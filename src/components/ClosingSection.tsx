@@ -19,7 +19,7 @@ const ClosingSection = () => {
           }, 300);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.5 }
     );
 
     if (sectionRef.current) {
@@ -69,7 +69,7 @@ const ClosingSection = () => {
     >
       <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6">
         {/* Line Animation */}
-        <div className="mb-12 flex justify-center">
+        <div className="mb-[20px] flex justify-center">
           <div
             className="h-1 bg-foreground transition-all duration-1000 ease-out max-w-[50%]"
             style={{
