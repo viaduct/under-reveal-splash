@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import undertheline from "@/assets/undertheline-text.png";
+import undertheline from "@/assets/undertheline-alt.png";
 import aradnas from "@/assets/aradnas.png";
 import mars from "@/assets/mars.png";
 import panorama from "@/assets/panorama.png";
