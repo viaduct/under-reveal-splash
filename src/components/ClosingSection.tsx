@@ -9,27 +9,6 @@ const ClosingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          // Start line animation
-          setTimeout(() => {
-            setLineWidth(100);
-          }, 300);
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       if (!sectionRef.current) return;
 
@@ -37,13 +16,24 @@ const ClosingSection = () => {
       const sectionHeight = rect.height;
       const scrollProgress = -rect.top / (sectionHeight - window.innerHeight);
 
-      if (scrollProgress < 0.2) {
+      // Line drawing progress (0-0.2)
+      if (scrollProgress >= 0 && scrollProgress <= 0.2) {
+        const lineProgress = (scrollProgress / 0.2) * 100;
+        setLineWidth(lineProgress);
+      } else if (scrollProgress > 0.2) {
+        setLineWidth(100);
+      } else {
+        setLineWidth(0);
+      }
+
+      // Text phases
+      if (scrollProgress < 0.3) {
         setTextPhase(0); // No text
-      } else if (scrollProgress < 0.4) {
+      } else if (scrollProgress < 0.5) {
         setTextPhase(1); // First text appears
-      } else if (scrollProgress < 0.6) {
+      } else if (scrollProgress < 0.7) {
         setTextPhase(2); // First text fades out
-      } else if (scrollProgress < 0.8) {
+      } else if (scrollProgress < 0.9) {
         setTextPhase(3); // Second text appears
       } else {
         setTextPhase(3); // Second text stays
