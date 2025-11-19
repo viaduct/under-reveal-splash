@@ -95,10 +95,10 @@ All colors MUST be HSL.
   /* Line drawing animation */
   @keyframes drawLine {
     from {
-      width: 0;
+      transform: scaleX(0);
     }
     to {
-      width: 100%;
+      transform: scaleX(1);
     }
   }
 
@@ -116,7 +116,6 @@ All colors MUST be HSL.
 
   .animate-draw-line {
     animation: drawLine var(--duration-line) ease-out var(--delay-line) forwards;
-    width: 0 !important;
   }
 
   .animate-fade-slide-up {
