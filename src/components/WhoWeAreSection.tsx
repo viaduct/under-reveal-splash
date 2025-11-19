@@ -38,8 +38,8 @@ const WhoWeAreSection = () => {
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[14px]">
             <div
-              className={`h-[2px] bg-foreground origin-left w-0 ${
-                isVisible ? "animate-draw-line" : ""
+              className={`h-[2px] bg-foreground origin-left ${
+                isVisible ? "animate-draw-line" : "w-0"
               }`}
             />
             </div>
