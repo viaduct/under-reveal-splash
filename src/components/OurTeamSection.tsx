@@ -114,7 +114,7 @@ const OurTeamSection = () => {
       {/* Title */}
       <div className="px-6 md:px-12 mb-[40px] text-center">
         <h2 
-          className={`text-5xl md:text-7xl lg:text-8xl font-bold text-foreground font-rift transition-all duration-700 ${
+          className={`text-[50px] font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
