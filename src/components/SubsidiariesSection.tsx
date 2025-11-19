@@ -120,7 +120,7 @@ const SubsidiariesSection = () => {
 
         {/* Top Right - ARADNAS */}
         <div
-          className={`absolute top-[15%] right-[5%] transition-all duration-1000 ${
+          className={`absolute top-[15%] right-[2%] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "1200ms" }}
@@ -136,7 +136,7 @@ const SubsidiariesSection = () => {
 
         {/* Bottom Right - MAR/S */}
         <div
-          className={`absolute top-[55%] right-[5%] transition-all duration-1000 ${
+          className={`absolute top-[55%] right-[2%] transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
           style={{ transitionDelay: "1400ms" }}
