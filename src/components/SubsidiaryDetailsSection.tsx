@@ -46,25 +46,25 @@ const SubsidiaryDetailsSection = () => {
           <TabsList className="w-full bg-transparent border-b border-border rounded-none h-auto p-0 mb-16 flex justify-center gap-8">
             <TabsTrigger
               value="panorama"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
             >
               PANORAMA
             </TabsTrigger>
             <TabsTrigger
               value="urbanlink"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
             >
               URBANLINK
             </TabsTrigger>
             <TabsTrigger
               value="aradnas"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
             >
               ARADNAS
             </TabsTrigger>
             <TabsTrigger
               value="mars"
-              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
+              className="relative bg-transparent text-muted-foreground hover:text-foreground data-[state=active]:text-foreground data-[state=active]:bg-transparent rounded-none pb-2 px-4 text-sm md:text-base font-medium font-rift transition-colors data-[state=active]:shadow-none after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
             >
               MAR/S
             </TabsTrigger>
@@ -80,7 +80,7 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2">
+                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
                   PANORAMA
                 </h2>
                 <div className="h-1 w-32 md:w-48 bg-foreground"></div>
@@ -148,7 +148,7 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2">
+                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
                   URBANLINK
                 </h2>
                 <div className="h-1 w-32 md:w-48 bg-foreground"></div>
@@ -200,7 +200,7 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2">
+                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
                   ARADNAS
                 </h2>
                 <div className="h-1 w-32 md:w-48 bg-foreground"></div>
@@ -238,7 +238,7 @@ const SubsidiaryDetailsSection = () => {
                     : "opacity-0 -translate-x-8"
                 }`}
               >
-                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2">
+                <h2 className="text-5xl md:text-7xl font-bold text-foreground mb-2 font-rift">
                   MAR/S
                 </h2>
                 <div className="h-1 w-32 md:w-48 bg-foreground"></div>
