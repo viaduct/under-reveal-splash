@@ -19,11 +19,11 @@ const HeroSection = () => {
           <div className="flex flex-col items-start">
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[14px]">
-              <div
-                className={`h-[2px] bg-foreground origin-left ${
-                  startAnimation ? "animate-draw-line" : "w-0"
-                }`}
-              />
+            <div
+              className={`h-[2px] bg-foreground origin-left w-0 ${
+                startAnimation ? "animate-draw-line" : ""
+              }`}
+            />
             </div>
             
             {/* Logo text */}
