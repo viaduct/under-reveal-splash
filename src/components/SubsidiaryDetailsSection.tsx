@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { ExternalLink } from "lucide-react";
 
 const SubsidiaryDetailsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -120,6 +122,17 @@ const SubsidiaryDetailsSection = () => {
                   <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                     Working closely with global concert agencies and promoters to maximize tour revenue and ensure successful K-POP world tours.
                   </p>
+                </div>
+
+                <div className="mt-12">
+                  <Button 
+                    variant="outline" 
+                    className="group"
+                    onClick={() => window.open('https://panorama-music.com', '_blank')}
+                  >
+                    WEBSITE
+                    <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
                 </div>
               </div>
             </div>
