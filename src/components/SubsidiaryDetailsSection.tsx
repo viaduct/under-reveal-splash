@@ -72,7 +72,7 @@ const SubsidiaryDetailsSection = () => {
 
           {/* PANORAMA Tab */}
           <TabsContent value="panorama" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start min-h-[400px]">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
                 <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   PANORAMA
@@ -134,7 +134,7 @@ const SubsidiaryDetailsSection = () => {
 
           {/* URBANLINK Tab */}
           <TabsContent value="urbanlink" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start min-h-[400px]">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
                 <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   URBANLINK
@@ -180,7 +180,7 @@ const SubsidiaryDetailsSection = () => {
 
           {/* ARADNAS Tab */}
           <TabsContent value="aradnas" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start min-h-[400px]">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
                 <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   ARADNAS
@@ -212,7 +212,7 @@ const SubsidiaryDetailsSection = () => {
 
           {/* MAR/S Tab */}
           <TabsContent value="mars" className="mt-0">
-            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-start min-h-[400px]">
+            <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center min-h-[400px]">
               <div className="transition-all duration-1000 opacity-100 translate-x-0">
                 <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   MAR/S
