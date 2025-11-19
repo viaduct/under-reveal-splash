@@ -16,6 +16,7 @@ export default {
       fontFamily: {
         sans: ['Pretendard', 'system-ui', 'sans-serif'],
         display: ['Anton', 'Pretendard', 'sans-serif'],
+        rift: ['rift', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",
