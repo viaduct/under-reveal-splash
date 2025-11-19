@@ -54,13 +54,13 @@ const SuperAppPublishingSection = () => {
             <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 flex justify-center items-center border-none w-full">
               <TabsTrigger 
                 value="tab1" 
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl font-bold transition-colors data-[state=inactive]:text-muted-foreground"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl transition-colors data-[state=inactive]:text-muted-foreground data-[state=active]:font-bold"
               >
                 SUPER APP PUBLISHING
               </TabsTrigger>
               <TabsTrigger 
                 value="tab2"
-                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl font-bold transition-colors data-[state=inactive]:text-muted-foreground"
+                className="bg-transparent p-0 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-2xl md:text-3xl transition-colors data-[state=inactive]:text-muted-foreground data-[state=active]:font-bold"
               >
                 ENT. INFRA & MANAGEMENT
               </TabsTrigger>
