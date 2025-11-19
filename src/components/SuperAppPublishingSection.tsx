@@ -5,6 +5,7 @@ import tab1SelectImage from "@/assets/tab1-select.png";
 import tab2DefaultImage from "@/assets/tab2-default.png";
 import tab2SelectImage from "@/assets/tab2-select.png";
 import doceOsLineImage from "@/assets/doce-os-line.png";
+import superAppTitleImage from "@/assets/super-app-title.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -80,6 +81,16 @@ const SuperAppPublishingSection = () => {
 
           {/* Tab Content */}
           <TabsContent value="tab1" className="mt-0 w-full max-w-[856px] mx-auto">
+            {/* Title Image */}
+            <div
+              className={`mb-8 flex justify-center transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
+            >
+              <img src={superAppTitleImage} alt="SUPER APP PUBLISHING" className="h-auto w-full max-w-[600px]" />
+            </div>
+            
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -103,6 +114,16 @@ const SuperAppPublishingSection = () => {
           </TabsContent>
 
           <TabsContent value="tab2" className="mt-0 w-full max-w-[856px] mx-auto">
+            {/* Title Image */}
+            <div
+              className={`mb-8 flex justify-center transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
+            >
+              <img src={superAppTitleImage} alt="SUPER APP PUBLISHING" className="h-auto w-full max-w-[600px]" />
+            </div>
+            
             <div
               className={`text-center space-y-8 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
