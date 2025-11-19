@@ -37,11 +37,11 @@ const WhoWeAreSection = () => {
           <div className="flex flex-col items-start">
             {/* Horizontal line */}
             <div className="w-full max-w-[500px] overflow-hidden mb-[14px]">
-            <div
-              className={`h-[2px] bg-foreground origin-left ${
-                isVisible ? "animate-draw-line" : "w-0"
-              }`}
-            />
+              <div
+                className={`h-[2px] bg-foreground origin-left transition-all duration-1000 ${
+                  isVisible ? "animate-draw-line" : "w-0"
+                }`}
+              />
             </div>
             
             {/* WHO WE ARE text */}
