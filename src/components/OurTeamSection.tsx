@@ -128,42 +128,44 @@ const OurTeamSection = () => {
         ref={scrollContainerRef}
         className="overflow-x-auto overflow-y-hidden"
       >
-        <div className="flex gap-4 px-6 md:px-12 pb-8 min-w-max">
+        <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-[400px] transition-all duration-700 delay-${index * 100}`}
+              className={`flex-shrink-0 w-screen h-screen flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
                 transitionDelay: `${index * 100}ms`
               }}
             >
-              {/* Image Section */}
-              <div className="w-full h-[200px] mb-4 border-b border-foreground/20">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              {/* Info Section */}
-              <div className="space-y-4">
-                <div>
-                  <h3 className="text-xl font-bold text-foreground mb-1">
-                    {member.name}
-                  </h3>
-                  <p className="text-sm text-foreground/70">{member.role}</p>
+              <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center gap-12">
+                {/* Image Section */}
+                <div className="w-full md:w-1/2 h-[500px] border-b border-foreground/20">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
 
-                <div>
-                  <h4 className="text-base font-semibold text-foreground mb-2">
-                    {member.title}
-                  </h4>
-                  <p className="text-sm text-foreground/80 leading-relaxed">
-                    {member.description}
-                  </p>
+                {/* Info Section */}
+                <div className="w-full md:w-1/2 space-y-6">
+                  <div>
+                    <h3 className="text-4xl font-bold text-foreground mb-3">
+                      {member.name}
+                    </h3>
+                    <p className="text-xl text-foreground/70">{member.role}</p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-2xl font-semibold text-foreground mb-4">
+                      {member.title}
+                    </h4>
+                    <p className="text-lg text-foreground/80 leading-relaxed">
+                      {member.description}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
