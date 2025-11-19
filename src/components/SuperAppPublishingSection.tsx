@@ -6,6 +6,8 @@ import tab2DefaultImage from "@/assets/tab2-default.png";
 import tab2SelectImage from "@/assets/tab2-select.png";
 import doceOsLineImage from "@/assets/doce-os-line.png";
 import superAppTitleImage from "@/assets/super-app-title.png";
+import globalEntInfraTitleImage from "@/assets/global-ent-infra-title.png";
+import entLogosImage from "@/assets/ent-logos.png";
 
 const SuperAppPublishingSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -121,28 +123,38 @@ const SuperAppPublishingSection = () => {
               }`}
               style={{ transitionDelay: isVisible ? "400ms" : "0ms" }}
             >
-              <img src={superAppTitleImage} alt="SUPER APP PUBLISHING" className="h-auto w-full max-w-[300px]" />
+              <img src={globalEntInfraTitleImage} alt="GLOBAL ENTERTAINMENT INFRASTRUCTURE" className="h-auto w-full max-w-[600px]" />
             </div>
             
             <div
-              className={`text-center space-y-8 transition-all duration-1000 ${
+              className={`text-center space-y-6 transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
               }`}
               style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
             >
               <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
-                UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region,
-                enabling artists and creators to own, design, and operate their own
-                independent platforms through DOCE-powered publishing.
+                UNDERTHELINE collaborates with global record labels, management companies, publishing networks,
+                and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
               </p>
               <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
-                Each app becomes a personal community and ecosystem where the artist is the true owner
-                -operating fandom, commerce, and content directly under their own control.
+                <strong>Record Distribution:</strong> Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto flex items-center justify-center gap-2">
-                <span>→</span>
-                <span>An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.</span>
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
+                <strong>Publishing Network:</strong> Connected with global publishers such as Warner Chappell, BMG, and Kobalt.
               </p>
+              <p className="text-base md:text-lg leading-relaxed text-foreground w-full mx-auto">
+                <strong>Touring Network:</strong> Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
+              </p>
+            </div>
+
+            {/* Logos Image */}
+            <div
+              className={`mt-12 flex justify-center transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
+            >
+              <img src={entLogosImage} alt="Entertainment Infrastructure Logos" className="w-full max-w-[600px]" />
             </div>
           </TabsContent>
         </Tabs>
