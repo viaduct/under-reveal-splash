@@ -5,7 +5,6 @@ import teamHan from "@/assets/team-han.png";
 import teamRyan from "@/assets/team-ryan.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
 import teamStavros from "@/assets/team-stavros.png";
-import ourTeamTitle from "@/assets/our-team-title.png";
 
 const teamMembers = [
   {
@@ -114,13 +113,13 @@ const OurTeamSection = () => {
     >
       {/* Title */}
       <div className="px-6 md:px-12 mb-[40px] text-center">
-        <img 
-          src={ourTeamTitle} 
-          alt="OUR TEAM" 
-          className={`mx-auto transition-all duration-700 scale-50 ${
+        <h2 
+          className={`text-5xl md:text-7xl lg:text-8xl font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
-        />
+        >
+          OUR TEAM
+        </h2>
       </div>
 
       {/* Horizontal Scrollable Team Members */}
