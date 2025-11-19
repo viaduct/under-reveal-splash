@@ -18,7 +18,7 @@ const HeroSection = () => {
           {/* Left side - Logo with line */}
           <div className="flex flex-col items-start space-y-8">
             {/* Horizontal line */}
-            <div className="w-full overflow-hidden">
+            <div className="w-full max-w-[500px] overflow-hidden">
               <div
                 className={`h-[2px] bg-foreground origin-left ${
                   startAnimation ? "animate-draw-line" : "w-0"
@@ -33,7 +33,7 @@ const HeroSection = () => {
               }`}
               style={{ animationDelay: "var(--delay-logo)" }}
             >
-              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-foreground font-rift">
+              <h1 className="text-[50px] font-bold text-foreground font-rift">
                 UNDERTHELINE
               </h1>
             </div>
