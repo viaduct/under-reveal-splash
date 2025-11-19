@@ -44,9 +44,9 @@ All colors MUST be HSL.
     --duration-text: 0.6s;
     
     /* Delays */
-    --delay-line: 0.3s;
-    --delay-logo: 1.8s;
-    --delay-text: 2.2s;
+    --delay-line: 0s;
+    --delay-logo: 0.2s;
+    --delay-text: 0.4s;
   }
 
   .dark {
