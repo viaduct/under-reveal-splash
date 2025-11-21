@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import teamSanghyun from "@/assets/team-sanghyun.png";
 import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
 import teamRyan from "@/assets/team-ryan.png";
@@ -7,13 +6,6 @@ import teamMaurizio from "@/assets/team-maurizio.png";
 import teamStavros from "@/assets/team-stavros.png";
 
 const teamMembers = [
-  {
-    name: "Sanghyun Shin",
-    role: "Founder",
-    title: "Visionary Founder & Innovator",
-    description: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
-    image: teamSanghyun
-  },
   {
     name: "Robert W. Lewis III",
     role: "Co-Founder",
