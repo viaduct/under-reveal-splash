@@ -54,13 +54,6 @@ const SubsidiariesSection = () => {
               alt="PANORAMA" 
               className="h-8 object-contain"
             />
-            {/* Line below logo */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            />
           </button>
         </div>
 
@@ -76,13 +69,6 @@ const SubsidiariesSection = () => {
               src={urbanlinkLogo} 
               alt="URBANLINK" 
               className="h-8 object-contain"
-            />
-            {/* Line below logo */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "600ms" }}
             />
           </button>
         </div>
@@ -100,13 +86,6 @@ const SubsidiariesSection = () => {
               alt="ARADNAS" 
               className="h-8 object-contain"
             />
-            {/* Line below logo */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "800ms" }}
-            />
           </button>
         </div>
 
@@ -123,13 +102,6 @@ const SubsidiariesSection = () => {
               alt="MAR/S" 
               className="h-8 object-contain"
             />
-            {/* Line below logo */}
-            <div
-              className={`mt-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1000ms" }}
-            />
           </button>
         </div>
 
@@ -140,14 +112,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1100ms" }}
         >
-          <div className="group relative cursor-pointer hover:scale-[1.02] transition-all duration-200 ease-out flex flex-col items-end">
-            {/* Line above logo - right aligned */}
-            <div
-              className={`mb-[8px] h-[3px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[300px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1200ms" }}
-            />
+          <div className="group relative cursor-pointer hover:scale-[1.02] transition-all duration-200 ease-out">
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
@@ -172,12 +137,6 @@ const SubsidiariesSection = () => {
               alt="PANORAMA" 
               className="h-6 object-contain"
             />
-            <div
-              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[200px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "400ms" }}
-            />
           </button>
         </div>
 
@@ -193,12 +152,6 @@ const SubsidiariesSection = () => {
               src={urbanlinkLogo} 
               alt="URBANLINK" 
               className="h-6 object-contain"
-            />
-            <div
-              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[200px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "600ms" }}
             />
           </button>
         </div>
@@ -216,12 +169,6 @@ const SubsidiariesSection = () => {
               alt="ARADNAS" 
               className="h-6 object-contain"
             />
-            <div
-              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[200px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "800ms" }}
-            />
           </button>
         </div>
 
@@ -238,12 +185,6 @@ const SubsidiariesSection = () => {
               alt="MAR/S" 
               className="h-6 object-contain"
             />
-            <div
-              className={`mt-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[200px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1000ms" }}
-            />
           </button>
         </div>
 
@@ -254,13 +195,7 @@ const SubsidiariesSection = () => {
           }`}
           style={{ transitionDelay: "1100ms" }}
         >
-          <div className="group relative cursor-pointer hover:scale-[1.02] transition-all duration-200 ease-out flex flex-col items-end w-full">
-            <div
-              className={`mb-2 h-[2px] bg-foreground transition-all duration-700 group-hover:bg-primary ${
-                isVisible ? "w-[200px]" : "w-0"
-              }`}
-              style={{ transitionDelay: "1200ms" }}
-            />
+          <div className="group relative cursor-pointer hover:scale-[1.02] transition-all duration-200 ease-out flex justify-end w-full">
             <img 
               src={underthelineText} 
               alt="UNDERTHELINE" 
