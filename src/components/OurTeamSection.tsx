@@ -102,10 +102,10 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="py-20 bg-background"
+      className="py-12 bg-background"
     >
       {/* Title */}
-      <div className="px-6 md:px-12 mb-[40px] text-center">
+      <div className="px-6 md:px-12 mb-8 text-center">
         <h2 
           className={`text-[50px] font-bold text-foreground font-rift transition-all duration-700 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -124,7 +124,7 @@ const OurTeamSection = () => {
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-screen min-h-[600px] flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
+              className={`flex-shrink-0 w-screen min-h-[400px] flex items-center justify-center transition-all duration-700 delay-${index * 100}`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
@@ -133,7 +133,7 @@ const OurTeamSection = () => {
             >
               <div className="max-w-[1880px] mx-auto px-6 md:px-12 flex flex-col items-start">
                 {/* Image Section - Smaller Rectangle */}
-                <div className="w-full h-[350px] mb-6">
+                <div className="w-full h-[280px] mb-6">
                   <img
                     src={member.image}
                     alt={member.name}
