@@ -115,7 +115,7 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="py-12 bg-background"
+      className="pt-[80px] pb-12 bg-background"
     >
       {/* Title */}
       <div className="px-6 md:px-12 mb-16 text-center">

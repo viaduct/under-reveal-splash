@@ -12,7 +12,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="flex items-center justify-center h-[calc(100vh-80px)] px-6 pt-[40px]">
+    <div className="flex items-center justify-center h-screen px-6 pt-[80px]">
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left side - Logo with line */}
