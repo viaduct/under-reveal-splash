@@ -8,15 +8,15 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <Logo />
-            <p className="text-sm text-foreground/70 leading-relaxed">
+            <p className="text-[14px] text-foreground/70 leading-relaxed">
               As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
             </p>
           </div>
 
           {/* Contact Information */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-foreground">Contact</h3>
-            <div className="space-y-2 text-sm text-foreground/70">
+            <h3 className="text-lg font-bold text-foreground font-rift">Contact</h3>
+            <div className="space-y-2 text-[14px] text-foreground/70">
               <p>Email: info@undertheline.com</p>
               <p>Phone: +1 (555) 123-4567</p>
               <p className="leading-relaxed">
@@ -29,8 +29,8 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="text-lg font-bold text-foreground">Quick Links</h3>
-            <div className="space-y-2 text-sm text-foreground/70">
+            <h3 className="text-lg font-bold text-foreground font-rift">Family Site</h3>
+            <div className="space-y-2 text-[14px] text-foreground/70">
               <p className="hover:text-foreground cursor-pointer transition-colors">About Us</p>
               <p className="hover:text-foreground cursor-pointer transition-colors">Our Subsidiaries</p>
               <p className="hover:text-foreground cursor-pointer transition-colors">Careers</p>
@@ -41,7 +41,7 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-8 border-t border-foreground/10">
-          <p className="text-center text-sm text-foreground/60">
+          <p className="text-center text-[14px] text-foreground/60">
             © {new Date().getFullYear()} Undertheline Holdings. All rights reserved.
           </p>
         </div>
