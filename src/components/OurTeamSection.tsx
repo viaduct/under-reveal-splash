@@ -144,14 +144,14 @@ const OurTeamSection = () => {
                 {/* Info Section */}
                 <div className="w-full md:w-1/2 space-y-8">
                   <div>
-                    <h3 className="text-[36px] font-bold text-foreground mb-1 font-rift">
+                    <h3 className="text-[36px] font-bold text-foreground mb-0 font-rift">
                       {member.name}
                     </h3>
                     <p className="text-xl text-foreground/70">{member.role}</p>
                   </div>
 
                   <div>
-                    <h4 className="text-[20px] font-semibold text-foreground mb-2">
+                    <h4 className="text-[20px] font-semibold text-foreground mb-1">
                       {member.title}
                     </h4>
                     <p className="text-[17px] text-foreground/80 leading-relaxed tracking-tight">
