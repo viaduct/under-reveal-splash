@@ -30,7 +30,7 @@ const WhoWeAreSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex items-center justify-center min-h-[calc(100vh-120px)] px-6">
+    <div ref={sectionRef} className="flex items-center justify-center min-h-screen px-6 pt-[80px]">
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
