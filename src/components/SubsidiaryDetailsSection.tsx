@@ -77,11 +77,19 @@ const SubsidiaryDetailsSection = () => {
                 <h2 className="text-[50px] font-bold text-foreground mb-[14px] font-rift">
                   PANORAMA
                 </h2>
-                <div className="h-1 w-[300px] bg-foreground"></div>
+                <div className="h-1 w-[300px] bg-foreground mb-6"></div>
+                <Button 
+                  variant="outline" 
+                  className="group"
+                  onClick={() => window.open('https://panorama-music.com', '_blank')}
+                >
+                  WEBSITE
+                  <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Button>
               </div>
 
               <div
-                className={`space-y-12 transition-all duration-1000 delay-200 ${
+                className={`space-y-[30px] transition-all duration-1000 delay-200 ${
                   isVisible && activeTab === "panorama"
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-8"
@@ -117,17 +125,6 @@ const SubsidiaryDetailsSection = () => {
                     Working closely with global concert agencies and promoters to maximize tour revenue and ensure successful K-POP world tours.
                   </p>
                 </div>
-
-                <div className="mt-12">
-                  <Button 
-                    variant="outline" 
-                    className="group"
-                    onClick={() => window.open('https://panorama-music.com', '_blank')}
-                  >
-                    WEBSITE
-                    <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </div>
               </div>
             </div>
           </TabsContent>
@@ -143,7 +140,7 @@ const SubsidiaryDetailsSection = () => {
               </div>
 
               <div
-                className={`space-y-12 transition-all duration-1000 delay-200 ${
+                className={`space-y-[30px] transition-all duration-1000 delay-200 ${
                   isVisible && activeTab === "urbanlink"
                     ? "opacity-100 translate-x-0"
                     : "opacity-0 translate-x-8"
