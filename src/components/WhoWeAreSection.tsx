@@ -59,7 +59,7 @@ const WhoWeAreSection = () => {
 
           {/* Right side - Description text */}
           <div
-            className={`transition-all duration-1000 mt-0 ${
+            className={`transition-all duration-1000 mt-[-10px] ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
@@ -68,9 +68,9 @@ const WhoWeAreSection = () => {
               UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.
             </p>
             
-            <div className="flex gap-6">
+            <div className="flex gap-5">
               <button 
-                className="px-8 py-3 bg-foreground text-background font-bold font-rift text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => {
                   const teamSection = document.getElementById('our-team');
                   if (teamSection) {
@@ -81,7 +81,7 @@ const WhoWeAreSection = () => {
                 OUR TEAM
               </button>
               <button 
-                className="px-8 py-3 bg-foreground text-background font-bold font-rift text-lg hover:scale-105 hover:shadow-lg transition-all duration-300"
+                className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => {
                   // Network page navigation will be added
                   console.log('Navigate to Network page');
