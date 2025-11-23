@@ -69,9 +69,17 @@ const BrandMessageSection = () => {
         <div className="absolute left-1/2 -translate-x-1/2 -top-20 w-[600px] h-[100px]">
           <svg viewBox="0 0 600 100" className="w-full h-full">
             <defs>
+              <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style={{ stopColor: 'white', stopOpacity: 0 }} />
+                <stop offset="20%" style={{ stopColor: 'white', stopOpacity: 0.4 }} />
+                <stop offset="50%" style={{ stopColor: 'white', stopOpacity: 1 }} />
+                <stop offset="80%" style={{ stopColor: 'white', stopOpacity: 0.4 }} />
+                <stop offset="100%" style={{ stopColor: 'white', stopOpacity: 0 }} />
+              </linearGradient>
               <filter id="neonGlow">
-                <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
                 <feMerge>
+                  <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
@@ -80,11 +88,19 @@ const BrandMessageSection = () => {
             <path
               d="M 50 90 Q 300 10, 550 90"
               fill="none"
-              stroke="white"
-              strokeWidth="2"
+              stroke="url(#neonGradient)"
+              strokeWidth="3"
               filter="url(#neonGlow)"
+            />
+            {/* Center glow enhancement */}
+            <path
+              d="M 200 40 Q 300 20, 400 40"
+              fill="none"
+              stroke="white"
+              strokeWidth="4"
+              opacity="0.8"
               style={{
-                filter: 'drop-shadow(0 0 8px rgba(255,255,255,0.8)) drop-shadow(0 0 15px rgba(255,255,255,0.6))'
+                filter: 'blur(10px)'
               }}
             />
           </svg>
