@@ -71,20 +71,44 @@ const BrandMessageSection = () => {
             <defs>
               <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" style={{ stopColor: 'white', stopOpacity: 0 }} />
-                <stop offset="20%" style={{ stopColor: 'white', stopOpacity: 0.4 }} />
+                <stop offset="15%" style={{ stopColor: 'white', stopOpacity: 0.3 }} />
                 <stop offset="50%" style={{ stopColor: 'white', stopOpacity: 1 }} />
-                <stop offset="80%" style={{ stopColor: 'white', stopOpacity: 0.4 }} />
+                <stop offset="85%" style={{ stopColor: 'white', stopOpacity: 0.3 }} />
                 <stop offset="100%" style={{ stopColor: 'white', stopOpacity: 0 }} />
               </linearGradient>
               <filter id="neonGlow">
-                <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
                 <feMerge>
+                  <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
             </defs>
+            {/* Outer glow */}
+            <path
+              d="M 50 90 Q 300 10, 550 90"
+              fill="none"
+              stroke="white"
+              strokeWidth="6"
+              opacity="0.3"
+              style={{
+                filter: 'blur(20px)'
+              }}
+            />
+            {/* Middle glow */}
+            <path
+              d="M 50 90 Q 300 10, 550 90"
+              fill="none"
+              stroke="white"
+              strokeWidth="5"
+              opacity="0.6"
+              style={{
+                filter: 'blur(12px)'
+              }}
+            />
+            {/* Main line */}
             <path
               d="M 50 90 Q 300 10, 550 90"
               fill="none"
@@ -92,15 +116,16 @@ const BrandMessageSection = () => {
               strokeWidth="3"
               filter="url(#neonGlow)"
             />
-            {/* Center glow enhancement */}
-            <path
-              d="M 200 40 Q 300 20, 400 40"
-              fill="none"
-              stroke="white"
-              strokeWidth="4"
-              opacity="0.8"
+            {/* Center intense glow */}
+            <ellipse
+              cx="300"
+              cy="25"
+              rx="150"
+              ry="30"
+              fill="white"
+              opacity="0.15"
               style={{
-                filter: 'blur(10px)'
+                filter: 'blur(25px)'
               }}
             />
           </svg>
