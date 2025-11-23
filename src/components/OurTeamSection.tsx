@@ -188,7 +188,7 @@ const OurTeamSection = () => {
       </div>
 
       {/* Custom Scrollbar */}
-      <div className="px-6 md:px-12 mt-8">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mt-8">
         <div className="relative w-full h-[2px] bg-border/30">
           <div 
             className="absolute left-0 top-0 h-full bg-foreground transition-all duration-150 ease-out"
