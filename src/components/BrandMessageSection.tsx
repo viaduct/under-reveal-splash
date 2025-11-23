@@ -77,10 +77,8 @@ const BrandMessageSection = () => {
                 <stop offset="100%" style={{ stopColor: 'white', stopOpacity: 0 }} />
               </linearGradient>
               <filter id="neonGlow">
-                <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                 <feMerge>
-                  <feMergeNode in="coloredBlur"/>
-                  <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="coloredBlur"/>
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
@@ -97,10 +95,10 @@ const BrandMessageSection = () => {
               d="M 50 90 Q 300 10, 550 90"
               fill="none"
               stroke="white"
-              strokeWidth="6"
-              opacity="0.3"
+              strokeWidth="3"
+              opacity="0.15"
               style={{
-                filter: 'blur(20px)'
+                filter: 'blur(10px)'
               }}
             />
             {/* Middle glow */}
@@ -108,10 +106,10 @@ const BrandMessageSection = () => {
               d="M 50 90 Q 300 10, 550 90"
               fill="none"
               stroke="white"
-              strokeWidth="5"
-              opacity="0.6"
+              strokeWidth="2"
+              opacity="0.3"
               style={{
-                filter: 'blur(12px)'
+                filter: 'blur(6px)'
               }}
             />
             {/* Main line */}
@@ -119,7 +117,7 @@ const BrandMessageSection = () => {
               d="M 50 90 Q 300 10, 550 90"
               fill="none"
               stroke="url(#neonGradient)"
-              strokeWidth="3"
+              strokeWidth="1.5"
               filter="url(#neonGlow)"
             />
             {/* Shining star at center */}
