@@ -121,7 +121,7 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="pt-[140px] pb-12 bg-background"
+      className="pt-[100px] pb-8 bg-background"
       style={{ minHeight: 'calc(100vh - 100px)' }}
     >
       {/* Title */}
