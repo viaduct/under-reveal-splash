@@ -115,8 +115,8 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="flex flex-col items-center justify-center pt-[140px] pb-12 bg-background"
-      style={{ height: 'calc(100vh - 100px)' }}
+      className="pt-[140px] pb-12 bg-background"
+      style={{ minHeight: 'calc(100vh - 100px)' }}
     >
       {/* Title */}
       <div className="px-6 md:px-12 mb-16 text-center">
@@ -132,7 +132,7 @@ const OurTeamSection = () => {
       {/* Horizontal Scrollable Team Members */}
       <div 
         ref={scrollContainerRef}
-        className="overflow-x-auto overflow-y-hidden scrollbar-hide"
+        className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full"
       >
         <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
@@ -182,7 +182,7 @@ const OurTeamSection = () => {
       </div>
 
       {/* Custom Scrollbar */}
-      <div className="px-6 md:px-12 mt-8 mb-[100px]">
+      <div className="px-6 md:px-12 mt-8">
         <div className="relative w-full h-[2px] bg-border/30">
           <div 
             className="absolute left-0 top-0 h-full bg-foreground transition-all duration-150 ease-out"
