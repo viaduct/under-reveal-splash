@@ -125,10 +125,10 @@ const SpaceSection = () => {
       />
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center px-6">
-          <h2 className="text-5xl md:text-7xl font-bold text-white font-rift mb-4">
+          <h2 className="text-[24px] font-bold text-white font-rift mb-4">
             Beyond the Line, Behind the Shine
           </h2>
-          <p className="text-3xl md:text-4xl text-white/90 font-rift">
+          <p className="text-[24px] text-white/90 font-rift">
             Invisible. Essential.
           </p>
         </div>
