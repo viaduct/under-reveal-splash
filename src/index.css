@@ -96,16 +96,19 @@ All colors MUST be HSL.
 
   /* Smooth scroll snap container */
   .snap-container {
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
     overflow-y: auto;
     overflow-x: hidden;
+    height: 100vh;
   }
 
   /* Smooth scroll snap sections */
   .snap-section {
     scroll-snap-align: start;
-    scroll-snap-stop: normal;
+    scroll-snap-stop: always;
+    height: 100vh;
+    min-height: 100vh;
   }
 
   /* Enhanced smooth scrolling with custom timing */
