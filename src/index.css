@@ -107,8 +107,8 @@ All colors MUST be HSL.
   .snap-section {
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    height: 100vh;
-    min-height: 100vh;
+    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
   }
 
   /* Enhanced smooth scrolling with custom timing */

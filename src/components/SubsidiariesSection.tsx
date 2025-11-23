@@ -49,7 +49,8 @@ const SubsidiariesSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="h-screen flex items-center justify-center px-[160px] relative pt-[140px] pb-20"
+      className="flex items-center justify-center px-[160px] relative pt-[140px] pb-20"
+      style={{ height: 'calc(100vh - 100px)' }}
     >
       {/* Desktop Layout */}
       <div className="hidden md:block relative w-full max-w-[1400px] mx-auto h-[600px]">
