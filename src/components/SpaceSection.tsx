@@ -18,89 +18,105 @@ const SpaceSection = () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Star class
-    class Star {
-      x: number;
-      y: number;
-      size: number;
-      speed: number;
-      color: string;
-      opacity: number;
-      twinkleSpeed: number;
-      twinkleOffset: number;
+    // Dot grid configuration
+    const gridSize = 30;
+    const dots: { x: number; y: number; z: number; baseZ: number }[] = [];
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = 300;
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 0.5;
-        this.speed = Math.random() * 0.3 + 0.1;
+    // Create spherical dot grid
+    for (let lat = -90; lat <= 90; lat += 15) {
+      for (let lon = -180; lon <= 180; lon += 15) {
+        const phi = (lat * Math.PI) / 180;
+        const theta = (lon * Math.PI) / 180;
         
-        // Random purple/pink colors
-        const colors = [
-          "rgba(200, 100, 255, ",  // Purple
-          "rgba(255, 100, 200, ",  // Pink
-          "rgba(150, 50, 255, ",   // Deep Purple
-          "rgba(255, 150, 200, ",  // Light Pink
-          "rgba(180, 80, 255, ",   // Mid Purple
-        ];
-        this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.opacity = Math.random();
-        this.twinkleSpeed = Math.random() * 0.02 + 0.01;
-        this.twinkleOffset = Math.random() * Math.PI * 2;
-      }
-
-      update(time: number) {
-        // Move star down slowly
-        this.y += this.speed;
+        const x = radius * Math.cos(phi) * Math.cos(theta);
+        const y = radius * Math.cos(phi) * Math.sin(theta);
+        const z = radius * Math.sin(phi);
         
-        // Reset position when star goes off screen
-        if (this.y > canvas.height) {
-          this.y = 0;
-          this.x = Math.random() * canvas.width;
-        }
-
-        // Twinkle effect
-        this.opacity = (Math.sin(time * this.twinkleSpeed + this.twinkleOffset) + 1) / 2;
-      }
-
-      draw(ctx: CanvasRenderingContext2D) {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color + this.opacity + ")";
-        ctx.fill();
-
-        // Add glow effect
-        const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.size * 3);
-        gradient.addColorStop(0, this.color + (this.opacity * 0.8) + ")");
-        gradient.addColorStop(1, this.color + "0)");
-        ctx.fillStyle = gradient;
-        ctx.arc(this.x, this.y, this.size * 3, 0, Math.PI * 2);
-        ctx.fill();
+        dots.push({ x, y, z, baseZ: z });
       }
     }
 
-    // Create stars
-    const stars: Star[] = [];
-    const starCount = 150;
-    for (let i = 0; i < starCount; i++) {
-      stars.push(new Star());
-    }
+    let rotation = 0;
 
     // Animation loop
     let animationId: number;
-    let startTime = Date.now();
 
     const animate = () => {
-      const currentTime = (Date.now() - startTime) / 1000;
-      
       // Clear canvas with black background
       ctx.fillStyle = "rgba(0, 0, 0, 1)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw stars
-      stars.forEach((star) => {
-        star.update(currentTime);
-        star.draw(ctx);
+      rotation += 0.003;
+
+      // Sort dots by z-index for proper layering
+      const sortedDots = [...dots].sort((a, b) => {
+        const aZ = a.z * Math.cos(rotation) - a.x * Math.sin(rotation);
+        const bZ = b.z * Math.cos(rotation) - b.x * Math.sin(rotation);
+        return aZ - bZ;
+      });
+
+      // Draw connecting lines
+      ctx.strokeStyle = "rgba(100, 100, 100, 0.3)";
+      ctx.lineWidth = 1;
+
+      for (let i = 0; i < sortedDots.length; i++) {
+        const dot = sortedDots[i];
+        
+        // Rotate dot
+        const rotatedX = dot.x * Math.cos(rotation) - dot.z * Math.sin(rotation);
+        const rotatedZ = dot.z * Math.cos(rotation) + dot.x * Math.sin(rotation);
+        
+        // Project to 2D
+        const scale = 800 / (800 + rotatedZ);
+        const x2d = centerX + rotatedX * scale;
+        const y2d = centerY + dot.y * scale;
+
+        // Draw lines to nearby dots
+        for (let j = i + 1; j < sortedDots.length; j++) {
+          const otherDot = sortedDots[j];
+          const otherRotatedX = otherDot.x * Math.cos(rotation) - otherDot.z * Math.sin(rotation);
+          const otherRotatedZ = otherDot.z * Math.cos(rotation) + otherDot.x * Math.sin(rotation);
+          
+          const otherScale = 800 / (800 + otherRotatedZ);
+          const otherX2d = centerX + otherRotatedX * otherScale;
+          const otherY2d = centerY + otherDot.y * otherScale;
+
+          const distance = Math.sqrt(
+            Math.pow(dot.x - otherDot.x, 2) +
+            Math.pow(dot.y - otherDot.y, 2) +
+            Math.pow(dot.z - otherDot.z, 2)
+          );
+
+          if (distance < radius * 0.6) {
+            const opacity = Math.max(0, (1 - distance / (radius * 0.6)) * 0.4);
+            ctx.strokeStyle = `rgba(120, 120, 120, ${opacity})`;
+            ctx.beginPath();
+            ctx.moveTo(x2d, y2d);
+            ctx.lineTo(otherX2d, otherY2d);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw dots
+      sortedDots.forEach((dot) => {
+        const rotatedX = dot.x * Math.cos(rotation) - dot.z * Math.sin(rotation);
+        const rotatedZ = dot.z * Math.cos(rotation) + dot.x * Math.sin(rotation);
+        
+        const scale = 800 / (800 + rotatedZ);
+        const x2d = centerX + rotatedX * scale;
+        const y2d = centerY + dot.y * scale;
+        
+        const size = 2 * scale;
+        const brightness = Math.max(80, Math.min(180, 80 + rotatedZ * 0.3));
+        
+        ctx.beginPath();
+        ctx.arc(x2d, y2d, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${brightness}, ${brightness}, ${brightness}, 0.8)`;
+        ctx.fill();
       });
 
       animationId = requestAnimationFrame(animate);
@@ -125,10 +141,10 @@ const SpaceSection = () => {
       />
       <div className="relative z-10 flex items-center justify-center h-full">
         <div className="text-center px-6">
-          <h2 className="text-[24px] font-bold text-white font-rift mb-4">
+          <h2 className="text-[24px] font-bold text-white font-rift mb-4" style={{ lineHeight: '120%' }}>
             Beyond the Line, Behind the Shine
           </h2>
-          <p className="text-[24px] text-white/90 font-rift">
+          <p className="text-[24px] text-white/90 font-rift" style={{ lineHeight: '120%' }}>
             Invisible. Essential.
           </p>
         </div>
