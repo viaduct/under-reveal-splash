@@ -115,7 +115,7 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="flex items-center justify-center pt-[140px] pb-12 bg-background"
+      className="flex flex-col items-center justify-center pt-[140px] pb-12 bg-background"
       style={{ height: 'calc(100vh - 100px)' }}
     >
       {/* Title */}
