@@ -123,7 +123,7 @@ const BrandMessageSection = () => {
             {/* Shining star at center */}
             <circle
               cx="300"
-              cy="15"
+              cy="10"
               r="20"
               fill="url(#starGlow)"
               style={{
@@ -132,8 +132,8 @@ const BrandMessageSection = () => {
             />
             <circle
               cx="300"
-              cy="15"
-              r="3"
+              cy="10"
+              r="2.5"
               fill="white"
             />
           </svg>
