@@ -85,6 +85,12 @@ const BrandMessageSection = () => {
                   <feMergeNode in="SourceGraphic"/>
                 </feMerge>
               </filter>
+              <radialGradient id="starGlow">
+                <stop offset="0%" style={{ stopColor: 'white', stopOpacity: 1 }} />
+                <stop offset="30%" style={{ stopColor: 'white', stopOpacity: 0.8 }} />
+                <stop offset="70%" style={{ stopColor: 'white', stopOpacity: 0.3 }} />
+                <stop offset="100%" style={{ stopColor: 'white', stopOpacity: 0 }} />
+              </radialGradient>
             </defs>
             {/* Outer glow */}
             <path
@@ -116,17 +122,21 @@ const BrandMessageSection = () => {
               strokeWidth="3"
               filter="url(#neonGlow)"
             />
-            {/* Center intense glow */}
-            <ellipse
+            {/* Shining star at center */}
+            <circle
               cx="300"
-              cy="25"
-              rx="150"
-              ry="30"
-              fill="white"
-              opacity="0.15"
+              cy="10"
+              r="20"
+              fill="url(#starGlow)"
               style={{
-                filter: 'blur(25px)'
+                animation: 'starPulse 2s ease-in-out infinite'
               }}
+            />
+            <circle
+              cx="300"
+              cy="10"
+              r="3"
+              fill="white"
             />
           </svg>
         </div>
@@ -210,6 +220,17 @@ const BrandMessageSection = () => {
           100% {
             transform: translateX(100vw) translateY(0);
             opacity: 0;
+          }
+        }
+        
+        @keyframes starPulse {
+          0%, 100% {
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.2);
           }
         }
       `}</style>
