@@ -124,7 +124,7 @@ const BrandMessageSection = () => {
             <circle
               cx="300"
               cy="50"
-              r="20"
+              r="12"
               fill="url(#starGlow)"
               style={{
                 animation: 'starGlow 2s ease-in-out infinite'
@@ -133,7 +133,7 @@ const BrandMessageSection = () => {
             <circle
               cx="300"
               cy="50"
-              r="2.5"
+              r="2"
               fill="white"
             />
           </svg>
