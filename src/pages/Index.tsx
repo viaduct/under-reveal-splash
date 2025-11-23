@@ -7,8 +7,6 @@ import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
 import OurTeamSection from "@/components/OurTeamSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
-
-import Footer from "@/components/Footer";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -68,10 +66,6 @@ const Index = () => {
           <BrandMessageSection />
         </section>
       </main>
-
-      <div className="mt-[300px] mb-[100px]">
-        <Footer />
-      </div>
     </div>
   );
 };
