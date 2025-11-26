@@ -46,7 +46,7 @@ const HeroSection = () => {
             }`}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground">
-              As the hidden engine of the entertainment industry, we deliver strategic business solutions that enable our labels and partners to achieve their brightest success.
+              "Undertheline" comes from a simple promise: we stand under every artist's line, not above it. We are not a company that pulls rights and data upward; instead, we design and operate the structures beneath, so that artists and labels can hold sovereignty over their own catalogs, communities and economics.
             </p>
           </div>
         </div>
