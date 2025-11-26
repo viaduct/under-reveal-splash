@@ -63,7 +63,7 @@ const NetworkSection = () => {
       case "top-left":
         return "absolute top-[5%] left-[5%] max-w-[400px]";
       case "top-right":
-        return "absolute top-[5%] right-[5%] max-w-[400px]";
+        return "absolute top-[5%] left-[5%] max-w-[600px]";
       case "right":
         return "absolute top-[45%] right-[5%] -translate-y-1/2 max-w-[400px]";
       case "bottom-right":
@@ -91,7 +91,8 @@ const NetworkSection = () => {
         </h2>
       </div>
 
-      <div className="max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
+      {/* Desktop Layout */}
+      <div className="hidden lg:block max-w-[1600px] mx-auto relative" style={{ minHeight: "800px" }}>
         {/* Center Circle with UNDERTHELINE */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
           {/* Outer dotted circles - spacing increases progressively */}
@@ -126,7 +127,7 @@ const NetworkSection = () => {
 
               {/* Logos */}
               {network.logos && (
-                <div className="flex flex-wrap gap-4 mt-4">
+                <div className={network.number === "02" ? "grid grid-cols-2 gap-2 mt-4" : "flex flex-wrap gap-4 mt-4"}>
                   {network.logos.map((logo) => (
                     <div
                       key={logo}
@@ -140,6 +141,61 @@ const NetworkSection = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Mobile/Tablet Layout */}
+      <div className="lg:hidden max-w-[800px] mx-auto">
+        {/* Center Circle with UNDERTHELINE */}
+        <div className="flex justify-center mb-12">
+          <div className="relative">
+            {/* Outer dotted circles */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border-2 border-dashed border-gray-300" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[280px] h-[280px] rounded-full border-2 border-dashed border-gray-200" />
+            
+            {/* Center circle */}
+            <div className="relative w-[140px] h-[140px] rounded-full bg-white border-2 border-black flex items-center justify-center z-10">
+              <h1 className="text-xl font-bold font-rift text-center px-2">UNDERTHELINE</h1>
+            </div>
+          </div>
+        </div>
+
+        {/* Network Sections - Vertical List */}
+        <div className="space-y-8">
+          {networkData.map((network, index) => (
+            <div
+              key={network.number}
+              className={`transition-all duration-700 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className="space-y-3 bg-white p-6 border border-gray-200">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-2xl font-bold text-foreground">{network.number}</span>
+                  <h3 className="text-lg font-bold text-foreground">{network.title}</h3>
+                </div>
+                
+                <p className="text-sm text-foreground/70 leading-relaxed">
+                  {network.description}
+                </p>
+
+                {/* Logos */}
+                {network.logos && (
+                  <div className="flex flex-wrap gap-2 mt-4">
+                    {network.logos.map((logo) => (
+                      <div
+                        key={logo}
+                        className="px-3 py-1.5 bg-white border border-gray-300 text-xs font-semibold text-foreground"
+                      >
+                        {logo}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
