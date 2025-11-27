@@ -72,13 +72,13 @@ const WhoWeAreSection = () => {
             
             <div className="flex gap-5">
               <button 
-                className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => navigate("/our-team")}
               >
                 OUR TEAM
               </button>
               <button 
-                className="px-8 py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-lg hover:bg-foreground hover:text-background transition-all duration-300"
+                className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => navigate("/network")}
               >
                 NETWORK
