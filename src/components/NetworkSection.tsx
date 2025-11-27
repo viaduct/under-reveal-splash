@@ -26,7 +26,7 @@ const networkData = [
     number: "04",
     title: "Dual Market Expertise",
     description: "The Panorama team brings deep expertise in both K-pop and the global music market, with a particular focus on breaking into the United States, the world's largest music market",
-    position: "bottom-right"
+    position: "right-middle"
   },
   {
     number: "05",
@@ -66,6 +66,8 @@ const NetworkSection = () => {
         return "absolute top-[5%] right-[5%] max-w-[400px]";
       case "right":
         return "absolute top-[45%] right-[5%] -translate-y-1/2 max-w-[400px]";
+      case "right-middle":
+        return "absolute top-[30%] right-[5%] max-w-[400px]";
       case "bottom-right":
         return "absolute bottom-[5%] right-[15%] max-w-[400px]";
       case "bottom-left":
