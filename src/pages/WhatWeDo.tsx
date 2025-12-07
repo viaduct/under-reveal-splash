@@ -24,8 +24,8 @@ const WhatWeDo = () => {
             WHAT WE DO
           </h1>
 
-          {/* Spacer for balance */}
-          <div className="w-[80px]" />
+          {/* Spacer for balance - hidden on mobile */}
+          <div className="hidden md:block w-[80px]" />
         </div>
       </header>
 
