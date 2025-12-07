@@ -5,6 +5,7 @@ import HeroSection from "@/components/HeroSection";
 import SubsidiariesSection from "@/components/SubsidiariesSection";
 import AboutSection from "@/components/AboutSection";
 import WhoWeAreSection from "@/components/WhoWeAreSection";
+import WhatWeDoSection from "@/components/WhatWeDoSection";
 import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import {
@@ -63,6 +64,9 @@ const Index = () => {
         </section>
         <section className="snap-section">
           <AboutSection />
+        </section>
+        <section className="snap-section">
+          <WhatWeDoSection />
         </section>
         <section className="snap-section">
           <WhoWeAreSection />
