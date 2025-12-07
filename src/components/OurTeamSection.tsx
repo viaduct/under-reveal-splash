@@ -45,9 +45,9 @@ const teamMembers = [
   // 7
   {
     name: "Maurizio Romiti",
-    role: "Senior Advisor",
-    title: "Industry Veteran",
-    description: "Providing strategic guidance with decades of experience in international business and entertainment industries.",
+    role: "Strategic Partner – Europe",
+    title: "Pioneer in Korea's entertainment management industry",
+    description: "Maurizio Romiti is the son of Cesare Romiti, former Chairman of FIAT Group for over 20 years, and part of one of Italy's most influential families. As former Chairman of HDP Group, he oversaw luxury brands including Armani, Fila, Kenzo, Valentino, and Calvin Klein, along with major newspapers, magazines, and media channels. He remains a key figure with wide influence across Italy's finance, media, and fashion industries.",
     image: teamMaurizio
   },
   // 8
