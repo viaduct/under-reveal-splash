@@ -37,12 +37,12 @@ const SubsidiariesSection = () => {
   const handleSubsidiaryClick = (tab: string) => {
     const detailsSection = document.getElementById('subsidiary-details');
     if (detailsSection) {
-      detailsSection.scrollIntoView({ behavior: 'smooth' });
+      // 먼저 탭 변경 이벤트 발생
+      const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
+      window.dispatchEvent(event);
       
-      setTimeout(() => {
-        const event = new CustomEvent('changeSubsidiaryTab', { detail: { tab } });
-        window.dispatchEvent(event);
-      }, 500);
+      // 즉시 해당 섹션으로 이동
+      detailsSection.scrollIntoView({ behavior: 'instant' });
     }
   };
 
