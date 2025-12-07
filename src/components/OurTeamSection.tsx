@@ -7,7 +7,7 @@ import teamStavros from "@/assets/team-stavros.png";
 
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
-import teamRyan from "@/assets/team-ryan.png";
+import teamCharles from "@/assets/team-charles.png";
 
 const teamMembers = [
   // 1
@@ -36,11 +36,11 @@ const teamMembers = [
   },
   // 4
   {
-    name: "Ryan Jang",
-    role: "CFO",
-    title: "Cross-Border Investment & Global Finance Executive",
-    description: "Wonjoon Jang is a finance executive with expertise spanning entertainment, SaaS, and cross-border investments. A Georgetown McDonough School of Business graduate in finance and former Deloitte Tohmatsu FAS professional, he has extensive experience in GCC cross-border trading finance as a partner at Alcenyar and Daleelaq in Doha. As CEO of Eidos Investment, LLC in California, he has led investments in real estate finance, F&B, and entertainment, and now serves as CFO, driving financial strategy and growth.",
-    image: teamRyan
+    name: "Charles \"Big Chuck\" Stanton",
+    role: "CEO, Drama Family Entertainment",
+    title: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline",
+    description: "Michael Jackson collaborator & culture connector. Charles \"Big Chuck\" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson's final decade working closely with producer Theron \"Neff-U\" Feemster on MJ's transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.",
+    image: teamCharles
   },
   // 5
   {
