@@ -18,7 +18,14 @@ const More = () => {
         <div className="h-20 px-6 md:px-12 flex items-center justify-between">
           {/* Back button */}
           <button
-            onClick={() => navigate("/")}
+            onClick={() => {
+              const from = searchParams.get("from");
+              if (from) {
+                navigate(`/#${from}`);
+              } else {
+                navigate("/");
+              }
+            }}
             className="flex items-center gap-2 text-foreground hover:text-primary transition-colors"
           >
             <ArrowLeft className="h-5 w-5" />
