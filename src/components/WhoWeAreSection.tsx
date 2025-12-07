@@ -32,7 +32,7 @@ const WhoWeAreSection = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
+    <div id="who-we-are" ref={sectionRef} className="flex items-center justify-center px-6 pt-[40px]" style={{ height: 'calc(100vh - 100px)' }}>
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
           {/* Left side - Logo with line */}
@@ -73,7 +73,7 @@ const WhoWeAreSection = () => {
             <div className="flex gap-5">
               <button 
                 className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
-                onClick={() => navigate("/more")}
+                onClick={() => navigate("/more?from=who-we-are")}
               >
                 MORE
               </button>
