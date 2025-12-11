@@ -47,7 +47,7 @@ const SubsidiaryDetailsSection = () => {
 
   return (
     <section
-      id="what-we-do"
+      id="subsidiary-details"
       ref={sectionRef}
       className="flex flex-col items-center justify-start px-6 md:px-[160px] pt-0 md:pt-[50px] pb-20 bg-background -mt-[50px] md:-mt-[30px]"
     >
