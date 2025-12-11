@@ -43,7 +43,7 @@ const SubsidiariesSection = () => {
       
       // 섹션 페이드 아웃
       detailsSection.style.opacity = '0';
-      detailsSection.style.transition = 'opacity 0.8s ease-out';
+      detailsSection.style.transition = 'opacity 1.2s ease-out';
       
       // 모바일에서는 헤더 높이를 고려해서 스크롤
       const isMobile = window.innerWidth < 768;
