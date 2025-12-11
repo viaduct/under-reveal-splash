@@ -88,9 +88,9 @@ const SubsidiaryDetailsSection = () => {
           {/* PANORAMA Tab */}
           <TabsContent value="panorama" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                 <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
-                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
+                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     PANORAMA
                   </h2>
                   <div className="h-1 w-full bg-foreground mb-6"></div>
@@ -149,9 +149,9 @@ const SubsidiaryDetailsSection = () => {
           {/* URBANLINK Tab */}
           <TabsContent value="urbanlink" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                 <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
-                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
+                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     URBANLINK
                   </h2>
                   <div className="h-1 w-full bg-foreground mb-6 md:mb-0"></div>
@@ -197,9 +197,9 @@ const SubsidiaryDetailsSection = () => {
           {/* ARADNAS Tab */}
           <TabsContent value="aradnas" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                 <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
-                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
+                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     ARADNAS
                   </h2>
                   <div className="h-1 w-full bg-foreground mb-6 md:mb-0"></div>
@@ -231,9 +231,9 @@ const SubsidiaryDetailsSection = () => {
           {/* MAR/S Tab */}
           <TabsContent value="mars" className="mt-0">
             <div className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center min-h-[400px]">
-              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-center md:text-left w-full md:w-auto">
+              <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
                 <div className="w-[200px] md:w-[300px] mx-auto md:mx-0">
-                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift">
+                  <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                     MAR/S
                   </h2>
                   <div className="h-1 w-full bg-foreground mb-6 md:mb-0"></div>
