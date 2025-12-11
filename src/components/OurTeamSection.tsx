@@ -39,7 +39,8 @@ const teamMembers = [
     name: "Charles \"Big Chuck\" Stanton",
     role: "CEO, Drama Family Entertainment",
     title: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline",
-    description: "Michael Jackson collaborator & culture connector. Charles \"Big Chuck\" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson's final decade working closely with producer Theron \"Neff-U\" Feemster on MJ's transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.",
+    description: "Michael Jackson collaborator & culture connector. Charles \"Big Chuck\" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson's final decade working closely with producer Theron \"Neff-U\" Feemster on MJ's transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther",
+    fullDescription: "Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.",
     image: teamCharles
   },
   // 5
@@ -266,9 +267,17 @@ const OurTeamSection = () => {
                     <h4 className="text-[18px] font-semibold text-foreground mb-2">
                       {member.title}
                     </h4>
-                    <p className="text-[15px] text-foreground/80 leading-relaxed">
-                      {member.description}
-                    </p>
+                    {'fullDescription' in member ? (
+                      <div className="max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-foreground/20 scrollbar-track-transparent pr-2">
+                        <p className="text-[15px] text-foreground/80 leading-relaxed">
+                          {member.description} {(member as any).fullDescription}
+                        </p>
+                      </div>
+                    ) : (
+                      <p className="text-[15px] text-foreground/80 leading-relaxed">
+                        {member.description}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>
