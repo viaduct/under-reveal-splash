@@ -9,6 +9,7 @@ const SuperAppPublishingSection = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [isTab1Expanded, setIsTab1Expanded] = useState(false);
   const [isTab2Expanded, setIsTab2Expanded] = useState(false);
+  const [imageVisible, setImageVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -73,7 +74,7 @@ const SuperAppPublishingSection = () => {
           </div>
 
           {/* Tab Content */}
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto">
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto" onAnimationEnd={() => setImageVisible(true)}>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
               {/* Left side - Text content */}
               <div
@@ -115,7 +116,13 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={appPublishingImage} alt="Super App Publishing Mockup" className="h-[240px] lg:h-[350px] xl:h-[420px] w-auto object-contain" />
+                <img 
+                  src={appPublishingImage} 
+                  alt="Super App Publishing Mockup" 
+                  className={`h-[240px] lg:h-[350px] xl:h-[420px] w-auto object-contain transition-opacity duration-700 ${
+                    activeTab === "tab1" ? "opacity-100" : "opacity-0"
+                  }`}
+                />
               </div>
             </div>
           </TabsContent>
@@ -170,7 +177,13 @@ const SuperAppPublishingSection = () => {
                 }`}
                 style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
               >
-                <img src={entLogosImage} alt="Entertainment Industry Logos" className="h-[240px] lg:h-[350px] xl:h-[420px] w-auto object-contain" />
+                <img 
+                  src={entLogosImage} 
+                  alt="Entertainment Industry Logos" 
+                  className={`h-[240px] lg:h-[350px] xl:h-[420px] w-auto object-contain transition-opacity duration-700 ${
+                    activeTab === "tab2" ? "opacity-100" : "opacity-0"
+                  }`}
+                />
               </div>
             </div>
           </TabsContent>
