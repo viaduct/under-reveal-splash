@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+import { MapPin } from "lucide-react";
 import worldMap from "@/assets/world-map.png";
 
 const GlobalNetworkSection = () => {
@@ -139,13 +140,16 @@ const GlobalNetworkSection = () => {
               top: `${location.y}%`,
             }}
           >
-            <div className="relative group cursor-pointer">
-              {/* Circle dot */}
-              <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-primary border-2 border-white shadow-lg -translate-x-1/2 -translate-y-1/2" />
-              {/* Tooltip */}
-              <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 px-2 py-1 bg-black/80 text-white text-[10px] md:text-xs rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full">
+              {/* Speech bubble */}
+              <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-sm mb-0.5">
                 {location.name}
               </div>
+              {/* Pin icon */}
+              <MapPin 
+                className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md" 
+                fill="currentColor"
+              />
             </div>
           </div>
         ))}
