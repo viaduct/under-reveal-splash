@@ -48,11 +48,11 @@ const SuperAppPublishingSection = () => {
       }}
     >
 
-      <div className="w-full relative z-10 flex flex-col items-center">
-        <Tabs defaultValue="tab1" className="w-full" onValueChange={setActiveTab}>
-          {/* Tab Title Images */}
+      <div className="w-full relative z-10 flex flex-col items-center h-full">
+        <Tabs defaultValue="tab1" className="w-full h-full flex flex-col" onValueChange={setActiveTab}>
+          {/* Tab Title Images - Fixed position */}
           <div
-            className={`transition-all duration-1000 mb-12 -mt-[110px] ${
+            className={`transition-all duration-1000 mb-12 flex-shrink-0 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
@@ -73,7 +73,8 @@ const SuperAppPublishingSection = () => {
             </TabsList>
           </div>
 
-          {/* Tab Content */}
+          {/* Tab Content - Flex grow to fill remaining space */}
+          <div className="flex-1 overflow-hidden">
           <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto" onAnimationEnd={() => setImageVisible(true)}>
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
@@ -187,6 +188,7 @@ const SuperAppPublishingSection = () => {
               </div>
             </div>
           </TabsContent>
+          </div>
         </Tabs>
       </div>
     </div>
