@@ -81,30 +81,11 @@ const OurTeamSection = () => {
     const container = scrollContainerRef.current;
     const targetScroll = container.clientWidth * index;
     
-    // 부드러운 커스텀 스크롤 애니메이션
-    const startScroll = container.scrollLeft;
-    const distance = targetScroll - startScroll;
-    const duration = 1200; // 더 천천히
-    let startTime: number | null = null;
+    container.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth'
+    });
     
-    const easeOutQuart = (t: number): number => {
-      return 1 - Math.pow(1 - t, 4);
-    };
-    
-    const animateScroll = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const easeProgress = easeOutQuart(progress);
-      
-      container.scrollLeft = startScroll + distance * easeProgress;
-      
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
-    
-    requestAnimationFrame(animateScroll);
     setCurrentIndex(index);
   };
 
@@ -176,7 +157,8 @@ const OurTeamSection = () => {
           isScrolling = true;
           const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
           scrollToIndex(newIndex);
-          scrollTimeout = setTimeout(() => { isScrolling = false; }, 1000);
+          if (scrollTimeout) clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
         }
         // If scrolling up and not at start, snap to previous
         else if (e.deltaY < 0 && !atStart) {
@@ -185,7 +167,7 @@ const OurTeamSection = () => {
           const newIndex = Math.max(currentIdx - 1, 0);
           scrollToIndex(newIndex);
           if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => { isScrolling = false; }, 1000);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
         }
       }
     };
@@ -248,11 +230,11 @@ const OurTeamSection = () => {
           ref={scrollContainerRef}
           className="overflow-x-auto overflow-y-hidden scrollbar-hide w-full snap-x snap-mandatory"
         >
-          <div className="flex gap-8 md:gap-12 min-w-max px-6 md:px-12">
+          <div className="flex gap-0 min-w-max">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className={`flex-shrink-0 w-[85vw] md:w-[80vw] lg:w-[70vw] min-h-[400px] flex items-start md:items-center justify-center transition-all duration-700 delay-${index * 100} snap-center`}
+              className={`flex-shrink-0 w-screen min-h-[400px] flex items-start md:items-center justify-center transition-all duration-700 delay-${index * 100} snap-center`}
               style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? "translateX(0)" : "translateX(50px)",
