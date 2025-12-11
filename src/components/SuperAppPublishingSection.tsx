@@ -79,7 +79,7 @@ const SuperAppPublishingSection = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between items-center lg:items-start ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 lg:h-[260px] flex flex-col justify-between items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -132,7 +132,7 @@ const SuperAppPublishingSection = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 h-[260px] flex flex-col justify-between items-center lg:items-start ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 lg:h-[260px] flex flex-col justify-between items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
