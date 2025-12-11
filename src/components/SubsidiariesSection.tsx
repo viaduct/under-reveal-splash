@@ -51,23 +51,19 @@ const SubsidiariesSection = () => {
       const elementPosition = detailsSection.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
       
-      // 빠른 스크롤
+      // 일정한 속도로 스크롤
       const startPosition = window.pageYOffset;
       const distance = offsetPosition - startPosition;
-      const duration = 400; // 빠르게
+      const duration = 600; // 느린 일정 속도
       let startTime: number | null = null;
-      
-      const easeOutQuart = (t: number) => {
-        return 1 - Math.pow(1 - t, 4);
-      };
       
       const animation = (currentTime: number) => {
         if (startTime === null) startTime = currentTime;
         const timeElapsed = currentTime - startTime;
         const progress = Math.min(timeElapsed / duration, 1);
-        const easedProgress = easeOutQuart(progress);
         
-        window.scrollTo(0, startPosition + distance * easedProgress);
+        // 일정한 속도 (linear)
+        window.scrollTo(0, startPosition + distance * progress);
         
         if (timeElapsed < duration) {
           requestAnimationFrame(animation);
