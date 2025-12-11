@@ -41,7 +41,7 @@ const SuperAppPublishingSection = () => {
     <div 
       id="super-app-publishing"
       ref={sectionRef}
-      className="relative flex items-center justify-center px-8 md:px-28 lg:px-40 xl:px-52 pt-[140px] pb-20 min-h-[calc(100vh-100px)]"
+      className="relative flex items-center justify-center px-8 md:px-28 lg:px-40 xl:px-52 pt-[80px] md:pt-[140px] pb-20 min-h-[calc(100vh-100px)]"
       style={{
         background: 'linear-gradient(180deg, #FFFFFF 0%, #E6E6E6 100%)',
       }}
@@ -56,7 +56,7 @@ const SuperAppPublishingSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "300ms" : "0ms" }}
           >
-            <TabsList className="bg-transparent p-0 h-auto gap-8 mb-16 flex justify-center items-center border-b border-border w-full rounded-none">
+            <TabsList className="bg-transparent p-0 h-auto gap-8 mb-6 md:mb-16 flex justify-center items-center border-b border-border w-full rounded-none">
               <TabsTrigger 
                 value="tab1" 
                 className="relative bg-transparent p-0 pb-2 data-[state=active]:bg-transparent data-[state=active]:shadow-none border-none cursor-pointer font-rift text-base md:text-lg transition-colors data-[state=inactive]:text-muted-foreground data-[state=active]:font-bold data-[state=active]:text-foreground after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-foreground after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform after:duration-300"
