@@ -81,11 +81,30 @@ const OurTeamSection = () => {
     const container = scrollContainerRef.current;
     const targetScroll = container.clientWidth * index;
     
-    container.scrollTo({
-      left: targetScroll,
-      behavior: 'smooth'
-    });
+    // 부드러운 커스텀 스크롤 애니메이션
+    const startScroll = container.scrollLeft;
+    const distance = targetScroll - startScroll;
+    const duration = 800; // 더 긴 duration
+    let startTime: number | null = null;
     
+    const easeOutCubic = (t: number): number => {
+      return 1 - Math.pow(1 - t, 3);
+    };
+    
+    const animateScroll = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easeProgress = easeOutCubic(progress);
+      
+      container.scrollLeft = startScroll + distance * easeProgress;
+      
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+    
+    requestAnimationFrame(animateScroll);
     setCurrentIndex(index);
   };
 
@@ -157,8 +176,7 @@ const OurTeamSection = () => {
           isScrolling = true;
           const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
           scrollToIndex(newIndex);
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 1000);
         }
         // If scrolling up and not at start, snap to previous
         else if (e.deltaY < 0 && !atStart) {
@@ -167,7 +185,7 @@ const OurTeamSection = () => {
           const newIndex = Math.max(currentIdx - 1, 0);
           scrollToIndex(newIndex);
           if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => { isScrolling = false; }, 800);
+          scrollTimeout = setTimeout(() => { isScrolling = false; }, 1000);
         }
       }
     };
