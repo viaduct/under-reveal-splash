@@ -62,9 +62,9 @@ const ClosingSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="min-h-[200vh] bg-background flex items-start justify-center pt-40"
+      className="min-h-[120vh] md:min-h-[200vh] bg-background flex items-start justify-center pt-20 md:pt-40"
     >
-      <div className="sticky top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-500" style={{ opacity: contentOpacity }}>
+      <div className="sticky top-1/3 md:top-1/2 -translate-y-1/2 w-full max-w-4xl px-6 transition-opacity duration-500" style={{ opacity: contentOpacity }}>
         {/* Line Animation */}
         <div className="mb-[20px] flex justify-center">
           <div
