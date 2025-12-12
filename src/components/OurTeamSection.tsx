@@ -211,8 +211,8 @@ const OurTeamSection = () => {
     <section
       id="our-team"
       ref={sectionRef}
-      className="pt-[20px] md:pt-[100px] pb-8 bg-background"
-      style={{ minHeight: "calc(100vh - 80px)" }}
+      className="pt-[20px] md:pt-[100px] pb-8 bg-background flex flex-col"
+      // style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* Title - Hidden on mobile */}
       <div className="hidden md:block px-6 md:px-12 mb-8 text-center">
@@ -254,7 +254,7 @@ const OurTeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.name}
-                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start md:items-center justify-center transition-all duration-700 delay-${
+                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start justify-center transition-all duration-700 delay-${
                   index * 100
                 } snap-center`}
                 style={{
@@ -297,7 +297,7 @@ const OurTeamSection = () => {
                         {member.title}
                       </h4>
                       {"fullDescription" in member ? (
-                        <div className="max-h-[100px] overflow-y-auto scrollbar-thin scrollbar-thumb-foreground/20 scrollbar-track-transparent pr-2">
+                        <div className="pr-2">
                           <p className="text-[15px] text-foreground/80 leading-relaxed">
                             {member.description}{" "}
                             {(member as any).fullDescription}
@@ -318,7 +318,7 @@ const OurTeamSection = () => {
       </div>
 
       {/* Custom Scrollbar */}
-      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mt-8">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12 mt-8 w-full">
         <div className="relative w-full h-[2px] bg-border/30">
           <div
             className="absolute left-0 top-0 h-full bg-foreground transition-all duration-150 ease-out"
