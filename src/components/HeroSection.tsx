@@ -1,18 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 const HeroSection = () => {
   const [startAnimation, setStartAnimation] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Trigger animations on mount
-    const timer = setTimeout(() => {
-      setStartAnimation(true);
-    }, 100);
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Small delay before starting animation
+            setTimeout(() => setStartAnimation(true), 100);
+          } else {
+            setStartAnimation(false);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
   }, []);
 
   return (
-    <div className="h-full flex items-center justify-center px-6">
+    <div ref={sectionRef} className="h-full flex items-center justify-center px-6">
       <div className="max-w-7xl w-full">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-center">
           {/* Left side - Logo with line */}

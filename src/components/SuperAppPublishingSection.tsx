@@ -9,7 +9,6 @@ const SuperAppPublishingSection = () => {
   const [activeTab, setActiveTab] = useState("tab1");
   const [isTab1Expanded, setIsTab1Expanded] = useState(false);
   const [isTab2Expanded, setIsTab2Expanded] = useState(false);
-  const [imageVisible, setImageVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -74,11 +73,11 @@ const SuperAppPublishingSection = () => {
 
           {/* Tab Content - Flex grow to fill remaining space */}
           <div className="flex-1 overflow-visible">
-          <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto" onAnimationEnd={() => setImageVisible(true)}>
+          <TabsContent value="tab1" className="mt-0 w-full max-w-[1000px] mx-auto">
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 lg:h-[260px] flex flex-col justify-between items-center lg:items-start ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 flex flex-col items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -87,19 +86,21 @@ const SuperAppPublishingSection = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center lg:text-left">
                   SUPER APP PUBLISHING
                 </h2>
-                
+
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                     UNDERTHELINE holds the exclusive DOCE OS licensing rights for the U.S. region, enabling artists and creators to own, design, and operate their own independent platforms through DOCE-powered publishing.
                   </p>
-                  
-                  {isTab1Expanded && (
-                    <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
-                      Each app becomes a personal community and ecosystem where the artist is the true owner - operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
-                    </p>
-                  )}
+
+                  <div className={`grid transition-all duration-500 ease-in-out ${isTab1Expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden">
+                      <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left pt-4">
+                        Each app becomes a personal community and ecosystem where the artist is the true owner - operating fandom, commerce, and content directly under their own control. → An "Entertainment OS" that bridges real-world entertainment infrastructure with digital platforms.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                
+
                 <Button
                   variant="outline"
                   onClick={() => setIsTab1Expanded(!isTab1Expanded)}
@@ -131,7 +132,7 @@ const SuperAppPublishingSection = () => {
             <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-start">
               {/* Left side - Text content */}
               <div
-                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 lg:h-[260px] flex flex-col justify-between items-center lg:items-start ${
+                className={`flex-1 max-w-[450px] space-y-6 transition-all duration-1000 flex flex-col items-center lg:items-start ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
                 style={{ transitionDelay: isVisible ? "600ms" : "0ms" }}
@@ -140,14 +141,14 @@ const SuperAppPublishingSection = () => {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground font-rift text-center lg:text-left max-w-[600px]">
                   GLOBAL ENTERTAINMENT INFRASTRUCTURE
                 </h2>
-                
+
                 <div className="space-y-4">
                   <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                     UNDERTHELINE collaborates with global record labels, management companies, publishing networks, and touring agencies based in Los Angeles and New York, building a global entertainment infrastructure.
                   </p>
-                  
-                  {isTab2Expanded && (
-                    <>
+
+                  <div className={`grid transition-all duration-500 ease-in-out ${isTab2Expanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                    <div className="overflow-hidden space-y-4 pt-4">
                       <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                         Record Distribution: Collaborates with major global labels including Columbia, Warner, Universal, and Sony.
                       </p>
@@ -157,10 +158,10 @@ const SuperAppPublishingSection = () => {
                       <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                         Touring Network: Partners with Live Nation, AEG, and CAA to operate global touring and live performance networks.
                       </p>
-                    </>
-                  )}
+                    </div>
+                  </div>
                 </div>
-                
+
                 <Button
                   variant="outline"
                   onClick={() => setIsTab2Expanded(!isTab2Expanded)}
