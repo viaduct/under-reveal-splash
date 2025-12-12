@@ -101,7 +101,7 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       PANORAMA
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
                     <Button
                       variant="outline"
                       className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
@@ -169,7 +169,7 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       URBANLINK
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
                     <Button
                       variant="outline"
                       className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
@@ -235,7 +235,7 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       ARADNAS
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
                     <Button
                       variant="outline"
                       className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
@@ -280,7 +280,7 @@ const SubsidiaryDetailsSection = () => {
                     <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
                       MAR/S
                     </h2>
-                    <div className="h-1 w-full bg-foreground mb-2 md:mb-6"></div>
+                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
                     <Button
                       variant="outline"
                       className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"

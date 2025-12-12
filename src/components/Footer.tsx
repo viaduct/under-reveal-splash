@@ -39,7 +39,7 @@ const Footer = () => {
                 Urbanlink 360
               </p>
               <p className="hover:text-white cursor-pointer transition-colors">
-                Urbanlink xyz(400)
+                Urbanlink 400
               </p>
               <p className="hover:text-white cursor-pointer transition-colors">
                 Panorama
