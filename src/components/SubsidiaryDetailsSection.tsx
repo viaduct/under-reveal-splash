@@ -97,20 +97,34 @@ const SubsidiaryDetailsSection = () => {
             <TabsContent value="panorama" className="mt-0 w-full">
               <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                  <div className="w-[200px] md:w-[300px]">
-                    <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
-                      PANORAMA
-                    </h2>
+                  <div className="w-full md:w-[300px]">
+                    <div className="flex items-center justify-between md:block">
+                      <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
+                        PANORAMA
+                      </h2>
+                      {/* Mobile button - next to title */}
+                      <Button
+                        variant="link"
+                        className="group text-xs h-8 px-3 md:hidden"
+                        onClick={() =>
+                          window.open("https://www.panoramamgmt.com", "_blank")
+                        }
+                      >
+                        WEBSITE
+                        <ExternalLink className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
+                      </Button>
+                    </div>
                     <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
-                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
+                      className="group hidden md:inline-flex text-sm h-10 px-4"
                       onClick={() =>
                         window.open("https://www.panoramamgmt.com", "_blank")
                       }
                     >
                       WEBSITE
-                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4 transition-transform group-hover:translate-x-1" />
+                      <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </div>
                 </div>
@@ -165,18 +179,30 @@ const SubsidiaryDetailsSection = () => {
             <TabsContent value="urbanlink" className="mt-0 w-full">
               <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                  <div className="w-[200px] md:w-[300px]">
-                    <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
-                      URBANLINK
-                    </h2>
+                  <div className="w-full md:w-[300px]">
+                    <div className="flex items-center justify-between md:block">
+                      <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
+                        URBANLINK
+                      </h2>
+                      {/* Mobile button - next to title */}
+                      <Button
+                        variant="link"
+                        className="group text-xs h-8 px-3 md:hidden"
+                        disabled
+                      >
+                        WEBSITE
+                        <ExternalLink className="ml-1.5 h-3 w-3" />
+                      </Button>
+                    </div>
                     <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
-                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
+                      className="group hidden md:inline-flex text-sm h-10 px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
+                      <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -231,18 +257,30 @@ const SubsidiaryDetailsSection = () => {
             <TabsContent value="aradnas" className="mt-0 w-full">
               <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                  <div className="w-[200px] md:w-[300px]">
-                    <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
-                      ARADNAS
-                    </h2>
+                  <div className="w-full md:w-[300px]">
+                    <div className="flex items-center justify-between md:block">
+                      <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
+                        ARADNAS
+                      </h2>
+                      {/* Mobile button - next to title */}
+                      <Button
+                        variant="link"
+                        className="group text-xs h-8 px-3 md:hidden"
+                        disabled
+                      >
+                        WEBSITE
+                        <ExternalLink className="ml-1.5 h-3 w-3" />
+                      </Button>
+                    </div>
                     <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
-                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
+                      className="group hidden md:inline-flex text-sm h-10 px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
+                      <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
                 </div>
@@ -276,18 +314,30 @@ const SubsidiaryDetailsSection = () => {
             <TabsContent value="mars" className="mt-0 w-full">
               <div className="flex-1 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-20 items-start md:items-center animate-fade-slide-up">
                 <div className="transition-all duration-1000 opacity-100 translate-x-0 text-left w-full md:w-auto">
-                  <div className="w-[200px] md:w-[300px]">
-                    <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
-                      MAR/S
-                    </h2>
+                  <div className="w-full md:w-[300px]">
+                    <div className="flex items-center justify-between md:block">
+                      <h2 className="text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground mb-[4px] font-rift text-left">
+                        MAR/S
+                      </h2>
+                      {/* Mobile button - next to title */}
+                      <Button
+                        variant="link"
+                        className="group text-xs h-8 px-3 md:hidden"
+                        disabled
+                      >
+                        WEBSITE
+                        <ExternalLink className="ml-1.5 h-3 w-3" />
+                      </Button>
+                    </div>
                     <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
-                      className="group text-xs md:text-sm h-8 md:h-10 px-3 md:px-4"
+                      className="group hidden md:inline-flex text-sm h-10 px-4"
                       disabled
                     >
                       WEBSITE
-                      <ExternalLink className="ml-1.5 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
+                      <ExternalLink className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
                 </div>
