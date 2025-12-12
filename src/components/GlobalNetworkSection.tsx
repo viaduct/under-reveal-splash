@@ -2,9 +2,11 @@ import { useEffect, useState, useRef } from "react";
 import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
+import { locations, connections, getLocationById } from "@/data/globalNetworkData";
 
 const GlobalNetworkSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [hoveredPin, setHoveredPin] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,58 +31,6 @@ const GlobalNetworkSection = () => {
       }
     };
   }, []);
-
-  // 위치 데이터 (x, y는 퍼센트 기준)
-  const locations = [
-    // 미주
-    { name: "USA", x: 20, y: 35 },
-    { name: "South America", x: 28, y: 70 },
-    // 유럽
-    { name: "Europe", x: 48, y: 28 },
-    { name: "France", x: 46, y: 32 },
-    { name: "Italy", x: 50, y: 35 },
-    // 중동
-    { name: "GCC", x: 58, y: 45 },
-    // 아시아
-    { name: "India", x: 68, y: 48 },
-    { name: "Thailand", x: 74, y: 52 },
-    { name: "Cambodia", x: 76, y: 54 },
-    { name: "Vietnam", x: 77, y: 50 },
-    { name: "Malaysia", x: 75, y: 60 },
-    { name: "Singapore", x: 75, y: 63 },
-    { name: "Indonesia", x: 78, y: 65 },
-    { name: "Philippines", x: 82, y: 52 },
-    { name: "Hong Kong", x: 80, y: 42 },
-    { name: "Japan", x: 86, y: 35 },
-  ];
-
-  // 연결선 정의 (핀들을 연결)
-  const connections = [
-    // 미주 연결
-    { from: "USA", to: "South America" },
-    // 유럽 내부 연결
-    { from: "Europe", to: "France" },
-    { from: "France", to: "Italy" },
-    // 유럽에서 중동/아시아
-    { from: "Italy", to: "GCC" },
-    { from: "GCC", to: "India" },
-    // 동남아 연결
-    { from: "India", to: "Thailand" },
-    { from: "Thailand", to: "Cambodia" },
-    { from: "Thailand", to: "Vietnam" },
-    { from: "Thailand", to: "Malaysia" },
-    { from: "Malaysia", to: "Singapore" },
-    { from: "Malaysia", to: "Indonesia" },
-    { from: "Vietnam", to: "Philippines" },
-    { from: "Vietnam", to: "Hong Kong" },
-    { from: "Hong Kong", to: "Japan" },
-    // USA에서 유럽/아시아
-    { from: "USA", to: "Europe" },
-    { from: "USA", to: "Japan" },
-  ];
-
-  const getLocation = (name: string) =>
-    locations.find((loc) => loc.name === name);
 
   return (
     <section
@@ -152,8 +102,8 @@ const GlobalNetworkSection = () => {
                     {/* Connection Lines SVG */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
                       {connections.map((connection, index) => {
-                        const from = getLocation(connection.from);
-                        const to = getLocation(connection.to);
+                        const from = getLocationById(connection.from);
+                        const to = getLocationById(connection.to);
                         if (!from || !to) return null;
 
                         // 곡선 컨트롤 포인트 계산
@@ -176,18 +126,24 @@ const GlobalNetworkSection = () => {
                     {/* Location Pins */}
                     {locations.map((location) => (
                       <div
-                        key={location.name}
+                        key={location.id}
                         className="absolute flex flex-col items-center"
                         style={{
                           left: `${location.x}%`,
                           top: `${location.y}%`,
                         }}
                       >
-                        <div className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full group hover:z-50">
-                          {/* Speech bubble - visible on hover */}
-                          <div className="px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
-                            {location.name}
-                          </div>
+                        <div
+                          className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full"
+                          onMouseEnter={() => setHoveredPin(location.id)}
+                          onMouseLeave={() => setHoveredPin(null)}
+                        >
+                          {/* Speech bubble - only rendered on hover */}
+                          {hoveredPin === location.id && (
+                            <div className="absolute bottom-full mb-0.5 px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md pointer-events-none z-50">
+                              {location.name}
+                            </div>
+                          )}
                           {/* Pin icon */}
                           <MapPin
                             className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer"
