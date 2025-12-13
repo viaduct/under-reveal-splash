@@ -114,7 +114,7 @@ const SubsidiaryDetailsSection = () => {
                         <ExternalLink className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" />
                       </Button>
                     </div>
-                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    <div className="h-0.5 w-full bg-foreground mb-3 md:mb-6"></div>
                     {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
@@ -137,7 +137,7 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       Record Distribution Network
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -146,10 +146,10 @@ const SubsidiaryDetailsSection = () => {
                     </p>
                   </div>
 
-                  <div className="h-px bg-border"></div>
+                  {/* <div className="h-px bg-border"></div> */}
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       Publishing Network
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -159,10 +159,10 @@ const SubsidiaryDetailsSection = () => {
                     </p>
                   </div>
 
-                  <div className="h-px bg-border"></div>
+                  {/* <div className="h-px bg-border"></div> */}
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       Touring Network
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
@@ -194,7 +194,7 @@ const SubsidiaryDetailsSection = () => {
                         <ExternalLink className="ml-1.5 h-3 w-3" />
                       </Button>
                     </div>
-                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    <div className="h-0.5 w-full bg-foreground mb-3 md:mb-6"></div>
                     {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
@@ -215,10 +215,10 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       URBANLINK 400
                     </h3>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
                       Driving business expansion through producing projects for
                       global artists and sports icons, supported by Super App
                       publishing.
@@ -231,13 +231,13 @@ const SubsidiaryDetailsSection = () => {
                     </p>
                   </div>
 
-                  <div className="h-px bg-border"></div>
+                  {/* <div className="h-px bg-border"></div> */}
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       URBANLINK 360
                     </h3>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
                       Operating Super App platforms for global icons NBA
                       YoungBoy and Nora Fatehi, URBANLINK 360 focuses on
                       building artist-owned ecosystems that merge music,
@@ -272,7 +272,7 @@ const SubsidiaryDetailsSection = () => {
                         <ExternalLink className="ml-1.5 h-3 w-3" />
                       </Button>
                     </div>
-                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    <div className="h-0.5 w-full bg-foreground mb-3 md:mb-6"></div>
                     {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
@@ -293,10 +293,10 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       ARADNAS
                     </h3>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed mb-4">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
                       ARADNAS is a management and creative label dedicated to
                       maximizing artists' visions and creative values.
                     </p>
@@ -329,7 +329,7 @@ const SubsidiaryDetailsSection = () => {
                         <ExternalLink className="ml-1.5 h-3 w-3" />
                       </Button>
                     </div>
-                    <div className="h-1 w-full bg-foreground mb-3 md:mb-6"></div>
+                    <div className="h-0.5 w-full bg-foreground mb-3 md:mb-6"></div>
                     {/* Desktop button - below divider */}
                     <Button
                       variant="outline"
@@ -350,7 +350,7 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-3 font-rift">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       MAR/S
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
