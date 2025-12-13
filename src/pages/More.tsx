@@ -15,7 +15,7 @@ const More = () => {
     <div className="min-h-screen bg-background">
       {/* Header with back button and tabs */}
       <header className="fixed top-0 left-0 w-full z-50 bg-background border-b border-gray-800/20">
-        <div className="h-20 px-6 md:px-12 flex items-center justify-between">
+        <div className="md:h-20 h-12 px-6 md:px-12 flex items-center justify-between">
           {/* Back button */}
           <button
             onClick={() => {
@@ -56,7 +56,7 @@ const More = () => {
       </header>
 
       {/* Main content */}
-      <main className="pt-20">
+      <main className="md:pt-20 pt-12">
         <Tabs value={activeTab} onValueChange={setActiveTab}>
           <TabsContent value="our-team" className="mt-0">
             <OurTeamSection />
