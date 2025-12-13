@@ -16,10 +16,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Globe } from "lucide-react";
+import { Globe, Check } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 const Index = () => {
   const location = useLocation();
+  const { lang, setLang } = useI18n();
 
   useEffect(() => {
     if (location.hash) {
@@ -44,11 +46,19 @@ const Index = () => {
             align="end"
             className="bg-background border-border"
           >
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem
+              className="cursor-pointer flex items-center justify-between"
+              onClick={() => setLang("en")}
+            >
               English
+              {lang === "en" && <Check className="h-4 w-4 ml-2" />}
             </DropdownMenuItem>
-            <DropdownMenuItem className="cursor-pointer">
+            <DropdownMenuItem
+              className="cursor-pointer flex items-center justify-between"
+              onClick={() => setLang("ko")}
+            >
               한국어
+              {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
