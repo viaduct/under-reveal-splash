@@ -32,7 +32,7 @@ const Index = () => {
   return (
     <div className="w-full h-dvh flex flex-col bg-background">
       {/* Header with logo and language selector */}
-      <header className="shrink-0 w-full h-20 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
+      <header className="shrink-0 w-full md:h-20 h-12 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
 
         <DropdownMenu>
