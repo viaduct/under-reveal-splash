@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "@/i18n";
 
 const AboutSection = () => {
+  const { t } = useI18n();
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -75,11 +77,10 @@ const AboutSection = () => {
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
-              UNDERTHELINE designs and operates integrated entertainment
-              ecosystems for artists and IP owners. We bring together platforms,
-              labels, management, production, touring, commerce, and data into
-              one structure, so that artists can build, own, and run their own
-              worlds instead of renting space from legacy platforms.
+              {t({
+                en: "UNDERTHELINE designs and operates integrated entertainment ecosystems for artists and IP owners. We bring together platforms, labels, management, production, touring, commerce, and data into one structure, so that artists can build, own, and run their own worlds instead of renting space from legacy platforms.",
+                ko: "UNDERTHELINE은 아티스트와 IP 보유자를 위한 통합 엔터테인먼트 생태계를 설계하고 운영합니다. 플랫폼, 레이블, 매니지먼트, 프로덕션, 투어·공연, 커머스, 데이터 인프라를 하나의 구조로 통합하여, 아티스트가 기존 플랫폼에 의존하는 운영 방식에서 벗어나 자신만의 브랜드와 세계관을 직접 구축하고 소유하며 운영할 수 있도록 지원합니다.",
+              })}
             </p>
 
             <div className="flex gap-5">
@@ -87,7 +88,7 @@ const AboutSection = () => {
                 className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => navigate("/what-we-do")}
               >
-                MORE
+                {t({ en: "MORE", ko: "더보기" })}
               </button>
             </div>
           </div>

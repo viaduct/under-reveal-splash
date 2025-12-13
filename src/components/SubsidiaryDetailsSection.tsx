@@ -3,8 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { useI18n } from "@/i18n";
 
 const SubsidiaryDetailsSection = () => {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const [activeTab, setActiveTab] = useState("urbanlink");
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -138,11 +140,13 @@ const SubsidiaryDetailsSection = () => {
                 >
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      Record Distribution Network
+                      {t({ en: "Record Distribution Network", ko: "레코드 유통 네트워크" })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      Partnering with leading record labels worldwide to support
-                      the global distribution and promotion of K-POP artists.
+                      {t({
+                        en: "Partnering with leading record labels worldwide to support the global distribution and promotion of K-POP artists.",
+                        ko: "전 세계 주요 레코드 레이블과 협력하여 K-POP 아티스트의 글로벌 유통과 프로모션을 지원합니다.",
+                      })}
                     </p>
                   </div>
 
@@ -150,12 +154,13 @@ const SubsidiaryDetailsSection = () => {
 
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      Publishing Network
+                      {t({ en: "Publishing Network", ko: "퍼블리싱 네트워크" })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      Leveraging an extensive global publishing network to
-                      maximize copyright income and provide opportunities to
-                      collaborate with world-renowned composers and producers.
+                      {t({
+                        en: "Leveraging an extensive global publishing network to maximize copyright income and provide opportunities to collaborate with world-renowned composers and producers.",
+                        ko: "폭넓은 글로벌 퍼블리싱 네트워크를 활용하여 저작권 수익을 극대화하고 세계적인 작곡가 및 프로듀서들과 협업할 수 있는 기회를 제공합니다.",
+                      })}
                     </p>
                   </div>
 
@@ -163,12 +168,13 @@ const SubsidiaryDetailsSection = () => {
 
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      Touring Network
+                      {t({ en: "Touring Network", ko: "투어링 네트워크" })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      Working closely with global concert agencies and promoters
-                      to maximize tour revenue and ensure successful K-POP world
-                      tours.
+                      {t({
+                        en: "Working closely with global concert agencies and promoters to maximize tour revenue and ensure successful K-POP world tours.",
+                        ko: "글로벌 콘서트 에이전시 및 프로모터와 긴밀히 협력하여 투어 수익을 극대화하고 성공적인 K-POP 월드 투어를 보장합니다.",
+                      })}
                     </p>
                   </div>
                 </div>
@@ -219,15 +225,16 @@ const SubsidiaryDetailsSection = () => {
                       URBANLINK 400
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
-                      Driving business expansion through producing projects for
-                      global artists and sports icons, supported by Super App
-                      publishing.
+                      {t({
+                        en: "Driving business expansion through producing projects for global artists and sports icons, supported by Super App publishing.",
+                        ko: "슈퍼앱 퍼블리싱을 기반으로 글로벌 아티스트와 스포츠 아이콘 프로젝트를 제작하며 비즈니스를 확장합니다.",
+                      })}
                     </p>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      With the participation of Republic Records, URBANLINK 400
-                      strengthens its position as a global entertainment
-                      partner—building a large-scale ecosystem that connects
-                      music, sports, and digital fandom worldwide.
+                      {t({
+                        en: "With the participation of Republic Records, URBANLINK 400 strengthens its position as a global entertainment partner—building a large-scale ecosystem that connects music, sports, and digital fandom worldwide.",
+                        ko: "Republic Records의 참여로 URBANLINK 400는 음악·스포츠·디지털 팬덤을 연결하는 대규모 생태계를 구축하며 글로벌 엔터테인먼트 파트너로서의 입지를 강화하고 있습니다.",
+                      })}
                     </p>
                   </div>
 
@@ -238,15 +245,16 @@ const SubsidiaryDetailsSection = () => {
                       URBANLINK 360
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
-                      Operating Super App platforms for global icons NBA
-                      YoungBoy and Nora Fatehi, URBANLINK 360 focuses on
-                      building artist-owned ecosystems that merge music,
-                      content, and community.
+                      {t({
+                        en: "Operating Super App platforms for global icons NBA YoungBoy and Nora Fatehi, URBANLINK 360 focuses on building artist-owned ecosystems that merge music, content, and community.",
+                        ko: "NBA YoungBoy, Nora Fatehi 등 글로벌 아이콘의 슈퍼앱 플랫폼을 운영하며, 음악·콘텐츠·커뮤니티를 통합한 아티스트 소유 생태계를 구축합니다.",
+                      })}
                     </p>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      As part of the URBANLINK network, the company specializes
-                      in developing and operating fandom-based platforms that
-                      embody each artist's brand identity and creative vision.
+                      {t({
+                        en: "As part of the URBANLINK network, the company specializes in developing and operating fandom-based platforms that embody each artist's brand identity and creative vision.",
+                        ko: "URBANLINK 네트워크의 일원으로서, 각 아티스트의 브랜드 아이덴티티와 창의적 비전을 담아낸 팬덤 기반 플랫폼을 개발·운영하는 데 특화되어 있습니다.",
+                      })}
                     </p>
                   </div>
                 </div>
@@ -297,13 +305,16 @@ const SubsidiaryDetailsSection = () => {
                       ARADNAS
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
-                      ARADNAS is a management and creative label dedicated to
-                      maximizing artists' visions and creative values.
+                      {t({
+                        en: "ARADNAS is a management and creative label dedicated to maximizing artists' visions and creative values.",
+                        ko: "ARADNAS는 아티스트의 비전과 창작 가치를 극대화하는 데 전념하는 매니지먼트 & 크리에이티브 레이블입니다.",
+                      })}
                     </p>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      Starting with its first artist, Sandara Park, the label is
-                      creating new forms of content and brand experiences while
-                      expanding its presence in the global market.
+                      {t({
+                        en: "Starting with its first artist, Sandara Park, the label is creating new forms of content and brand experiences while expanding its presence in the global market.",
+                        ko: "첫 아티스트인 산다라박을 시작으로 새로운 형태의 콘텐츠와 브랜드 경험을 만들며 글로벌 시장에서의 존재감을 확장하고 있습니다.",
+                      })}
                     </p>
                   </div>
                 </div>
@@ -354,10 +365,10 @@ const SubsidiaryDetailsSection = () => {
                       MAR/S
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      MAR/S aims to establish a single integrated platform
-                      centered on virtual artists, combining content, commerce,
-                      and fandom within a unified ecosystem where each artist's
-                      IP can independently evolve and expand.
+                      {t({
+                        en: "MAR/S aims to establish a single integrated platform centered on virtual artists, combining content, commerce, and fandom within a unified ecosystem where each artist's IP can independently evolve and expand.",
+                        ko: "MAR/S는 가상 아티스트를 중심으로 한 단일 통합 플랫폼을 구축하는 것을 목표로 하며, 콘텐츠·커머스·팬덤을 하나의 생태계로 결합하여 각 아티스트의 IP가 독립적으로 발전하고 확장될 수 있도록 합니다.",
+                      })}
                     </p>
                   </div>
                 </div>

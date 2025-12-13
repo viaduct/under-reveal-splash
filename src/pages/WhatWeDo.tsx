@@ -1,9 +1,17 @@
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Globe, Check } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useI18n } from "@/i18n";
 import SuperAppPublishingSection from "@/components/SuperAppPublishingSection";
 
 const WhatWeDo = () => {
   const navigate = useNavigate();
+  const { lang, setLang } = useI18n();
 
   return (
     <div className="min-h-screen bg-background">
@@ -24,8 +32,26 @@ const WhatWeDo = () => {
             WHAT WE DO
           </h1>
 
-          {/* Spacer for balance - desktop only */}
-          <div className="hidden md:block ml-auto w-[80px]" />
+          {/* Language dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="ml-auto text-foreground hover:text-primary transition-colors">
+              <Globe className="h-5 w-5" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-background border-border">
+              <DropdownMenuItem
+                className="cursor-pointer flex items-center justify-between"
+                onClick={() => setLang("en")}
+              >
+                English {lang === "en" && <Check className="h-4 w-4 ml-2" />}
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="cursor-pointer flex items-center justify-between"
+                onClick={() => setLang("ko")}
+              >
+                한국어 {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
 

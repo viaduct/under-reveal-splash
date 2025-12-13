@@ -3,6 +3,7 @@ import { MapPin, ZoomIn, ZoomOut, RotateCcw, Save } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
 import { locations, connections } from "@/data/globalNetworkData";
+import { useI18n } from "@/i18n";
 
 // DEV MODE: Set to true to enable draggable markers
 const DEV_MODE = false;
@@ -22,6 +23,7 @@ const getMappedLocationById = (id: string) =>
   mappedLocations.find((loc) => loc.id === id);
 
 const GlobalNetworkSection = () => {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredPin, setHoveredPin] = useState<string | null>(null);
   const [currentScale, setCurrentScale] = useState(1);
@@ -136,21 +138,20 @@ const GlobalNetworkSection = () => {
           }`}
         >
           <h2 className="text-2xl md:text-4xl font-bold font-rift text-foreground">
-            Global Presence
+            {t({ en: "Global Presence", ko: "글로벌 네트워크" })}
           </h2>
         </div>
 
         <p className="mt-6 mt:mb-8 text-sm md:text-base leading-[1.4] text-foreground md:w-[60%] w-[100%] md:p-0 p-[20px] text-center">
-          "Undertheline" comes from a simple promise: we stand under every
-          artist's line, not above it. We are not a company that pulls rights
-          and data upward; instead, we design and operate the structures
-          beneath, so that artists and labels can hold sovereignty over their
-          own catalogs, communities and economics.
+          {t({
+            en: '"Undertheline" comes from a simple promise: we stand under every artist\'s line, not above it. We are not a company that pulls rights and data upward; instead, we design and operate the structures beneath, so that artists and labels can hold sovereignty over their own catalogs, communities and economics.',
+            ko: '"언더라인(Undertheline)"은 단순한 약속에서 비롯되었습니다. 우리는 모든 아티스트의 선 위에 서는 것이 아니라, 그 아래에 서 있습니다. 우리는 권리와 데이터를 끌어올리는 회사가 아닙니다. 아티스트와 레이블이 자체 카탈로그, 커뮤니티, 그리고 경제에 대한 주권을 가질 수 있도록 선 아래에 있는 구조를 설계하고 운영합니다.',
+          })}
         </p>
 
         {/* Map Container with Zoom */}
         <div
-          className="mt-6 mt:mb-8 relative w-full"
+          className="mt-6 mt:mb-8 relative w-full max-w-[1400px]"
           style={{ aspectRatio: "1738 / 920" }}
         >
           {/* DEV: Floating save button */}

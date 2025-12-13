@@ -1,87 +1,92 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import teamRobert from "@/assets/team-robert.png";
 import teamHan from "@/assets/team-han.png";
 import teamMaurizio from "@/assets/team-maurizio.png";
 import teamStavros from "@/assets/team-stavros.png";
-
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 import teamCharles from "@/assets/team-charles.png";
+import { useI18n } from "@/i18n";
 
-const teamMembers = [
-  // 1
+type TranslateFn = (t: { en: string; ko: string }) => string;
+
+const getTeamMembers = (t: TranslateFn) => [
   {
-    name: "Sanghyun Shin",
-    role: "Founder",
-    title: "Visionary Founder & Innovator",
-    description:
-      "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
+    name: t({ en: "Sanghyun Shin", ko: "신상현" }),
+    role: t({ en: "Founder", ko: "Founder" }),
+    title: t({ en: "Visionary Founder & Innovator", ko: "차세대 엔터테인먼트 생태계 리더" }),
+    description: t({
+      en: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
+      ko: "차세대 엔터테인먼트 생태계를 전 세계로 확장하는 리더. 독자 DOCE 기술을 기반으로 산업과 국가를 넘는 네트워크를 통합하며 아티스트·팬·브랜드가 함께 성장할 수 있는 인프라를 설계합니다.",
+    }),
     image: teamSanghyun,
   },
-  // 2
   {
     name: "Robert W. Lewis III",
-    role: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
-    title: "Highly sought-after producer",
-    description:
-      "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber,",
-    fullDescription:
-      "Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
+    role: t({ en: "CEO, URBANLINK 360\nCEO, URBANLINK 400", ko: "CEO, URBANLINK 360\nCEO, URBANLINK 400" }),
+    title: t({ en: "Highly sought-after producer", ko: "미국 음악 산업 베테랑 프로듀서" }),
+    description: t({
+      en: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
+      ko: "30년 이상의 미국 음악 산업 베테랑. Whitney Houston, Beyoncé, Michael Jackson, Ariana Grande, The Weeknd 등 세계적 아티스트들과 협업해온 프로듀서. Undertheline 산하 전체 레이블의 슈퍼앱 전략 및 아티스트 개발을 지원합니다.",
+    }),
     image: teamRobert,
   },
-  // 3
   {
-    name: "Han Kim",
-    role: "CEO, Panorama",
-    title: "International entertainment law and management leader",
-    description:
-      "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
+    name: t({ en: "Han Kim", ko: "김한" }),
+    role: t({ en: "CEO, Panorama", ko: "CEO, Panorama" }),
+    title: t({ en: "International entertainment law and management leader", ko: "국제 엔터테인먼트 법률 및 경영 전문가" }),
+    description: t({
+      en: "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
+      ko: "빌보드 선정 미국 톱 음악 변호사. SM, JYP, Kakao, THEBLACKLABEL과 협업 경험. NYU 음악비즈니스 석사. K-POP과 글로벌 시장을 잇는 인프라를 구축합니다.",
+    }),
     image: teamHan,
   },
-  // 4
   {
     name: 'Charles "Big Chuck" Stanton',
-    role: "CEO, Drama Family Entertainment",
-    title: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline",
-    description:
-      'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther',
-    fullDescription:
-      "Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.",
+    role: t({ en: "CEO, Drama Family Entertainment", ko: "CEO, Drama Family Entertainment" }),
+    title: t({ en: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline", ko: "Strategic Advisor – U.S. Hip-Hop & Urban Culture" }),
+    description: t({
+      en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+      ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+    }),
     image: teamCharles,
   },
-  // 5
   {
     name: "Mark Friedman",
-    role: "Strategic Investment Advisor",
-    title: "Institutional investor & growth strategist",
-    description:
-      "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds.",
-    fullDescription:
-      "He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+    role: t({ en: "Strategic Investment Advisor", ko: "Strategic Investment Advisor" }),
+    title: t({ en: "Institutional investor & growth strategist", ko: "Institutional investor & growth strategist" }),
+    description: t({
+      en: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+      ko: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+    }),
     image: teamMark,
   },
-  // 6
   {
     name: "Maurizio Romiti",
-    role: "Strategic Partner – Europe",
-    title: "Pioneer in Korea's entertainment management industry",
-    description:
-      "Maurizio Romiti is the son of Cesare Romiti, former Chairman of FIAT Group for over 20 years, and part of one of Italy's most influential families. As former Chairman of HDP Group, he oversaw luxury brands including Armani, Fila, Kenzo, Valentino, and Calvin Klein, along with major newspapers, magazines, and media channels. He remains a key figure with wide influence across Italy's finance, media, and fashion industries.",
+    role: t({ en: "Strategic Partner – Europe", ko: "Strategic Partner – Europe" }),
+    title: t({ en: "Pioneer in Korea's entertainment management industry", ko: "이탈리아 최고 영향력 가문" }),
+    description: t({
+      en: "Maurizio Romiti is the son of Cesare Romiti, former Chairman of FIAT Group for over 20 years, and part of one of Italy's most influential families. As former Chairman of HDP Group, he oversaw luxury brands including Armani, Fila, Kenzo, Valentino, and Calvin Klein, along with major newspapers, magazines, and media channels. He remains a key figure with wide influence across Italy's finance, media, and fashion industries.",
+      ko: "FIAT 회장 체사레 로미티의 가문. Armani, Fila, Kenzo, Calvin Klein 등 럭셔리 브랜드를 총괄했던 이탈리아 최고 영향력 가문 출신의 인물.",
+    }),
     image: teamMaurizio,
   },
-  // 8
   {
     name: "Stavros Pirounis",
-    role: "Strategic Partner – Luxury",
-    title: "Pioneer in Korea's entertainment management industry",
-    description:
-      "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
+    role: t({ en: "Strategic Partner – Luxury", ko: "Strategic Partner – Luxury" }),
+    title: t({ en: "Pioneer in Korea's entertainment management industry", ko: "글로벌 패션 산업 베테랑" }),
+    description: t({
+      en: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
+      ko: "ST Dupont 아시아 총괄 및 한국 대표, Gruppo GFT 아시아 CEO(Armani·Valentino·Calvin Klein 관리) 등을 역임. Loro Piana, Zegna 등 럭셔리 하우스 성장에 기여.",
+    }),
     image: teamStavros,
   },
 ];
 
 const OurTeamSection = () => {
+  const { t } = useI18n();
+  const teamMembers = useMemo(() => getTeamMembers(t), [t]);
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -269,7 +274,7 @@ const OurTeamSection = () => {
     return () => {
       container.removeEventListener("wheel", handleWheel);
     };
-  }, []);
+  }, [teamMembers.length]);
 
   return (
     <section
@@ -285,7 +290,7 @@ const OurTeamSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           }`}
         >
-          OUR TEAM
+          {t({ en: "OUR TEAM", ko: "팀 소개" })}
         </h2>
       </div>
 
@@ -360,18 +365,9 @@ const OurTeamSection = () => {
                       <h4 className="text-[18px] font-semibold text-foreground mb-2">
                         {member.title}
                       </h4>
-                      {"fullDescription" in member ? (
-                        <div className="pr-2">
-                          <p className="text-[15px] text-foreground/80 leading-relaxed">
-                            {member.description}{" "}
-                            {(member as any).fullDescription}
-                          </p>
-                        </div>
-                      ) : (
-                        <p className="text-[15px] text-foreground/80 leading-relaxed">
-                          {member.description}
-                        </p>
-                      )}
+                      <p className="text-[15px] text-foreground/80 leading-relaxed">
+                        {member.description}
+                      </p>
                     </div>
                   </div>
                 </div>

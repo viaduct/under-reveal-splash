@@ -1,7 +1,9 @@
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { useI18n } from "@/i18n";
 
 const WhoWeAreSection = () => {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -74,11 +76,17 @@ const WhoWeAreSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
+            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-4">
+              {t({
+                en: "UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.",
+                ko: "UNDERTHELINE은 현실과 가상의 경계를 허물고 글로벌 엔터테인먼트 산업을 위한 차세대 인프라를 구축하며 엔터테인먼트의 미래를 만들어가고 있습니다.",
+              })}
+            </p>
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
-              UNDERTHELINE is shaping the future of entertainment by breaking
-              down the boundaries between reality and the virtual world,
-              building a next-generation infrastructure for the global
-              entertainment industry.
+              {t({
+                en: "UNDERTHELINE is a DOCE-powered full-stack entertainment operator, combining day-to-day operations with infrastructure. The same team that works on artists' music, content, branding, and touring also designs the rails, data flows, and rights/settlement structures that sustain their ecosystems.",
+                ko: "UNDERTHELINE은 DOCE 기술을 기반으로 실제 운영과 인프라를 결합한 풀스택 엔터테인먼트 운영사입니다. 음악, 콘텐츠, 브랜딩, 투어·공연 운영을 담당하는 동일한 팀이 아티스트 생태계를 지속시키는 데이터 흐름, 권리 구조, 정산 시스템까지 함께 설계합니다.",
+              })}
             </p>
 
             <div className="flex gap-5">
@@ -86,7 +94,7 @@ const WhoWeAreSection = () => {
                 className="px-6 py-3 md:px-8 md:py-3 border border-foreground bg-transparent text-foreground font-bold font-rift text-base md:text-lg hover:bg-foreground hover:text-background transition-all duration-300"
                 onClick={() => navigate("/more?from=who-we-are")}
               >
-                MORE
+                {t({ en: "MORE", ko: "더보기" })}
               </button>
             </div>
           </div>

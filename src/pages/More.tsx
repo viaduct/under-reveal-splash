@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Globe, Check } from "lucide-react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useI18n } from "@/i18n";
 import OurTeamSection from "@/components/OurTeamSection";
 import NetworkSection from "@/components/NetworkSection";
 
@@ -10,6 +17,7 @@ const More = () => {
   const [searchParams] = useSearchParams();
   const initialTab = searchParams.get("tab") || "our-team";
   const [activeTab, setActiveTab] = useState(initialTab);
+  const { lang, setLang } = useI18n();
 
   return (
     <div className="min-h-screen bg-background">
@@ -50,8 +58,26 @@ const More = () => {
             </TabsList>
           </Tabs>
 
-          {/* Spacer for balance - hidden on mobile */}
-          <div className="hidden md:block w-[80px]" />
+          {/* Language dropdown */}
+          <DropdownMenu>
+            <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
+              <Globe className="h-5 w-5" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-background border-border">
+              <DropdownMenuItem
+                className="cursor-pointer flex items-center justify-between"
+                onClick={() => setLang("en")}
+              >
+                English {lang === "en" && <Check className="h-4 w-4 ml-2" />}
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="cursor-pointer flex items-center justify-between"
+                onClick={() => setLang("ko")}
+              >
+                한국어 {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
       </header>
 
