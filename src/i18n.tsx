@@ -3,8 +3,11 @@ import {
   useContext,
   useState,
   useCallback,
+  useEffect,
   ReactNode,
 } from "react";
+import i18next from "i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 type Language = "en" | "ko";
 
@@ -19,10 +22,43 @@ interface I18nContextType {
   t: (translations: Translations) => string;
 }
 
+// Initialize i18next with language detector
+i18next.use(LanguageDetector).init({
+  fallbackLng: "en",
+  supportedLngs: ["en", "ko"],
+  detection: {
+    order: ["localStorage", "navigator"],
+    caches: ["localStorage"],
+    lookupLocalStorage: "i18nextLng",
+  },
+});
+
 const I18nContext = createContext<I18nContextType | null>(null);
 
 export const I18nProvider = ({ children }: { children: ReactNode }) => {
-  const [lang, setLang] = useState<Language>("en");
+  const [lang, setLangState] = useState<Language>(() => {
+    const detected = i18next.language;
+    // Handle cases like "en-US" -> "en"
+    const normalized = detected?.startsWith("ko") ? "ko" : "en";
+    return normalized;
+  });
+
+  const setLang = useCallback((newLang: Language) => {
+    i18next.changeLanguage(newLang);
+    setLangState(newLang);
+  }, []);
+
+  // Sync with i18next language changes
+  useEffect(() => {
+    const handleLanguageChanged = (lng: string) => {
+      const normalized = lng.startsWith("ko") ? "ko" : "en";
+      setLangState(normalized as Language);
+    };
+    i18next.on("languageChanged", handleLanguageChanged);
+    return () => {
+      i18next.off("languageChanged", handleLanguageChanged);
+    };
+  }, []);
 
   const t = useCallback(
     (translations: Translations) => translations[lang],
