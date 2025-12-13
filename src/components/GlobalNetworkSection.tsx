@@ -2,18 +2,29 @@ import { useEffect, useState, useRef, useCallback } from "react";
 import { MapPin, ZoomIn, ZoomOut, RotateCcw, Save } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
-import {
-  locations,
-  connections,
-  getLocationById,
-} from "@/data/globalNetworkData";
+import { locations, connections } from "@/data/globalNetworkData";
 
 // DEV MODE: Set to true to enable draggable markers
 const DEV_MODE = false;
 
+// Position adjustment - modify these values to shift all markers
+const mappedLocations = locations.map((loc) => {
+  const scaleFactor = 1.125;
+  const xTransformed = (loc.x - 50) * scaleFactor + 50;
+
+  return {
+    ...loc,
+    x: xTransformed,
+  };
+});
+
+const getMappedLocationById = (id: string) =>
+  mappedLocations.find((loc) => loc.id === id);
+
 const GlobalNetworkSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredPin, setHoveredPin] = useState<string | null>(null);
+  const [currentScale, setCurrentScale] = useState(1);
   const sectionRef = useRef<HTMLDivElement>(null);
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
@@ -140,7 +151,7 @@ const GlobalNetworkSection = () => {
         {/* Map Container with Zoom */}
         <div
           className="mt-6 mt:mb-8 relative w-full"
-          style={{ aspectRatio: "1920 / 900" }}
+          style={{ aspectRatio: "1738 / 920" }}
         >
           {/* DEV: Floating save button */}
           {DEV_MODE && (
@@ -161,6 +172,7 @@ const GlobalNetworkSection = () => {
             wheel={{ disabled: true }}
             pinch={{ step: 5 }}
             disabled={DEV_MODE && draggingId !== null}
+            onTransformed={(_, state) => setCurrentScale(state.scale)}
           >
             {({ zoomIn, zoomOut, resetTransform }) => (
               <>
@@ -198,23 +210,16 @@ const GlobalNetworkSection = () => {
                     <img
                       src={worldMap}
                       alt="World Map"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full"
                       draggable={false}
                     />
 
                     {/* Connection Lines SVG - use adjusted positions in DEV mode */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
                       {connections.map((connection, index) => {
-                        const fromLoc = getLocationById(connection.from);
-                        const toLoc = getLocationById(connection.to);
-                        if (!fromLoc || !toLoc) return null;
-
-                        const from = DEV_MODE
-                          ? adjustedPositions[fromLoc.id] || fromLoc
-                          : fromLoc;
-                        const to = DEV_MODE
-                          ? adjustedPositions[toLoc.id] || toLoc
-                          : toLoc;
+                        const from = getMappedLocationById(connection.from);
+                        const to = getMappedLocationById(connection.to);
+                        if (!from || !to) return null;
 
                         // 곡선 컨트롤 포인트 계산
                         const midX = (from.x + to.x) / 2;
@@ -234,10 +239,8 @@ const GlobalNetworkSection = () => {
                     </svg>
 
                     {/* Location Pins */}
-                    {locations.map((location) => {
-                      const pos = DEV_MODE
-                        ? adjustedPositions[location.id] || location
-                        : location;
+                    {mappedLocations.map((location) => {
+                      const pos = location;
                       return (
                         <div
                           key={location.id}
@@ -245,14 +248,24 @@ const GlobalNetworkSection = () => {
                           style={{
                             left: `${pos.x}%`,
                             top: `${pos.y}%`,
+                            zIndex:
+                              hoveredPin === location.id ||
+                              (DEV_MODE && draggingId === location.id)
+                                ? 50
+                                : 10,
                           }}
                         >
                           <div
-                            className={`relative flex flex-col items-center -translate-x-1/2 -translate-y-full ${
+                            className={`relative flex flex-col items-center ${
                               DEV_MODE
                                 ? "cursor-grab active:cursor-grabbing"
                                 : ""
                             }`}
+                            style={{
+                              transform: `translate(-50%, -100%) scale(${
+                                1 / currentScale
+                              })`,
+                            }}
                             onMouseEnter={() =>
                               !draggingId && setHoveredPin(location.id)
                             }

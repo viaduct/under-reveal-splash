@@ -131,79 +131,141 @@ const OurTeamSection = () => {
     return () => observer.disconnect();
   }, []);
 
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!scrollContainerRef.current) return;
+
+  //     const container = scrollContainerRef.current;
+  //     const maxScrollLeft = container.scrollWidth - container.clientWidth;
+  //     const progress =
+  //       maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
+  //     setScrollProgress(progress);
+
+  //     // Update currentIndex based on scroll position
+  //     const newIndex = Math.round(container.scrollLeft / container.clientWidth);
+  //     setCurrentIndex(newIndex);
+  //   };
+
+  //   let isScrolling = false;
+  //   let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
+  //   const handleWheel = (e: WheelEvent) => {
+  //     if (!scrollContainerRef.current || isScrolling) return;
+
+  //     // Ignore small scroll movements
+  //     if (Math.abs(e.deltaY) < 30) return;
+
+  //     const container = scrollContainerRef.current;
+  //     const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+  //     // Check if we're at the boundaries
+  //     const atStart = container.scrollLeft <= 1;
+  //     const atEnd = container.scrollLeft >= maxScrollLeft - 1;
+
+  //     // Only hijack vertical scroll if not at boundaries
+  //     if (e.deltaY !== 0) {
+  //       const currentIdx = Math.round(
+  //         container.scrollLeft / container.clientWidth
+  //       );
+
+  //       // If scrolling down and not at end, snap to next
+  //       if (e.deltaY > 0 && !atEnd) {
+  //         e.preventDefault();
+  //         isScrolling = true;
+  //         const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
+  //         scrollToIndex(newIndex);
+  //         if (scrollTimeout) clearTimeout(scrollTimeout);
+  //         scrollTimeout = setTimeout(() => {
+  //           isScrolling = false;
+  //         }, 800);
+  //       }
+  //       // If scrolling up and not at start, snap to previous
+  //       else if (e.deltaY < 0 && !atStart) {
+  //         e.preventDefault();
+  //         isScrolling = true;
+  //         const newIndex = Math.max(currentIdx - 1, 0);
+  //         scrollToIndex(newIndex);
+  //         if (scrollTimeout) clearTimeout(scrollTimeout);
+  //         scrollTimeout = setTimeout(() => {
+  //           isScrolling = false;
+  //         }, 800);
+  //       }
+  //     }
+  //   };
+
+  //   const container = scrollContainerRef.current;
+  //   if (container) {
+  //     container.addEventListener("scroll", handleScroll);
+  //     container.addEventListener("wheel", handleWheel, { passive: false });
+  //     handleScroll(); // Initial calculation
+  //   }
+
+  //   return () => {
+  //     if (container) {
+  //       container.removeEventListener("scroll", handleScroll);
+  //       container.removeEventListener("wheel", handleWheel);
+  //     }
+  //   };
+  // }, []);
+
   useEffect(() => {
-    const handleScroll = () => {
-      if (!scrollContainerRef.current) return;
-
-      const container = scrollContainerRef.current;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-      const progress =
-        maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
-      setScrollProgress(progress);
-
-      // Update currentIndex based on scroll position
-      const newIndex = Math.round(container.scrollLeft / container.clientWidth);
-      setCurrentIndex(newIndex);
-    };
-
-    let isScrolling = false;
-    let scrollTimeout: ReturnType<typeof setTimeout> | null = null;
-    const handleWheel = (e: WheelEvent) => {
-      if (!scrollContainerRef.current || isScrolling) return;
-
-      // Ignore small scroll movements
-      if (Math.abs(e.deltaY) < 30) return;
-
-      const container = scrollContainerRef.current;
-      const maxScrollLeft = container.scrollWidth - container.clientWidth;
-
-      // Check if we're at the boundaries
-      const atStart = container.scrollLeft <= 1;
-      const atEnd = container.scrollLeft >= maxScrollLeft - 1;
-
-      // Only hijack vertical scroll if not at boundaries
-      if (e.deltaY !== 0) {
-        const currentIdx = Math.round(
-          container.scrollLeft / container.clientWidth
-        );
-
-        // If scrolling down and not at end, snap to next
-        if (e.deltaY > 0 && !atEnd) {
-          e.preventDefault();
-          isScrolling = true;
-          const newIndex = Math.min(currentIdx + 1, teamMembers.length - 1);
-          scrollToIndex(newIndex);
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-          }, 800);
-        }
-        // If scrolling up and not at start, snap to previous
-        else if (e.deltaY < 0 && !atStart) {
-          e.preventDefault();
-          isScrolling = true;
-          const newIndex = Math.max(currentIdx - 1, 0);
-          scrollToIndex(newIndex);
-          if (scrollTimeout) clearTimeout(scrollTimeout);
-          scrollTimeout = setTimeout(() => {
-            isScrolling = false;
-          }, 800);
-        }
-      }
-    };
-
     const container = scrollContainerRef.current;
     if (container) {
-      container.addEventListener("scroll", handleScroll);
-      container.addEventListener("wheel", handleWheel, { passive: false });
-      handleScroll(); // Initial calculation
+      const callback = () => {
+        const maxScrollLeft = container.scrollWidth - container.clientWidth;
+        const progress =
+          maxScrollLeft > 0 ? (container.scrollLeft / maxScrollLeft) * 100 : 0;
+        setScrollProgress(progress);
+      };
+
+      container.addEventListener("scroll", callback);
+
+      return () => {
+        container.removeEventListener("scroll", callback);
+      };
     }
+  }, []);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+    if (!container) return;
+
+    let lastNavigationTime = 0;
+    const THRESHOLD = 30;
+    const DEBOUNCE_MS = 500;
+
+    const handleWheel = (e: WheelEvent) => {
+      // Check debounce - ignore if within 500ms of last navigation
+      const now = Date.now();
+      if (now - lastNavigationTime < DEBOUNCE_MS) return;
+
+      // Abstract 2D to 1D: combine X and Y deltas
+      // Left/Top (negative) = prev, Right/Bottom (positive) = next
+      const combinedDelta = e.deltaX + e.deltaY;
+
+      // Check threshold - ignore if scroll strength is too weak
+      if (Math.abs(combinedDelta) < THRESHOLD) return;
+
+      // Get current index from scroll position
+      const currentIdx = Math.round(container.scrollLeft / container.clientWidth);
+
+      // Determine direction and navigate
+      if (combinedDelta > 0 && currentIdx < teamMembers.length - 1) {
+        // Next: right/bottom scroll
+        e.preventDefault();
+        scrollToIndex(currentIdx + 1);
+        lastNavigationTime = now;
+      } else if (combinedDelta < 0 && currentIdx > 0) {
+        // Prev: left/top scroll
+        e.preventDefault();
+        scrollToIndex(currentIdx - 1);
+        lastNavigationTime = now;
+      }
+    };
+
+    container.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      if (container) {
-        container.removeEventListener("scroll", handleScroll);
-        container.removeEventListener("wheel", handleWheel);
-      }
+      container.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
