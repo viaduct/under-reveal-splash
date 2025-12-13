@@ -1,5 +1,5 @@
-import { useEffect, useState, useRef } from "react";
-import { MapPin, ZoomIn, ZoomOut, RotateCcw } from "lucide-react";
+import { useEffect, useState, useRef, useCallback } from "react";
+import { MapPin, ZoomIn, ZoomOut, RotateCcw, Save } from "lucide-react";
 import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch";
 import worldMap from "@/assets/world-map.png";
 import {
@@ -8,10 +8,77 @@ import {
   getLocationById,
 } from "@/data/globalNetworkData";
 
+// DEV MODE: Set to true to enable draggable markers
+const DEV_MODE = false;
+
 const GlobalNetworkSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredPin, setHoveredPin] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+  const mapContainerRef = useRef<HTMLDivElement>(null);
+
+  // DEV: Adjusted positions state
+  const [adjustedPositions, setAdjustedPositions] = useState<Record<string, { x: number; y: number }>>(() => {
+    const initial: Record<string, { x: number; y: number }> = {};
+    locations.forEach(loc => {
+      initial[loc.id] = { x: loc.x, y: loc.y };
+    });
+    return initial;
+  });
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+
+  // DEV: Handle drag
+  const handleMouseDown = (e: React.MouseEvent, locationId: string) => {
+    if (!DEV_MODE) return;
+    e.preventDefault();
+    e.stopPropagation();
+    setDraggingId(locationId);
+  };
+
+  const handleMouseMove = useCallback((e: MouseEvent) => {
+    if (!DEV_MODE || !draggingId || !mapContainerRef.current) return;
+
+    const rect = mapContainerRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width) * 100;
+    const y = ((e.clientY - rect.top) / rect.height) * 100;
+
+    setAdjustedPositions(prev => ({
+      ...prev,
+      [draggingId]: {
+        x: Math.max(0, Math.min(100, x)),
+        y: Math.max(0, Math.min(100, y))
+      }
+    }));
+  }, [draggingId]);
+
+  const handleMouseUp = useCallback(() => {
+    setDraggingId(null);
+  }, []);
+
+  // DEV: Log coordinates to console
+  const logCoordinates = () => {
+    console.log("\n========== ADJUSTED COORDINATES ==========");
+    console.log("Copy this to globalNetworkData.ts:\n");
+    const output = locations.map(loc => {
+      const pos = adjustedPositions[loc.id] || { x: loc.x, y: loc.y };
+      return `  { id: "${loc.id}", name: "${loc.name}", x: ${pos.x.toFixed(1)}, y: ${pos.y.toFixed(1)} },`;
+    }).join("\n");
+    console.log(output);
+    console.log("\n===========================================\n");
+  };
+
+  // DEV: Add global mouse listeners for dragging
+  useEffect(() => {
+    if (!DEV_MODE) return;
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, [handleMouseMove, handleMouseUp]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,6 +133,17 @@ const GlobalNetworkSection = () => {
           className="mt-6 mt:mb-8 relative w-full"
           style={{ aspectRatio: "1920 / 900" }}
         >
+          {/* DEV: Floating save button */}
+          {DEV_MODE && (
+            <button
+              onClick={logCoordinates}
+              className="absolute top-4 left-4 z-30 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg transition-colors flex items-center gap-2 font-medium"
+            >
+              <Save className="w-4 h-4" />
+              Log Coordinates
+            </button>
+          )}
+
           <TransformWrapper
             initialScale={1}
             minScale={1}
@@ -73,6 +151,7 @@ const GlobalNetworkSection = () => {
             centerOnInit
             wheel={{ disabled: true }}
             pinch={{ step: 5 }}
+            disabled={DEV_MODE && draggingId !== null}
           >
             {({ zoomIn, zoomOut, resetTransform }) => (
               <>
@@ -105,7 +184,7 @@ const GlobalNetworkSection = () => {
                   wrapperStyle={{ width: "100%", height: "100%" }}
                   contentStyle={{ width: "100%", height: "100%" }}
                 >
-                  <div className="relative w-full h-full">
+                  <div ref={mapContainerRef} className="relative w-full h-full">
                     {/* World Map Image */}
                     <img
                       src={worldMap}
@@ -114,12 +193,15 @@ const GlobalNetworkSection = () => {
                       draggable={false}
                     />
 
-                    {/* Connection Lines SVG */}
+                    {/* Connection Lines SVG - use adjusted positions in DEV mode */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
                       {connections.map((connection, index) => {
-                        const from = getLocationById(connection.from);
-                        const to = getLocationById(connection.to);
-                        if (!from || !to) return null;
+                        const fromLoc = getLocationById(connection.from);
+                        const toLoc = getLocationById(connection.to);
+                        if (!fromLoc || !toLoc) return null;
+
+                        const from = DEV_MODE ? adjustedPositions[fromLoc.id] || fromLoc : fromLoc;
+                        const to = DEV_MODE ? adjustedPositions[toLoc.id] || toLoc : toLoc;
 
                         // 곡선 컨트롤 포인트 계산
                         const midX = (from.x + to.x) / 2;
@@ -139,36 +221,51 @@ const GlobalNetworkSection = () => {
                     </svg>
 
                     {/* Location Pins */}
-                    {locations.map((location) => (
-                      <div
-                        key={location.id}
-                        className="absolute flex flex-col items-center"
-                        style={{
-                          left: `${location.x}%`,
-                          top: `${location.y}%`,
-                        }}
-                      >
+                    {locations.map((location) => {
+                      const pos = DEV_MODE ? adjustedPositions[location.id] || location : location;
+                      return (
                         <div
-                          className="relative flex flex-col items-center -translate-x-1/2 -translate-y-full"
-                          onMouseEnter={() => setHoveredPin(location.id)}
-                          onMouseLeave={() => setHoveredPin(null)}
+                          key={location.id}
+                          className="absolute flex flex-col items-center"
+                          style={{
+                            left: `${pos.x}%`,
+                            top: `${pos.y}%`,
+                          }}
                         >
-                          {/* Speech bubble - only rendered on hover */}
-                          {hoveredPin === location.id && (
-                            <div className="absolute bottom-full mb-0.5 px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md pointer-events-none z-50">
-                              {location.name}
-                            </div>
-                          )}
-                          {/* Pin icon */}
-                          <MapPin
-                            className="w-4 h-4 md:w-5 md:h-5 text-primary drop-shadow-md cursor-pointer"
-                            fill="currentColor"
-                            stroke="white"
-                            strokeWidth={1}
-                          />
+                          <div
+                            className={`relative flex flex-col items-center -translate-x-1/2 -translate-y-full ${
+                              DEV_MODE ? "cursor-grab active:cursor-grabbing" : ""
+                            }`}
+                            onMouseEnter={() => !draggingId && setHoveredPin(location.id)}
+                            onMouseLeave={() => setHoveredPin(null)}
+                            onMouseDown={(e) => handleMouseDown(e, location.id)}
+                          >
+                            {/* Speech bubble - show name (always in DEV mode when dragging this pin) */}
+                            {(hoveredPin === location.id || (DEV_MODE && draggingId === location.id)) && (
+                              <div className="absolute bottom-full mb-0.5 px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md pointer-events-none z-50">
+                                {location.name}
+                                {DEV_MODE && (
+                                  <span className="ml-1 text-blue-600">
+                                    ({pos.x.toFixed(1)}, {pos.y.toFixed(1)})
+                                  </span>
+                                )}
+                              </div>
+                            )}
+                            {/* Pin icon */}
+                            <MapPin
+                              className={`w-4 h-4 md:w-5 md:h-5 drop-shadow-md ${
+                                DEV_MODE && draggingId === location.id
+                                  ? "text-blue-600 scale-125"
+                                  : "text-primary"
+                              } transition-transform`}
+                              fill="currentColor"
+                              stroke="white"
+                              strokeWidth={1}
+                            />
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      );
+                    })}
                   </div>
                 </TransformComponent>
               </>

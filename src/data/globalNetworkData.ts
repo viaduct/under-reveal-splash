@@ -15,28 +15,28 @@ export interface Connection {
 // y: 0% = top edge (~80°N latitude), 100% = bottom edge (~60°S latitude)
 export const locations: Location[] = [
   // Americas
-  { id: "usa", name: "USA", x: 17, y: 33 },
-  { id: "south-america", name: "South America", x: 30, y: 68 },
+  { id: "usa", name: "USA", x: 22.0, y: 37.5 },
+  { id: "south-america", name: "South America", x: 31.2, y: 68.4 },
 
   // Europe
-  { id: "europe", name: "Europe", x: 49, y: 25 },
-  { id: "france", name: "France", x: 47, y: 28 },
-  { id: "italy", name: "Italy", x: 51, y: 31 },
+  { id: "europe", name: "Europe", x: 50.9, y: 36.3 },
+  { id: "france", name: "France", x: 45.8, y: 38.6 },
+  { id: "italy", name: "Italy", x: 49.0, y: 42.3 },
 
   // Middle East
-  { id: "gcc", name: "GCC", x: 57, y: 38 },
+  { id: "gcc", name: "GCC", x: 57.0, y: 32.0 },
 
   // Asia
-  { id: "india", name: "India", x: 64, y: 42 },
-  { id: "thailand", name: "Thailand", x: 71, y: 47 },
-  { id: "vietnam", name: "Vietnam", x: 73, y: 44 },
-  { id: "cambodia", name: "Cambodia", x: 72, y: 49 },
-  { id: "malaysia", name: "Malaysia", x: 72, y: 54 },
-  { id: "singapore", name: "Singapore", x: 72, y: 56 },
-  { id: "indonesia", name: "Indonesia", x: 74, y: 60 },
-  { id: "philippines", name: "Philippines", x: 77, y: 46 },
-  { id: "hong-kong", name: "Hong Kong", x: 75, y: 40 },
-  { id: "japan", name: "Japan", x: 81, y: 32 },
+  { id: "india", name: "India", x: 66.0, y: 56.1 },
+  { id: "thailand", name: "Thailand", x: 71.8, y: 57.9 },
+  { id: "vietnam", name: "Vietnam", x: 73.5, y: 58.4 },
+  { id: "cambodia", name: "Cambodia", x: 72.5, y: 59.1 },
+  { id: "malaysia", name: "Malaysia", x: 72.1, y: 63.6 },
+  { id: "singapore", name: "Singapore", x: 72.2, y: 65.1 },
+  { id: "indonesia", name: "Indonesia", x: 76.8, y: 66.7 },
+  { id: "philippines", name: "Philippines", x: 77.2, y: 59.9 },
+  { id: "hong-kong", name: "Hong Kong", x: 75.0, y: 53.2 },
+  { id: "japan", name: "Japan", x: 81.4, y: 45.4 },
 ];
 
 // Network connections between locations
