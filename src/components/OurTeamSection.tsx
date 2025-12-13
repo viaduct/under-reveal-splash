@@ -246,7 +246,9 @@ const OurTeamSection = () => {
       if (Math.abs(combinedDelta) < THRESHOLD) return;
 
       // Get current index from scroll position
-      const currentIdx = Math.round(container.scrollLeft / container.clientWidth);
+      const currentIdx = Math.round(
+        container.scrollLeft / container.clientWidth
+      );
 
       // Determine direction and navigate
       if (combinedDelta > 0 && currentIdx < teamMembers.length - 1) {
@@ -293,7 +295,7 @@ const OurTeamSection = () => {
         <button
           onClick={handlePrevious}
           disabled={currentIndex === 0}
-          className="md:hidden absolute left-4 top-[140px] z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
+          className="absolute left-4 top-[140px] z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
           aria-label="Previous team member"
         >
           <ChevronLeft className="w-6 h-6 text-foreground" />
@@ -302,7 +304,7 @@ const OurTeamSection = () => {
         <button
           onClick={handleNext}
           disabled={currentIndex === teamMembers.length - 1}
-          className="md:hidden absolute right-4 top-[140px] z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
+          className="absolute right-4 top-[140px] z-10 bg-background/80 backdrop-blur-sm border border-border rounded-full p-3 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-background transition-all"
           aria-label="Next team member"
         >
           <ChevronRight className="w-6 h-6 text-foreground" />
