@@ -111,13 +111,7 @@ All colors MUST be HSL.
     scroll-behavior: smooth;
   }
 
-  /* Smooth scroll snap sections */
-  .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    height: calc(100dvh - 80px);
-    min-height: calc(100dvh - 80px);
-  }
+  /* Smooth scroll snap sections - now handled by SnapSection component with Tailwind */
 
   /* Enhanced smooth scrolling with custom timing */
   @media (prefers-reduced-motion: no-preference) {

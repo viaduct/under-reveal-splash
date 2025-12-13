@@ -18,9 +18,11 @@ const GlobalNetworkSection = () => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   // DEV: Adjusted positions state
-  const [adjustedPositions, setAdjustedPositions] = useState<Record<string, { x: number; y: number }>>(() => {
+  const [adjustedPositions, setAdjustedPositions] = useState<
+    Record<string, { x: number; y: number }>
+  >(() => {
     const initial: Record<string, { x: number; y: number }> = {};
-    locations.forEach(loc => {
+    locations.forEach((loc) => {
       initial[loc.id] = { x: loc.x, y: loc.y };
     });
     return initial;
@@ -35,21 +37,24 @@ const GlobalNetworkSection = () => {
     setDraggingId(locationId);
   };
 
-  const handleMouseMove = useCallback((e: MouseEvent) => {
-    if (!DEV_MODE || !draggingId || !mapContainerRef.current) return;
+  const handleMouseMove = useCallback(
+    (e: MouseEvent) => {
+      if (!DEV_MODE || !draggingId || !mapContainerRef.current) return;
 
-    const rect = mapContainerRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
+      const rect = mapContainerRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
 
-    setAdjustedPositions(prev => ({
-      ...prev,
-      [draggingId]: {
-        x: Math.max(0, Math.min(100, x)),
-        y: Math.max(0, Math.min(100, y))
-      }
-    }));
-  }, [draggingId]);
+      setAdjustedPositions((prev) => ({
+        ...prev,
+        [draggingId]: {
+          x: Math.max(0, Math.min(100, x)),
+          y: Math.max(0, Math.min(100, y)),
+        },
+      }));
+    },
+    [draggingId]
+  );
 
   const handleMouseUp = useCallback(() => {
     setDraggingId(null);
@@ -59,10 +64,14 @@ const GlobalNetworkSection = () => {
   const logCoordinates = () => {
     console.log("\n========== ADJUSTED COORDINATES ==========");
     console.log("Copy this to globalNetworkData.ts:\n");
-    const output = locations.map(loc => {
-      const pos = adjustedPositions[loc.id] || { x: loc.x, y: loc.y };
-      return `  { id: "${loc.id}", name: "${loc.name}", x: ${pos.x.toFixed(1)}, y: ${pos.y.toFixed(1)} },`;
-    }).join("\n");
+    const output = locations
+      .map((loc) => {
+        const pos = adjustedPositions[loc.id] || { x: loc.x, y: loc.y };
+        return `  { id: "${loc.id}", name: "${loc.name}", x: ${pos.x.toFixed(
+          1
+        )}, y: ${pos.y.toFixed(1)} },`;
+      })
+      .join("\n");
     console.log(output);
     console.log("\n===========================================\n");
   };
@@ -200,8 +209,12 @@ const GlobalNetworkSection = () => {
                         const toLoc = getLocationById(connection.to);
                         if (!fromLoc || !toLoc) return null;
 
-                        const from = DEV_MODE ? adjustedPositions[fromLoc.id] || fromLoc : fromLoc;
-                        const to = DEV_MODE ? adjustedPositions[toLoc.id] || toLoc : toLoc;
+                        const from = DEV_MODE
+                          ? adjustedPositions[fromLoc.id] || fromLoc
+                          : fromLoc;
+                        const to = DEV_MODE
+                          ? adjustedPositions[toLoc.id] || toLoc
+                          : toLoc;
 
                         // 곡선 컨트롤 포인트 계산
                         const midX = (from.x + to.x) / 2;
@@ -222,7 +235,9 @@ const GlobalNetworkSection = () => {
 
                     {/* Location Pins */}
                     {locations.map((location) => {
-                      const pos = DEV_MODE ? adjustedPositions[location.id] || location : location;
+                      const pos = DEV_MODE
+                        ? adjustedPositions[location.id] || location
+                        : location;
                       return (
                         <div
                           key={location.id}
@@ -234,14 +249,19 @@ const GlobalNetworkSection = () => {
                         >
                           <div
                             className={`relative flex flex-col items-center -translate-x-1/2 -translate-y-full ${
-                              DEV_MODE ? "cursor-grab active:cursor-grabbing" : ""
+                              DEV_MODE
+                                ? "cursor-grab active:cursor-grabbing"
+                                : ""
                             }`}
-                            onMouseEnter={() => !draggingId && setHoveredPin(location.id)}
+                            onMouseEnter={() =>
+                              !draggingId && setHoveredPin(location.id)
+                            }
                             onMouseLeave={() => setHoveredPin(null)}
                             onMouseDown={(e) => handleMouseDown(e, location.id)}
                           >
                             {/* Speech bubble - show name (always in DEV mode when dragging this pin) */}
-                            {(hoveredPin === location.id || (DEV_MODE && draggingId === location.id)) && (
+                            {(hoveredPin === location.id ||
+                              (DEV_MODE && draggingId === location.id)) && (
                               <div className="absolute bottom-full mb-0.5 px-1.5 py-0.5 md:px-2 md:py-1 bg-white border border-gray-300 rounded text-[8px] md:text-[10px] text-gray-700 whitespace-nowrap shadow-md pointer-events-none z-50">
                                 {location.name}
                                 {DEV_MODE && (

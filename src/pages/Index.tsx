@@ -9,6 +9,7 @@ import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import GlobalNetworkSection from "@/components/GlobalNetworkSection";
 import Footer from "@/components/Footer";
+import SnapSection from "@/components/SnapSection";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -55,30 +56,30 @@ const Index = () => {
 
       {/* Main content - scrollable area */}
       <main className="flex-1 overflow-y-auto snap-container">
-        <section className="snap-section">
+        <SnapSection>
           <HeroSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <AboutSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <WhoWeAreSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <SubsidiariesSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <SubsidiaryDetailsSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <GlobalNetworkSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <BrandMessageSection />
-        </section>
-        <section className="snap-section">
+        </SnapSection>
+        <SnapSection>
           <Footer />
-        </section>
+        </SnapSection>
       </main>
     </div>
   );

@@ -24,7 +24,7 @@ export const locations: Location[] = [
   { id: "italy", name: "Italy", x: 49.0, y: 42.3 },
 
   // Middle East
-  { id: "gcc", name: "GCC", x: 57.0, y: 32.0 },
+  { id: "gcc", name: "GCC", x: 61.8, y: 47.4 },
 
   // Asia
   { id: "india", name: "India", x: 66.0, y: 56.1 },
