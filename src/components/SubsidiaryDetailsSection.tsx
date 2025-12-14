@@ -140,12 +140,13 @@ const SubsidiaryDetailsSection = () => {
                 >
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({ en: "Record Distribution Network", ko: "레코드 유통 네트워크" })}
+                      {t({
+                        en: "RECORD DISTRIBUTION",
+                      })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {t({
-                        en: "Partnering with leading record labels worldwide to support the global distribution and promotion of K-POP artists.",
-                        ko: "전 세계 주요 레코드 레이블과 협력하여 K-POP 아티스트의 글로벌 유통과 프로모션을 지원합니다.",
+                        en: "Partnering with leading labels and platforms to support global release strategy, distribution, and promotion for K-POP artists.",
                       })}
                     </p>
                   </div>
@@ -154,12 +155,13 @@ const SubsidiaryDetailsSection = () => {
 
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({ en: "Publishing Network", ko: "퍼블리싱 네트워크" })}
+                      {t({
+                        en: "PUBLISHING & RIGHTS",
+                      })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {t({
-                        en: "Leveraging an extensive global publishing network to maximize copyright income and provide opportunities to collaborate with world-renowned composers and producers.",
-                        ko: "폭넓은 글로벌 퍼블리싱 네트워크를 활용하여 저작권 수익을 극대화하고 세계적인 작곡가 및 프로듀서들과 협업할 수 있는 기회를 제공합니다.",
+                        en: "Managing publishing across key territories to maximize royalty income and enable collaboration with world-class songwriters and producers.",
                       })}
                     </p>
                   </div>
@@ -168,12 +170,22 @@ const SubsidiaryDetailsSection = () => {
 
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({ en: "Touring Network", ko: "투어링 네트워크" })}
+                      {t({ en: "TOURING & LIVE" })}
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {t({
-                        en: "Working closely with global concert agencies and promoters to maximize tour revenue and ensure successful K-POP world tours.",
-                        ko: "글로벌 콘서트 에이전시 및 프로모터와 긴밀히 협력하여 투어 수익을 극대화하고 성공적인 K-POP 월드 투어를 보장합니다.",
+                        en: "Working with top agencies, promoters, and venues to build world tours—optimizing routing, ticketing, and live revenue.",
+                      })}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
+                      {t({ en: "CATALOGUE IP DEALS" })}
+                    </h3>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      {t({
+                        en: "Structuring catalogue transactions across master and publishing rights—including acquisitions, partnerships, and administration/advance models—to unlock capital and grow long-term royalty value.",
                       })}
                     </p>
                   </div>
@@ -222,25 +234,39 @@ const SubsidiaryDetailsSection = () => {
                 >
                   <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      URBANLINK 400
+                      URBANLINK
                     </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
                       {t({
-                        en: "Driving business expansion through producing projects for global artists and sports icons, supported by Super App publishing.",
-                        ko: "슈퍼앱 퍼블리싱을 기반으로 글로벌 아티스트와 스포츠 아이콘 프로젝트를 제작하며 비즈니스를 확장합니다.",
+                        en: ``,
                       })}
                     </p>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                    {[
+                      "URBANLINK is an operating group of dedicated entities—launching and running partner-specific Super App ecosystems across fandom, IP, and culture.",
+                      "Artist Super App Ecosystems",
+                      "Operating partner-led platforms that unify fandom, content, and commerce.",
+                      "Franchise IP Community Hubs",
+                      "The community home for stories across film, series, animation, and beyond—built for membership and monetization.",
+                      "Culture Commerce",
+                      "Scaling talent-adopted culture brands through community momentum and drop-based commerce.",
+                    ].map((str) => {
+                      return (
+                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
+                          {str}
+                        </p>
+                      );
+                    })}
+                    {/* <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {t({
                         en: "With the participation of Republic Records, URBANLINK 400 strengthens its position as a global entertainment partner—building a large-scale ecosystem that connects music, sports, and digital fandom worldwide.",
                         ko: "Republic Records의 참여로 URBANLINK 400는 음악·스포츠·디지털 팬덤을 연결하는 대규모 생태계를 구축하며 글로벌 엔터테인먼트 파트너로서의 입지를 강화하고 있습니다.",
                       })}
-                    </p>
+                    </p> */}
                   </div>
 
                   {/* <div className="h-px bg-border"></div> */}
 
-                  <div>
+                  {/* <div>
                     <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       URBANLINK 360
                     </h3>
@@ -256,7 +282,7 @@ const SubsidiaryDetailsSection = () => {
                         ko: "URBANLINK 네트워크의 일원으로서, 각 아티스트의 브랜드 아이덴티티와 창의적 비전을 담아낸 팬덤 기반 플랫폼을 개발·운영하는 데 특화되어 있습니다.",
                       })}
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </TabsContent>

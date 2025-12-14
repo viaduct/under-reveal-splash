@@ -38,7 +38,7 @@ const Index = () => {
       <header className="shrink-0 w-full md:h-20 h-12 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
 
-        <DropdownMenu>
+        {/* <DropdownMenu>
           <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
             <Globe className="h-5 w-5" />
           </DropdownMenuTrigger>
@@ -61,7 +61,7 @@ const Index = () => {
               {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
             </DropdownMenuItem>
           </DropdownMenuContent>
-        </DropdownMenu>
+        </DropdownMenu> */}
       </header>
 
       {/* Main content - scrollable area */}

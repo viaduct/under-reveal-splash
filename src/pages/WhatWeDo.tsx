@@ -33,7 +33,7 @@ const WhatWeDo = () => {
           </h1>
 
           {/* Language dropdown */}
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="ml-auto text-foreground hover:text-primary transition-colors">
               <Globe className="h-5 w-5" />
             </DropdownMenuTrigger>
@@ -51,7 +51,7 @@ const WhatWeDo = () => {
                 한국어 {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
 

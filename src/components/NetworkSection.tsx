@@ -16,35 +16,35 @@ const networkData = [
     number: "01",
     title: "Global Record Distribution Network",
     description:
-      "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists.",
+      "UNDERTHELINE Holdings leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists.",
     position: "top-left",
   },
   {
     number: "02",
     title: "Global Publishing Network",
     description:
-      "Panorama leverages its global publishing partnerships to maximize publishing income and set up songwriting and production sessions with leading songwriters and producers of the world for K-pop artists",
+      "UNDERTHELINE Holdings leverages its global publishing partnerships to maximize publishing income and set up songwriting and production sessions with leading songwriters and producers of the world for K-pop artists",
     position: "top-right",
   },
   {
     number: "03",
     title: "Global Touring Network",
     description:
-      "Panorama leverages its relationships with global talent booking agencies and live event promoters to secure maximum value from tours while sharing in the success with K-pop artists",
+      "UNDERTHELINE Holdings leverages its relationships with global talent booking agencies and live event promoters to secure maximum value from tours while sharing in the success with K-pop artists",
     position: "bottom-left",
   },
   {
     number: "04",
     title: "Dual Market Expertise",
     description:
-      "The Panorama team brings deep expertise in both K-pop and the global music market, with a particular focus on breaking into the United States, the world's largest music market",
+      "The UNDERTHELINE Holdings team brings deep expertise in both K-pop and the global music market, with a particular focus on breaking into the United States, the world's largest music market",
     position: "right-middle",
   },
   {
     number: "05",
     title: "Global OTT Network",
     description:
-      "Panorama leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
+      "UNDERTHELINE Holdings leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
     position: "bottom-right-lower",
   },
 ];

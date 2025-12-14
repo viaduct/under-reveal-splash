@@ -13,7 +13,7 @@ type Language = "en" | "ko";
 
 type Translations = {
   en: string;
-  ko: string;
+  ko?: string;
 };
 
 interface I18nContextType {
@@ -25,7 +25,10 @@ interface I18nContextType {
 // Initialize i18next with language detector
 i18next.use(LanguageDetector).init({
   fallbackLng: "en",
-  supportedLngs: ["en", "ko"],
+  supportedLngs: [
+    "en",
+    // , "ko"
+  ],
   detection: {
     order: ["localStorage", "navigator"],
     caches: ["localStorage"],
@@ -39,7 +42,7 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   const [lang, setLangState] = useState<Language>(() => {
     const detected = i18next.language;
     // Handle cases like "en-US" -> "en"
-    const normalized = detected?.startsWith("ko") ? "ko" : "en";
+    const normalized = "en"; //detected?.startsWith("ko") ? "ko" : "en";
     return normalized;
   });
 
@@ -51,7 +54,7 @@ export const I18nProvider = ({ children }: { children: ReactNode }) => {
   // Sync with i18next language changes
   useEffect(() => {
     const handleLanguageChanged = (lng: string) => {
-      const normalized = lng.startsWith("ko") ? "ko" : "en";
+      const normalized = "en"; //lng.startsWith("ko") ? "ko" : "en";
       setLangState(normalized as Language);
     };
     i18next.on("languageChanged", handleLanguageChanged);

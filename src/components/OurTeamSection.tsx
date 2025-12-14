@@ -15,7 +15,10 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: t({ en: "Sanghyun Shin", ko: "신상현" }),
     role: t({ en: "Founder", ko: "Founder" }),
-    title: t({ en: "Visionary Founder & Innovator", ko: "차세대 엔터테인먼트 생태계 리더" }),
+    title: t({
+      en: "Visionary Founder & Innovator",
+      ko: "차세대 엔터테인먼트 생태계 리더",
+    }),
     description: t({
       en: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
       ko: "차세대 엔터테인먼트 생태계를 전 세계로 확장하는 리더. 독자 DOCE 기술을 기반으로 산업과 국가를 넘는 네트워크를 통합하며 아티스트·팬·브랜드가 함께 성장할 수 있는 인프라를 설계합니다.",
@@ -24,8 +27,14 @@ const getTeamMembers = (t: TranslateFn) => [
   },
   {
     name: "Robert W. Lewis III",
-    role: t({ en: "CEO, URBANLINK 360\nCEO, URBANLINK 400", ko: "CEO, URBANLINK 360\nCEO, URBANLINK 400" }),
-    title: t({ en: "Highly sought-after producer", ko: "미국 음악 산업 베테랑 프로듀서" }),
+    role: t({
+      en: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
+      ko: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
+    }),
+    title: t({
+      en: "Highly sought-after producer",
+      ko: "미국 음악 산업 베테랑 프로듀서",
+    }),
     description: t({
       en: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
       ko: "30년 이상의 미국 음악 산업 베테랑. Whitney Houston, Beyoncé, Michael Jackson, Ariana Grande, The Weeknd 등 세계적 아티스트들과 협업해온 프로듀서. Undertheline 산하 전체 레이블의 슈퍼앱 전략 및 아티스트 개발을 지원합니다.",
@@ -35,7 +44,10 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: t({ en: "Han Kim", ko: "김한" }),
     role: t({ en: "CEO, Panorama", ko: "CEO, Panorama" }),
-    title: t({ en: "International entertainment law and management leader", ko: "국제 엔터테인먼트 법률 및 경영 전문가" }),
+    title: t({
+      en: "International entertainment law and management leader",
+      ko: "국제 엔터테인먼트 법률 및 경영 전문가",
+    }),
     description: t({
       en: "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
       ko: "빌보드 선정 미국 톱 음악 변호사. SM, JYP, Kakao, THEBLACKLABEL과 협업 경험. NYU 음악비즈니스 석사. K-POP과 글로벌 시장을 잇는 인프라를 구축합니다.",
@@ -44,8 +56,14 @@ const getTeamMembers = (t: TranslateFn) => [
   },
   {
     name: 'Charles "Big Chuck" Stanton',
-    role: t({ en: "CEO, Drama Family Entertainment", ko: "CEO, Drama Family Entertainment" }),
-    title: t({ en: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline", ko: "Strategic Advisor – U.S. Hip-Hop & Urban Culture" }),
+    role: t({
+      en: "CEO, Drama Family Entertainment",
+      ko: "CEO, Drama Family Entertainment",
+    }),
+    title: t({
+      en: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline",
+      ko: "Strategic Advisor – U.S. Hip-Hop & Urban Culture",
+    }),
     description: t({
       en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
       ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
@@ -54,28 +72,40 @@ const getTeamMembers = (t: TranslateFn) => [
   },
   {
     name: "Mark Friedman",
-    role: t({ en: "Strategic Investment Advisor", ko: "Strategic Investment Advisor" }),
-    title: t({ en: "Institutional investor & growth strategist", ko: "Institutional investor & growth strategist" }),
+    role: t({
+      en: "Strategic Investment Advisor",
+      ko: "Strategic Investment Advisor",
+    }),
+    title: t({
+      en: "Institutional investor & growth strategist",
+      ko: "Institutional investor & growth strategist",
+    }),
     description: t({
       en: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
       ko: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
     }),
     image: teamMark,
   },
-  {
-    name: "Maurizio Romiti",
-    role: t({ en: "Strategic Partner – Europe", ko: "Strategic Partner – Europe" }),
-    title: t({ en: "Pioneer in Korea's entertainment management industry", ko: "이탈리아 최고 영향력 가문" }),
-    description: t({
-      en: "Maurizio Romiti is the son of Cesare Romiti, former Chairman of FIAT Group for over 20 years, and part of one of Italy's most influential families. As former Chairman of HDP Group, he oversaw luxury brands including Armani, Fila, Kenzo, Valentino, and Calvin Klein, along with major newspapers, magazines, and media channels. He remains a key figure with wide influence across Italy's finance, media, and fashion industries.",
-      ko: "FIAT 회장 체사레 로미티의 가문. Armani, Fila, Kenzo, Calvin Klein 등 럭셔리 브랜드를 총괄했던 이탈리아 최고 영향력 가문 출신의 인물.",
-    }),
-    image: teamMaurizio,
-  },
+  // {
+  //   name: "Maurizio Romiti",
+  //   role: t({ en: "Strategic Partner – Europe", ko: "Strategic Partner – Europe" }),
+  //   title: t({ en: "Pioneer in Korea's entertainment management industry", ko: "이탈리아 최고 영향력 가문" }),
+  //   description: t({
+  //     en: "Maurizio Romiti is the son of Cesare Romiti, former Chairman of FIAT Group for over 20 years, and part of one of Italy's most influential families. As former Chairman of HDP Group, he oversaw luxury brands including Armani, Fila, Kenzo, Valentino, and Calvin Klein, along with major newspapers, magazines, and media channels. He remains a key figure with wide influence across Italy's finance, media, and fashion industries.",
+  //     ko: "FIAT 회장 체사레 로미티의 가문. Armani, Fila, Kenzo, Calvin Klein 등 럭셔리 브랜드를 총괄했던 이탈리아 최고 영향력 가문 출신의 인물.",
+  //   }),
+  //   image: teamMaurizio,
+  // },
   {
     name: "Stavros Pirounis",
-    role: t({ en: "Strategic Partner – Luxury", ko: "Strategic Partner – Luxury" }),
-    title: t({ en: "Pioneer in Korea's entertainment management industry", ko: "글로벌 패션 산업 베테랑" }),
+    role: t({
+      en: "Strategic Partner – Luxury",
+      ko: "Strategic Partner – Luxury",
+    }),
+    title: t({
+      en: "Pioneer in Korea's entertainment management industry",
+      ko: "글로벌 패션 산업 베테랑",
+    }),
     description: t({
       en: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
       ko: "ST Dupont 아시아 총괄 및 한국 대표, Gruppo GFT 아시아 CEO(Armani·Valentino·Calvin Klein 관리) 등을 역임. Loro Piana, Zegna 등 럭셔리 하우스 성장에 기여.",

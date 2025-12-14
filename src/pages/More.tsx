@@ -41,16 +41,20 @@ const More = () => {
           </button>
 
           {/* Tabs */}
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex justify-center md:justify-center">
+          <Tabs
+            value={activeTab}
+            onValueChange={setActiveTab}
+            className="flex-1 flex justify-center md:justify-center"
+          >
             <TabsList className="bg-transparent gap-4">
-              <TabsTrigger 
-                value="our-team" 
+              <TabsTrigger
+                value="our-team"
                 className="font-rift text-base md:text-lg font-bold data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:border-b-2 data-[state=active]:border-foreground rounded-none px-4 py-2 text-muted-foreground"
               >
                 OUR TEAM
               </TabsTrigger>
-              <TabsTrigger 
-                value="network" 
+              <TabsTrigger
+                value="network"
                 className="font-rift text-base md:text-lg font-bold data-[state=active]:bg-transparent data-[state=active]:text-foreground data-[state=active]:border-b-2 data-[state=active]:border-foreground rounded-none px-4 py-2 text-muted-foreground"
               >
                 NETWORK
@@ -59,7 +63,7 @@ const More = () => {
           </Tabs>
 
           {/* Language dropdown */}
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
               <Globe className="h-5 w-5" />
             </DropdownMenuTrigger>
@@ -77,7 +81,7 @@ const More = () => {
                 한국어 {lang === "ko" && <Check className="h-4 w-4 ml-2" />}
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </header>
 
