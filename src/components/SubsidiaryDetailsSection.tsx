@@ -139,40 +139,55 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({
-                        en: "RECORD DISTRIBUTION",
-                      })}
-                    </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
                       {t({
-                        en: "Partnering with leading labels and platforms to support global release strategy, distribution, and promotion for K-POP artists.",
+                        en: "Panorama provides an operating framework through which artists and IP expand across platforms, communities, and commerce",
                       })}
                     </p>
                   </div>
 
-                  {/* <div className="h-px bg-border"></div> */}
+                  <div>
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      <b className="font-bold">
+                        {t({
+                          en: "RECORD DISTRIBUTION",
+                        })}
+                      </b>
+
+                      <br />
+
+                      {t({
+                        en: "Partnering with leading labels and platforms to support global release strategy, distribution, and promotion for artists.",
+                      })}
+                    </p>
+                  </div>
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({
-                        en: "PUBLISHING & RIGHTS",
-                      })}
-                    </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      <b className="font-bold">
+                        {t({
+                          en: "PUBLISHING & RIGHTS",
+                        })}
+                      </b>
+
+                      <br />
+
                       {t({
                         en: "Managing publishing across key territories to maximize royalty income and enable collaboration with world-class songwriters and producers.",
                       })}
                     </p>
                   </div>
 
-                  {/* <div className="h-px bg-border"></div> */}
-
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({ en: "TOURING & LIVE" })}
-                    </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      <b className="font-bold">
+                        {t({
+                          en: "TOURING & LIVE",
+                        })}
+                      </b>
+
+                      <br />
+
                       {t({
                         en: "Working with top agencies, promoters, and venues to build world tours—optimizing routing, ticketing, and live revenue.",
                       })}
@@ -180,12 +195,17 @@ const SubsidiaryDetailsSection = () => {
                   </div>
 
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      {t({ en: "CATALOGUE IP DEALS" })}
-                    </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                      <b className="font-bold">
+                        {t({
+                          en: "CATALOGUE IP DEALS",
+                        })}
+                      </b>
+
+                      <br />
+
                       {t({
-                        en: "Structuring catalogue transactions across master and publishing rights—including acquisitions, partnerships, and administration/advance models—to unlock capital and grow long-term royalty value.",
+                        en: "Structuring catalogue transactions across master and publishing rights—including acquisitions, partnerships, and administration models—to unlock long-term royalty value.",
                       })}
                     </p>
                   </div>
@@ -233,35 +253,36 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
+                    {/* <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
                       URBANLINK
-                    </h3>
+                    </h3> */}
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
-                      {t({
-                        en: ``,
-                      })}
+                      URBANLINK is an operating group of dedicated
+                      entities—launching and running partner-specific Super App
+                      ecosystems across fandom, IP, and culture.
                     </p>
-                    {[
-                      "URBANLINK is an operating group of dedicated entities—launching and running partner-specific Super App ecosystems across fandom, IP, and culture.",
-                      "Artist Super App Ecosystems",
-                      "Operating partner-led platforms that unify fandom, content, and commerce.",
-                      "Franchise IP Community Hubs",
-                      "The community home for stories across film, series, animation, and beyond—built for membership and monetization.",
-                      "Culture Commerce",
-                      "Scaling talent-adopted culture brands through community momentum and drop-based commerce.",
-                    ].map((str) => {
-                      return (
-                        <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
-                          {str}
-                        </p>
-                      );
-                    })}
-                    {/* <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
-                      {t({
-                        en: "With the participation of Republic Records, URBANLINK 400 strengthens its position as a global entertainment partner—building a large-scale ecosystem that connects music, sports, and digital fandom worldwide.",
-                        ko: "Republic Records의 참여로 URBANLINK 400는 음악·스포츠·디지털 팬덤을 연결하는 대규모 생태계를 구축하며 글로벌 엔터테인먼트 파트너로서의 입지를 강화하고 있습니다.",
-                      })}
-                    </p> */}
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
+                      <b className="font-bold">ARTIST SUPER APP ECOSYSTEMS</b>
+                      <br />
+                      Operating partner-led platforms that unify fandom,
+                      content, and commerce.
+                    </p>
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
+                      <b className="font-bold">FRANCHISE IP COMMUNITY HUBS</b>
+                      <br />
+                      The community home for stories across film, series,
+                      animation, and beyond—built for membership and
+                      monetization.
+                    </p>
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
+                      <b className="font-bold">CULTURE COMMERCE</b>
+                      <br />
+                      Scaling talent-adopted culture brands through community
+                      momentum and drop-based commerce.
+                    </p>
                   </div>
 
                   {/* <div className="h-px bg-border"></div> */}
@@ -327,19 +348,32 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      ARADNAS
-                    </h3>
                     <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
                       {t({
-                        en: "ARADNAS is a management and creative label dedicated to maximizing artists' visions and creative values.",
-                        ko: "ARADNAS는 아티스트의 비전과 창작 가치를 극대화하는 데 전념하는 매니지먼트 & 크리에이티브 레이블입니다.",
+                        en: "ARADNAS is a creative label that develops individual IP into sustainable projects and brands, grounded in artists’ creative practice.",
                       })}
                     </p>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
+                      <b className="font-bold">
+                        {t({
+                          en: "ARTIST MANAGEMENT & CREATIVE LABEL",
+                        })}
+                      </b>
+
+                      <br />
+
+                      <span className="whitespace-pre-wrap">
+                        {`Plans and operates career and project strategies aligned with each artist’s stage of growth.
+Leads creative production across music, content, and visual direction.
+Conceives, produces, and manages the growth of both live artists and original virtual artist IP.
+Designs the narrative, world-building, and structural pathways through which artist IP evolves and expands.`}
+                      </span>
+                    </p>
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
                       {t({
-                        en: "Starting with its first artist, Sandara Park, the label is creating new forms of content and brand experiences while expanding its presence in the global market.",
-                        ko: "첫 아티스트인 산다라박을 시작으로 새로운 형태의 콘텐츠와 브랜드 경험을 만들며 글로벌 시장에서의 존재감을 확장하고 있습니다.",
+                        en: "Drives market expansion of projects and IP through global collaborations and partnerships.",
                       })}
                     </p>
                   </div>
@@ -387,14 +421,28 @@ const SubsidiaryDetailsSection = () => {
                   }`}
                 >
                   <div>
-                    <h3 className="text-xl md:text-2xl font-bold text-foreground md:mb-3 mb-1 font-rift">
-                      MAR/S
-                    </h3>
-                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed">
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-3 mb-1">
                       {t({
-                        en: "MAR/S aims to establish a single integrated platform centered on virtual artists, combining content, commerce, and fandom within a unified ecosystem where each artist's IP can independently evolve and expand.",
-                        ko: "MAR/S는 가상 아티스트를 중심으로 한 단일 통합 플랫폼을 구축하는 것을 목표로 하며, 콘텐츠·커머스·팬덤을 하나의 생태계로 결합하여 각 아티스트의 IP가 독립적으로 발전하고 확장될 수 있도록 합니다.",
+                        en: `MAR/S provides an open platform ecosystem centered on virtual artists and music, integrating content, commerce, and fandom.`,
                       })}
+                    </p>
+
+                    <p className="text-muted-foreground text-sm md:text-base leading-relaxed md:mb-4 mb-1">
+                      <b className="font-bold">
+                        {t({
+                          en: "VIRTUAL ARTIST SUPER PLATFORM",
+                        })}
+                      </b>
+
+                      <br />
+
+                      <span className="whitespace-pre-wrap">
+                        {`Builds and operates a super platform environment where diverse virtual artists can actively perform and create.
+Enables direct connections between virtual artists and fans through content and music.
+Provides an open participation framework where anyone can explore and experiment with becoming a virtual artist.
+Creates a stage for expanding activities across live performances, content, and community engagement.
+Operates an ecosystem in which individual artist IP can grow independently while coexisting within the platform.`}
+                      </span>
                     </p>
                   </div>
                 </div>
