@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Helper components for body content
 const P = ({
@@ -19,6 +20,10 @@ const P = ({
     {children}
   </p>
 );
+
+const PSmall = ({ children, first = false }) => {
+  return <span className={cn("block", first ? "" : "mt-2")}>{children}</span>;
+};
 
 const Bold = ({ children }: { children: React.ReactNode }) => (
   <span className="font-bold">{children}</span>
@@ -116,10 +121,22 @@ const businesses: Business[] = [
         <P>
           <Bold>ARTIST MANAGEMENT & CREATIVE LABEL</Bold>
           <br />
-          {`Plans and operates career and project strategies aligned with each artist's stage of growth.
-  Leads creative production across music, content, and visual direction.
-  Conceives, produces, and manages the growth of both live artists and original virtual artist IP.
-  Designs the narrative, world-building, and structural pathways through which artist IP evolves and expands.`}
+          <PSmall first>
+            Plans and operates career and project strategies aligned with each
+            artist's stage of growth.
+          </PSmall>
+          <PSmall>
+            Leads creative production across music, content, and visual
+            direction.
+          </PSmall>
+          <PSmall>
+            Conceives, produces, and manages the growth of both live artists and
+            original virtual artist IP.
+          </PSmall>
+          <PSmall>
+            Designs the narrative, world-building, and structural pathways
+            through which artist IP evolves and expands.
+          </PSmall>
         </P>
         <P>
           Drives market expansion of projects and IP through global
@@ -141,11 +158,26 @@ const businesses: Business[] = [
         <P>
           <Bold>VIRTUAL ARTIST SUPER PLATFORM</Bold>
           <br />
-          {`Builds and operates a super platform environment where diverse virtual artists can actively perform and create.
-Enables direct connections between virtual artists and fans through content and music.
-Provides an open participation framework where anyone can explore and experiment with becoming a virtual artist.
-Creates a stage for expanding activities across live performances, content, and community engagement.
-Operates an ecosystem in which individual artist IP can grow independently while coexisting within the platform.`}
+          <PSmall first>
+            Builds and operates a super platform environment where diverse
+            virtual artists can actively perform and create.
+          </PSmall>
+          <PSmall>
+            Enables direct connections between virtual artists and fans through
+            content and music.
+          </PSmall>
+          <PSmall>
+            Provides an open participation framework where anyone can explore
+            and experiment with becoming a virtual artist.
+          </PSmall>
+          <PSmall>
+            Creates a stage for expanding activities across live performances,
+            content, and community engagement.
+          </PSmall>
+          <PSmall>
+            Operates an ecosystem in which individual artist IP can grow
+            independently while coexisting within the platform.
+          </PSmall>
         </P>
       </>
     ),

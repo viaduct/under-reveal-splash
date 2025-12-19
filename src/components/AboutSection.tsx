@@ -76,11 +76,15 @@ const AboutSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
+            <p className="text-sm md:text-base leading-[1.4] text-foreground font-bold mb-4">
+              Where artists and IP operate: An all-in-one operating stack.
+            </p>
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
-              {t({
-                en: "UNDERTHELINE designs and operates integrated entertainment ecosystems for artists and IP owners. We bring together platforms, labels, management, production, touring, commerce, and data into one structure, so that artists can build, own, and run their own worlds instead of renting space from legacy platforms.",
-                ko: "UNDERTHELINE은 아티스트와 IP 보유자를 위한 통합 엔터테인먼트 생태계를 설계하고 운영합니다. 플랫폼, 레이블, 매니지먼트, 프로덕션, 투어·공연, 커머스, 데이터 인프라를 하나의 구조로 통합하여, 아티스트가 기존 플랫폼에 의존하는 운영 방식에서 벗어나 자신만의 브랜드와 세계관을 직접 구축하고 소유하며 운영할 수 있도록 지원합니다.",
-              })}
+              UNDERTHELINE designs and operates integrated entertainment
+              ecosystems for artists and IP owners. We bring together platforms,
+              labels, management, production, touring, commerce, and data into
+              one structure, so that artists can build, own, and run their own
+              worlds instead of renting space from legacy platforms.
             </p>
 
             <div className="flex gap-5">

@@ -35,12 +35,12 @@ const Footer = () => {
               Family Site
             </h3>
             <div className="space-y-2 text-[14px] text-white/70">
-              <p className="hover:text-white cursor-pointer transition-colors">
+              {/* <p className="hover:text-white cursor-pointer transition-colors">
                 Urbanlink 360
               </p>
               <p className="hover:text-white cursor-pointer transition-colors">
                 Urbanlink 400
-              </p>
+              </p> */}
               <p className="hover:text-white cursor-pointer transition-colors">
                 Panorama
               </p>

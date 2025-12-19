@@ -197,18 +197,19 @@ const SuperAppPublishingSection = () => {
                     >
                       <div className="overflow-hidden space-y-4 pt-4">
                         <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
-                          Record Distribution: Collaborates with major global
-                          labels including Columbia, Warner, Universal, and
-                          Sony.
+                          <span className="font-bold">Record Distribution</span>
+                          : Collaborates with major global labels including
+                          Columbia, Warner, Universal, and Sony.
                         </p>
                         <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
-                          Publishing Network: Connected with global publishers
-                          such as Warner Chappell, BMG, and Kobalt.
+                          <span className="font-bold">Publishing Network</span>:
+                          Connected with global publishers such as Warner
+                          Chappell, BMG, and Kobalt.
                         </p>
                         <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
-                          Touring Network: Partners with Live Nation, AEG, and
-                          CAA to operate global touring and live performance
-                          networks.
+                          <span className="font-bold">Touring Network</span>:
+                          Partners with Live Nation, AEG, and CAA to operate
+                          global touring and live performance networks.
                         </p>
                       </div>
                     </div>
