@@ -151,7 +151,7 @@ const GlobalNetworkSection = () => {
 
         {/* Map Container with Zoom */}
         <div
-          className="mt-6 mt:mb-8 relative w-full max-w-[1400px]"
+          className="mt-6 mt:mb-8 relative w-full max-w-[1400px] max-h-[50vh] md:max-h-[55vh]"
           style={{ aspectRatio: "1738 / 920" }}
         >
           {/* DEV: Floating save button */}

@@ -76,16 +76,16 @@ const WhoWeAreSection = () => {
             }`}
             style={{ transitionDelay: isVisible ? "800ms" : "0ms" }}
           >
-            <p className="text-sm md:text-base leading-[1.4] text-foreground mb-4">
+            <p className="text-sm md:text-base leading-[1.4] text-foreground font-bold mb-4">
               {t({
-                en: "UNDERTHELINE is shaping the future of entertainment by breaking down the boundaries between reality and the virtual world, building a next-generation infrastructure for the global entertainment industry.",
-                ko: "UNDERTHELINE은 현실과 가상의 경계를 허물고 글로벌 엔터테인먼트 산업을 위한 차세대 인프라를 구축하며 엔터테인먼트의 미래를 만들어가고 있습니다.",
+                en: "UNDERTHELINE is a DOCE-powered full-stack entertainment operator — combining day-to-day execution with infrastructure.",
+                ko: "UNDERTHELINE은 DOCE 기반의 풀스택 엔터테인먼트 운영사로, 일상적인 실행과 인프라를 결합합니다.",
               })}
             </p>
             <p className="text-sm md:text-base leading-[1.4] text-foreground mb-12">
               {t({
-                en: "UNDERTHELINE is a DOCE-powered full-stack entertainment operator, combining day-to-day operations with infrastructure. The same team that works on artists' music, content, branding, and touring also designs the rails, data flows, and rights/settlement structures that sustain their ecosystems.",
-                ko: "UNDERTHELINE은 DOCE 기술을 기반으로 실제 운영과 인프라를 결합한 풀스택 엔터테인먼트 운영사입니다. 음악, 콘텐츠, 브랜딩, 투어·공연 운영을 담당하는 동일한 팀이 아티스트 생태계를 지속시키는 데이터 흐름, 권리 구조, 정산 시스템까지 함께 설계합니다.",
+                en: "We work across music, content, branding, touring, and commerce on a single reporting and settlement standard — aligning data flows, rights, and payouts so each ecosystem stays rights-preserving, operator-led, and defensible.",
+                ko: "음악, 콘텐츠, 브랜딩, 투어, 커머스를 하나의 리포팅 및 정산 표준으로 운영합니다 — 데이터 흐름, 권리, 정산을 정렬하여 각 생태계가 권리를 보존하고, 운영자 주도적이며, 방어 가능하도록 합니다.",
               })}
             </p>
 

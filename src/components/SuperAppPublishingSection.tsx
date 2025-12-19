@@ -98,11 +98,17 @@ const SuperAppPublishingSection = () => {
                   </h2>
 
                   <div className="space-y-4">
+                    <p className="text-sm md:text-base leading-[1.6] text-foreground font-bold text-center lg:text-left">
+                      Commerce, membership, and media run on one reporting and
+                      settlement standard.
+                    </p>
+
                     <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
-                      UNDERTHELINE holds the exclusive DOCE OS licensing rights
-                      for the U.S. region, enabling artists and creators to own,
-                      design, and operate their own independent platforms
-                      through DOCE-powered publishing.
+                      UNDERTHELINE holds exclusive DOCE OS licensing rights for
+                      the U.S. region. Through DOCE-powered publishing, artists
+                      and creators can launch and run dedicated platforms under
+                      their own governance — with clear rights, reporting, and
+                      settlement by design.
                     </p>
 
                     <div
@@ -114,12 +120,13 @@ const SuperAppPublishingSection = () => {
                     >
                       <div className="overflow-hidden">
                         <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left pt-4">
-                          Each app becomes a personal community and ecosystem
-                          where the artist is the true owner - operating fandom,
-                          commerce, and content directly under their own
-                          control. → An "Entertainment OS" that bridges
-                          real-world entertainment infrastructure with digital
-                          platforms.
+                          Each app becomes a personal community and operating
+                          layer — where the artist remains the principal
+                          operator of fandom, commerce, and content.
+                          <br />
+                          An "Entertainment OS" that connects real-world
+                          entertainment infrastructure with digital platforms,
+                          without pulling rights and data upward.
                         </p>
                       </div>
                     </div>

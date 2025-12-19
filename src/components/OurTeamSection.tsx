@@ -13,27 +13,30 @@ type TranslateFn = (t: { en: string; ko: string }) => string;
 
 const getTeamMembers = (t: TranslateFn) => [
   {
-    name: t({ en: "Sanghyun Shin", ko: "신상현" }),
-    role: t({ en: "Founder", ko: "Founder" }),
+    name: t({ en: "Shin Sanghyun", ko: "신상현" }),
+    role: t({
+      en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
+      ko: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
+    }),
     title: t({
-      en: "Visionary Founder & Innovator",
-      ko: "차세대 엔터테인먼트 생태계 리더",
+      en: "DOCE Architect.",
+      ko: "DOCE Architect.",
     }),
     description: t({
-      en: "As the Founder & CEO of Undertheline Holdings, he lead the global expansion of a next-generation entertainment ecosystem. Powered by proprietary DOCE technology, he unify networks across industries and nations, designing infrastructure where artists, fans, and brands can thrive together.",
-      ko: "차세대 엔터테인먼트 생태계를 전 세계로 확장하는 리더. 독자 DOCE 기술을 기반으로 산업과 국가를 넘는 네트워크를 통합하며 아티스트·팬·브랜드가 함께 성장할 수 있는 인프라를 설계합니다.",
+      en: "Shin Sanghyun is the architect of DOCE, a settlement-first operating system for entertainment and cultural platforms.\nHe designs and operates artist-, brand-, and IP-led platforms across music, sports, and culture—aligning rights, data flows, and settlement so each ecosystem can scale without losing rights or control.",
+      ko: "신상현은 엔터테인먼트와 문화 플랫폼을 위한 정산 우선 운영 체제인 DOCE의 설계자입니다.\n음악, 스포츠, 문화 전반에 걸쳐 아티스트, 브랜드, IP 주도 플랫폼을 설계하고 운영하며, 권리·데이터 흐름·정산을 정렬하여 각 생태계가 권리나 통제권을 잃지 않고 확장할 수 있도록 합니다.",
     }),
     image: teamSanghyun,
   },
   {
     name: "Robert W. Lewis III",
     role: t({
-      en: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
-      ko: "CEO, URBANLINK 360\nCEO, URBANLINK 400",
+      en: "Director, Artist & Platform Strategy (Undertheline)\nFounder & CEO (Urbanlink Group)",
+      ko: "Director, Artist & Platform Strategy (Undertheline)\nFounder & CEO (Urbanlink Group)",
     }),
     title: t({
-      en: "Highly sought-after producer",
-      ko: "미국 음악 산업 베테랑 프로듀서",
+      en: "Producer-operator bridging artist development and super app strategy.",
+      ko: "Producer-operator bridging artist development and super app strategy.",
     }),
     description: t({
       en: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
@@ -43,10 +46,13 @@ const getTeamMembers = (t: TranslateFn) => [
   },
   {
     name: t({ en: "Han Kim", ko: "김한" }),
-    role: t({ en: "CEO, Panorama", ko: "CEO, Panorama" }),
+    role: t({
+      en: "COO (Undertheline)\nFounder (Panorama)",
+      ko: "COO (Undertheline)\nFounder (Panorama)",
+    }),
     title: t({
-      en: "International entertainment law and management leader",
-      ko: "국제 엔터테인먼트 법률 및 경영 전문가",
+      en: "Cross-border operator for rights, deals, and platform execution.",
+      ko: "Cross-border operator for rights, deals, and platform execution.",
     }),
     description: t({
       en: "Han Kim is an international expert with over 15 years in the K-pop and global music industries. A U.S.-licensed attorney recognized among Billboard's Top Music Lawyers, he has worked with SM Entertainment, JYP Entertainment, Kakao, and THEBLACKLABEL. With a Master's degree in Music Business from NYU, he now leads Panorama, connecting K-pop with the global music market through platforms and infrastructure.",
@@ -57,12 +63,12 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: 'Charles "Big Chuck" Stanton',
     role: t({
-      en: "CEO, Drama Family Entertainment",
-      ko: "CEO, Drama Family Entertainment",
+      en: "Strategic Advisor (Undertheline)",
+      ko: "Strategic Advisor (Undertheline)",
     }),
     title: t({
-      en: "Strategic Advisor – U.S. Hip-Hop & Urban Culture, Undertheline",
-      ko: "Strategic Advisor – U.S. Hip-Hop & Urban Culture",
+      en: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
+      ko: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
     }),
     description: t({
       en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
@@ -73,12 +79,12 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Mark Friedman",
     role: t({
-      en: "Strategic Investment Advisor",
-      ko: "Strategic Investment Advisor",
+      en: "Capital & Investment Advisor (Undertheline)",
+      ko: "Capital & Investment Advisor (Undertheline)",
     }),
     title: t({
-      en: "Institutional investor & growth strategist",
-      ko: "Institutional investor & growth strategist",
+      en: "Institutional fundraising advisor — deal execution, capital strategy, and investor relations.",
+      ko: "Institutional fundraising advisor — deal execution, capital strategy, and investor relations.",
     }),
     description: t({
       en: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
@@ -99,12 +105,12 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Stavros Pirounis",
     role: t({
-      en: "Strategic Partner – Luxury",
-      ko: "Strategic Partner – Luxury",
+      en: "Director, Luxury Partnerships & Brand Strategy (Undertheline)",
+      ko: "Director, Luxury Partnerships & Brand Strategy (Undertheline)",
     }),
     title: t({
-      en: "Pioneer in Korea's entertainment management industry",
-      ko: "글로벌 패션 산업 베테랑",
+      en: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
+      ko: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
     }),
     description: t({
       en: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",

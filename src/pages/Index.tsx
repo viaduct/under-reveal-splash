@@ -19,6 +19,14 @@ import {
 import { Globe, Check } from "lucide-react";
 import { useI18n } from "@/i18n";
 
+const navItems = [
+  { label: "Home", id: "home" },
+  { label: "What", id: "what" },
+  { label: "Who", id: "who" },
+  { label: "Companies", id: "companies" },
+  { label: "Contact", id: "contact" },
+];
+
 const Index = () => {
   const location = useLocation();
   const { lang, setLang } = useI18n();
@@ -32,11 +40,30 @@ const Index = () => {
     }
   }, [location]);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="w-full h-dvh flex flex-col bg-background">
       {/* Header with logo and language selector */}
       <header className="shrink-0 w-full md:h-20 h-12 px-6 md:px-12 flex justify-between items-center border-b border-gray-800/20 bg-background">
         <Logo />
+
+        <nav className="hidden md:flex items-center gap-10">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.id)}
+              className="text-base font-medium text-foreground hover:text-primary transition-colors"
+            >
+              {item.label}
+            </button>
+          ))}
+        </nav>
 
         {/* <DropdownMenu>
           <DropdownMenuTrigger className="text-foreground hover:text-primary transition-colors">
@@ -66,16 +93,16 @@ const Index = () => {
 
       {/* Main content - scrollable area */}
       <main className="flex-1 overflow-y-auto snap-container">
-        <SnapSection>
+        <SnapSection id="home">
           <HeroSection />
         </SnapSection>
-        <SnapSection>
+        <SnapSection id="what">
           <AboutSection />
         </SnapSection>
-        <SnapSection>
+        <SnapSection id="who">
           <WhoWeAreSection />
         </SnapSection>
-        <SnapSection>
+        <SnapSection id="companies">
           <SubsidiariesSection />
         </SnapSection>
         <SnapSection>
@@ -87,7 +114,7 @@ const Index = () => {
         <SnapSection>
           <BrandMessageSection />
         </SnapSection>
-        <SnapSection>
+        <SnapSection id="contact">
           <Footer />
         </SnapSection>
       </main>

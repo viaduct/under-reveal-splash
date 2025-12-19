@@ -64,12 +64,17 @@ const HeroSection = () => {
               startAnimation ? "animate-fade-slide-up-delayed" : ""
             }`}
           >
+            <p className="text-sm md:text-base leading-[1.4] text-foreground font-bold mb-4">
+              A single settlement rail for distribution, community, and commerce.
+              Defined upfront. Replayable by design.
+            </p>
             <p className="text-sm md:text-base leading-[1.4] text-foreground">
-              "Undertheline" comes from a simple promise: we stand under every
-              artist's line, not above it. We are not a company that pulls
-              rights and data upward; instead, we design and operate the
-              structures beneath, so that artists and labels can hold
-              sovereignty over their own catalogs, communities and economics.
+              Undertheline comes from a simple promise: we stand under every
+              artist's line, not above it.
+              <br />
+              We don't pull rights and data upward. We design and operate the
+              structures beneath — so artists and labels keep sovereignty over
+              their catalogs, communities, and economy.
             </p>
           </div>
         </div>

@@ -17,12 +17,12 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-lg font-bold text-white font-rift">Contact</h3>
             <div className="space-y-2 text-[14px] text-white/70">
-              <p>Email: info@undertheline.com</p>
+              <p>Email: info@undertheline.holdings</p>
               <p>Phone: +1 (555) 123-4567</p>
               <p className="leading-relaxed">
-                Address: 123 Entertainment Blvd
+                Address: 9452 HYANNIS PORT DR
                 <br />
-                Los Angeles, CA 90001
+                HUNTINGTON BEACH, CA 92646
                 <br />
                 United States
               </p>
