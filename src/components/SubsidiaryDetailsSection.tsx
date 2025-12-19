@@ -102,21 +102,32 @@ const businesses: Business[] = [
       </>
     ),
   },
-  //   {
-  //     id: "aradnas",
-  //     title: "ARADNAS",
-  //     webpageUrl: null,
-  //     body: (
-  //       <>
-  //         <P first>ARADNAS is a creative label that develops individual IP into sustainable projects and brands, grounded in artists' creative practice.</P>
-  //         <P><Bold>ARTIST MANAGEMENT & CREATIVE LABEL</Bold><br />{`Plans and operates career and project strategies aligned with each artist's stage of growth.
-  // Leads creative production across music, content, and visual direction.
-  // Conceives, produces, and manages the growth of both live artists and original virtual artist IP.
-  // Designs the narrative, world-building, and structural pathways through which artist IP evolves and expands.`}</P>
-  //         <P>Drives market expansion of projects and IP through global collaborations and partnerships.</P>
-  //       </>
-  //     ),
-  //   },
+  {
+    id: "aradnas",
+    title: "ARADNAS",
+    webpageUrl: null,
+    body: (
+      <>
+        <P first>
+          ARADNAS is a creative label that develops individual IP into
+          sustainable projects and brands, grounded in artists' creative
+          practice.
+        </P>
+        <P>
+          <Bold>ARTIST MANAGEMENT & CREATIVE LABEL</Bold>
+          <br />
+          {`Plans and operates career and project strategies aligned with each artist's stage of growth.
+  Leads creative production across music, content, and visual direction.
+  Conceives, produces, and manages the growth of both live artists and original virtual artist IP.
+  Designs the narrative, world-building, and structural pathways through which artist IP evolves and expands.`}
+        </P>
+        <P>
+          Drives market expansion of projects and IP through global
+          collaborations and partnerships.
+        </P>
+      </>
+    ),
+  },
   {
     id: "mars",
     title: "MAR/S",

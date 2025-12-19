@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import panoramaLogo from "@/assets/panorama.png";
 import urbanlinkLogo from "@/assets/urbanlink.png";
-// import aradnasLogo from "@/assets/aradnas.png";
+import aradnasLogo from "@/assets/aradnas.png";
 import marsLogo from "@/assets/mars.png";
 import underthelineText from "@/assets/undertheline-text.png";
 
@@ -58,7 +58,9 @@ const SubsidiariesSection = () => {
           {/* URBANLINK */}
           <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "300ms" }}
           >
@@ -77,7 +79,9 @@ const SubsidiariesSection = () => {
           {/* PANORAMA */}
           <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
             style={{ transitionDelay: "500ms" }}
           >
@@ -94,14 +98,16 @@ const SubsidiariesSection = () => {
           </div>
 
           {/* ARADNAS */}
-          {/* <div
+          <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
-            style={{ transitionDelay: "900ms" }}
+            style={{ transitionDelay: "700ms" }}
           >
             <button
-              onClick={() => handleSubsidiaryClick('aradnas')}
+              onClick={() => handleSubsidiaryClick("aradnas")}
               className="group hover:scale-110 hover:shadow-2xl transition-all duration-300 ease-out relative block text-left cursor-pointer hover:brightness-110"
             >
               <img
@@ -110,14 +116,16 @@ const SubsidiariesSection = () => {
                 className="h-8 object-contain"
               />
             </button>
-          </div> */}
+          </div>
 
           {/* MAR/S */}
           <div
             className={`transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              isVisible
+                ? "opacity-100 translate-y-0"
+                : "opacity-0 translate-y-4"
             }`}
-            style={{ transitionDelay: "700ms" }}
+            style={{ transitionDelay: "900ms" }}
           >
             <button
               onClick={() => handleSubsidiaryClick("mars")}
@@ -167,7 +175,7 @@ const SubsidiariesSection = () => {
           <img src={panoramaLogo} alt="PANORAMA" className="h-7" />
         </button>
 
-        {/* <button
+        <button
           onClick={() => handleSubsidiaryClick("aradnas")}
           className={`transition-all duration-700 hover:opacity-70 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -175,7 +183,7 @@ const SubsidiariesSection = () => {
           style={{ transitionDelay: "600ms" }}
         >
           <img src={aradnasLogo} alt="ARADNAS" className="h-7" />
-        </button> */}
+        </button>
 
         <button
           onClick={() => handleSubsidiaryClick("mars")}
