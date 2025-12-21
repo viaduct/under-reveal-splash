@@ -181,6 +181,11 @@ const SuperAppPublishingSection = () => {
                   </h2>
 
                   <div className="space-y-4">
+                    <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left font-bold">
+                      A global infrastructure network across distribution,
+                      publishing, and touring.
+                    </p>
+
                     <p className="text-sm md:text-base leading-[1.6] text-foreground text-center lg:text-left">
                       UNDERTHELINE collaborates with global record labels,
                       management companies, publishing networks, and touring
