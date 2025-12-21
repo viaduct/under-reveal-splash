@@ -58,7 +58,7 @@ const Index = () => {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-base font-medium text-foreground hover:text-primary transition-colors"
+              className="text-lg font-bold text-foreground hover:text-primary transition-colors font-rift"
             >
               {item.label}
             </button>
