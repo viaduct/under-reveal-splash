@@ -23,7 +23,7 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "DOCE Architect.",
     }),
     description: t({
-      en: "Shin Sanghyun is the architect of DOCE, a settlement-first operating system for entertainment and cultural platforms.\nHe designs and operates artist-, brand-, and IP-led platforms across music, sports, and culture—aligning rights, data flows, and settlement so each ecosystem can scale without losing rights or control.",
+      en: "Shin Sanghyun is the architect of DOCE, a settlement-first operating system for entertainment and cultural platforms.\nHe designs artist-, brand-, and IP-led platforms across music, sports, and culture—aligning rights, data flows, and settlement so each ecosystem can scale without losing rights or control.",
       ko: "신상현은 엔터테인먼트와 문화 플랫폼을 위한 정산 우선 운영 체제인 DOCE의 설계자입니다.\n음악, 스포츠, 문화 전반에 걸쳐 아티스트, 브랜드, IP 주도 플랫폼을 설계하고 운영하며, 권리·데이터 흐름·정산을 정렬하여 각 생태계가 권리나 통제권을 잃지 않고 확장할 수 있도록 합니다.",
     }),
     image: teamSanghyun,
