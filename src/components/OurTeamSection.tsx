@@ -30,22 +30,6 @@ const getTeamMembers = (t: TranslateFn) => [
     image: teamSanghyun,
   },
   {
-    name: "Wonjoon Jang",
-    role: t({
-      en: "CFO, Co-founder (Undertheline)",
-      ko: "CFO, Co-founder (Undertheline)",
-    }),
-    title: t({
-      en: "Cross-border capital executive — finance, structuring, and investor strategy.",
-      ko: "Cross-border capital executive — finance, structuring, and investor strategy.",
-    }),
-    description: t({
-      en: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
-      ko: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
-    }),
-    image: teamRyan,
-  },
-  {
     name: "Robert W. Lewis III",
     role: t({
       en: "Director, Artist & Platform Strategy (Undertheline)\nFounder & CEO (Urbanlink Group)",
@@ -76,6 +60,22 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "빌보드 선정 미국 톱 음악 변호사. SM, JYP, Kakao, THEBLACKLABEL과 협업 경험. NYU 음악비즈니스 석사. K-POP과 글로벌 시장을 잇는 인프라를 구축합니다.",
     }),
     image: teamHan,
+  },
+  {
+    name: "Wonjoon Jang",
+    role: t({
+      en: "CFO, Co-founder (Undertheline)",
+      ko: "CFO, Co-founder (Undertheline)",
+    }),
+    title: t({
+      en: "Cross-border capital executive — finance, structuring, and investor strategy.",
+      ko: "Cross-border capital executive — finance, structuring, and investor strategy.",
+    }),
+    description: t({
+      en: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
+      ko: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
+    }),
+    image: teamRyan,
   },
   {
     name: 'Charles "Big Chuck" Stanton',
