@@ -12,7 +12,7 @@ import { useI18n } from "@/i18n";
 import OurTeamSection from "@/components/OurTeamSection";
 import NetworkSection from "@/components/NetworkSection";
 
-const More = () => {
+const WhoWeAre = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const initialTab = searchParams.get("tab") || "our-team";
@@ -100,4 +100,4 @@ const More = () => {
   );
 };
 
-export default More;
+export default WhoWeAre;

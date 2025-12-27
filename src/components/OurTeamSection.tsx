@@ -7,6 +7,7 @@ import teamStavros from "@/assets/team-stavros.png";
 import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 import teamCharles from "@/assets/team-charles.png";
+import teamRyan from "@/assets/ryan-jang.png";
 import { useI18n } from "@/i18n";
 
 type TranslateFn = (t: { en: string; ko: string }) => string;
@@ -27,6 +28,22 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "신상현은 엔터테인먼트와 문화 플랫폼을 위한 정산 우선 운영 체제인 DOCE의 설계자입니다.\n음악, 스포츠, 문화 전반에 걸쳐 아티스트, 브랜드, IP 주도 플랫폼을 설계하고 운영하며, 권리·데이터 흐름·정산을 정렬하여 각 생태계가 권리나 통제권을 잃지 않고 확장할 수 있도록 합니다.",
     }),
     image: teamSanghyun,
+  },
+  {
+    name: "Wonjoon Jang",
+    role: t({
+      en: "CFO, Co-founder (Undertheline)",
+      ko: "CFO, Co-founder (Undertheline)",
+    }),
+    title: t({
+      en: "Cross-border capital executive — finance, structuring, and investor strategy.",
+      ko: "Cross-border capital executive — finance, structuring, and investor strategy.",
+    }),
+    description: t({
+      en: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
+      ko: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
+    }),
+    image: teamRyan,
   },
   {
     name: "Robert W. Lewis III",
