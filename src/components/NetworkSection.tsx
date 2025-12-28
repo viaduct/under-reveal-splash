@@ -16,35 +16,35 @@ const networkData = [
     number: "01",
     title: "Global Record Distribution Network",
     description:
-      "UNDERTHELINE Holdings leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists.",
+      "UNDERTHELINE Holdings works across global record distribution partners and major labels to execute international releases — aligning rollout, reporting, and settlement so artists and IP owners scale globally without losing rights or control.",
     position: "top-left",
   },
   {
     number: "02",
     title: "Global Publishing Network",
     description:
-      "UNDERTHELINE Holdings leverages its global publishing partnerships to maximize publishing income and set up songwriting and production sessions with leading songwriters and producers of the world for K-pop artists",
+      "UNDERTHELINE Holdings operates through a global publishing network to align registration, licensing, and royalty flows — keeping ownership, attribution, and deal terms clear from day one.",
     position: "top-right",
   },
   {
     number: "03",
     title: "Global Touring Network",
     description:
-      "UNDERTHELINE Holdings leverages its relationships with global talent booking agencies and live event promoters to secure maximum value from tours while sharing in the success with K-pop artists",
+      "UNDERTHELINE Holdings partners with leading booking agencies and live promoters to run touring strategy and execution — aligning routing, deal terms, and settlement so live value is captured transparently.",
     position: "bottom-left",
   },
   {
     number: "04",
     title: "Dual Market Expertise",
     description:
-      "The UNDERTHELINE Holdings team brings deep expertise in both K-pop and the global music market, with a particular focus on breaking into the United States, the world's largest music market",
+      "UNDERTHELINE Holdings bridges K-pop and the global market with a U.S.-first execution focus — translating artists and catalog into U.S.-native deal structures and go-to-market pathways.",
     position: "right-middle",
   },
   {
     number: "05",
     title: "Global OTT Network",
     description:
-      "UNDERTHELINE Holdings leverages its partnerships with global record distribution companies and major labels to effectively promote K-pop artists on an international stage while ensuring that most of the value remains with the artists",
+      "UNDERTHELINE Holdings supports film and premium video distribution through global OTT platforms — shaping packaging, sales strategy, and platform deals to maximize reach while preserving rights and control.",
     position: "bottom-right-lower",
   },
 ];
