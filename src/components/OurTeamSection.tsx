@@ -13,7 +13,7 @@ import { useI18n } from "@/i18n";
 type TranslateFn = (t: { en: string; ko: string }) => string;
 
 const getTeamMembers = (t: TranslateFn) => [
-  // {
+   // {
   //   name: t({ en: "Shin Sanghyun", ko: "신상현" }),
   //   role: t({
   //     en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
