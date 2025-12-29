@@ -13,22 +13,22 @@ import { useI18n } from "@/i18n";
 type TranslateFn = (t: { en: string; ko: string }) => string;
 
 const getTeamMembers = (t: TranslateFn) => [
-  {
-    name: t({ en: "Shin Sanghyun", ko: "신상현" }),
-    role: t({
-      en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
-      ko: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
-    }),
-    title: t({
-      en: "DOCE Architect.",
-      ko: "DOCE Architect.",
-    }),
-    description: t({
-      en: "Shin Sanghyun is the architect of DOCE, a settlement-first operating system for entertainment and cultural platforms.\nHe designs artist-, brand-, and IP-led platforms across music, sports, and culture—aligning rights, data flows, and settlement so each ecosystem can scale without losing rights or control.",
-      ko: "신상현은 엔터테인먼트와 문화 플랫폼을 위한 정산 우선 운영 체제인 DOCE의 설계자입니다.\n음악, 스포츠, 문화 전반에 걸쳐 아티스트, 브랜드, IP 주도 플랫폼을 설계하고 운영하며, 권리·데이터 흐름·정산을 정렬하여 각 생태계가 권리나 통제권을 잃지 않고 확장할 수 있도록 합니다.",
-    }),
-    image: teamSanghyun,
-  },
+  // {
+  //   name: t({ en: "Shin Sanghyun", ko: "신상현" }),
+  //   role: t({
+  //     en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
+  //     ko: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
+  //   }),
+  //   title: t({
+  //     en: "DOCE Architect.",
+  //     ko: "DOCE Architect.",
+  //   }),
+  //   description: t({
+  //     en: "Shin Sanghyun is the architect of DOCE, a settlement-first operating system for entertainment and cultural platforms.\nHe designs artist-, brand-, and IP-led platforms across music, sports, and culture—aligning rights, data flows, and settlement so each ecosystem can scale without losing rights or control.",
+  //     ko: "신상현은 엔터테인먼트와 문화 플랫폼을 위한 정산 우선 운영 체제인 DOCE의 설계자입니다.\n음악, 스포츠, 문화 전반에 걸쳐 아티스트, 브랜드, IP 주도 플랫폼을 설계하고 운영하며, 권리·데이터 흐름·정산을 정렬하여 각 생태계가 권리나 통제권을 잃지 않고 확장할 수 있도록 합니다.",
+  //   }),
+  //   image: teamSanghyun,
+  // },
   {
     name: "Robert W. Lewis III",
     role: t({
@@ -334,14 +334,13 @@ const OurTeamSection = () => {
       id="our-team"
       ref={sectionRef}
       className="pt-[20px] md:pt-[100px] pb-8 bg-background flex flex-col"
-      // style={{ minHeight: "calc(100vh - 80px)" }}
+    // style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* Title - Hidden on mobile */}
       <div className="hidden md:block px-6 md:px-12 mb-8 text-center">
         <h2
-          className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
         >
           {t({ en: "OUR TEAM", ko: "팀 소개" })}
         </h2>
@@ -376,9 +375,8 @@ const OurTeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.name}
-                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start justify-center transition-all duration-700 delay-${
-                  index * 100
-                } snap-center`}
+                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start justify-center transition-all duration-700 delay-${index * 100
+                  } snap-center`}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? "translateX(0)" : "translateX(50px)",
@@ -400,11 +398,10 @@ const OurTeamSection = () => {
                     {/* Left Column - Name and Role */}
                     <div className="flex-shrink-0">
                       <h3
-                        className={`leading-[100%] font-bold text-foreground mb-1 font-sans ${
-                          member.name.includes("Big Chuck")
-                            ? "text-[20px] lg:text-[24px]"
-                            : "text-[24px] lg:text-[28px]"
-                        }`}
+                        className={`leading-[100%] font-bold text-foreground mb-1 font-sans ${member.name.includes("Big Chuck")
+                          ? "text-[20px] lg:text-[24px]"
+                          : "text-[24px] lg:text-[28px]"
+                          }`}
                       >
                         {member.name}
                       </h3>
