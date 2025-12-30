@@ -8,6 +8,8 @@ import teamMark from "@/assets/team-mark.png";
 import teamSanghyun from "@/assets/team-sanghyun-new.png";
 import teamCharles from "@/assets/team-charles.png";
 import teamRyan from "@/assets/ryan-jang.png";
+import teamMei from "@/assets/team-mei.png";
+import teamMinji from "@/assets/team-minji.png";
 import { useI18n } from "@/i18n";
 
 type TranslateFn = (t: { en: string; ko: string }) => string;
@@ -62,22 +64,6 @@ const getTeamMembers = (t: TranslateFn) => [
     image: teamHan,
   },
   {
-    name: "Wonjoon Jang",
-    role: t({
-      en: "CFO, Co-founder (Undertheline)",
-      ko: "CFO, Co-founder (Undertheline)",
-    }),
-    title: t({
-      en: "Cross-border capital executive — finance, structuring, and investor strategy.",
-      ko: "Cross-border capital executive — finance, structuring, and investor strategy.",
-    }),
-    description: t({
-      en: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
-      ko: "Wonjoon Jang is a finance executive focused on cross-border structuring and capital execution across entertainment and technology. A Georgetown McDonough finance graduate and former Deloitte Tomatsu FAS professional, he has led investments and finance operations in the U.S., with additional experience in GCC-related transactions.\nAs CFO of Undertheline, he leads financial strategy, capital planning, and growth readiness.",
-    }),
-    image: teamRyan,
-  },
-  {
     name: 'Charles "Big Chuck" Stanton',
     role: t({
       en: "Strategic Advisor (Undertheline)",
@@ -92,6 +78,39 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
     }),
     image: teamCharles,
+  },
+  {
+    name: "Minji Song",
+    role: t({
+      en: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
+      ko: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
+    }),
+    title: t({
+      en: "Commerce operator connecting brands to app-native retail.",
+      ko: "Commerce operator connecting brands to app-native retail.",
+    }),
+    description: t({
+      en: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
+      ko: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
+    }),
+    image: teamMinji,
+  },
+
+  {
+    name: "Wonjoon Jang",
+    role: t({
+      en: "CFO (Undertheline)",
+      ko: "CFO (Undertheline)",
+    }),
+    title: t({
+      en: "Capital and structuring — financing the operator-led super app strategy.",
+      ko: "Capital and structuring — financing the operator-led super app strategy.",
+    }),
+    description: t({
+      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade financ",
+      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade financ",
+    }),
+    image: teamRyan,
   },
   {
     name: "Mark Friedman",
@@ -134,6 +153,22 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "ST Dupont 아시아 총괄 및 한국 대표, Gruppo GFT 아시아 CEO(Armani·Valentino·Calvin Klein 관리) 등을 역임. Loro Piana, Zegna 등 럭셔리 하우스 성장에 기여.",
     }),
     image: teamStavros,
+  },
+  {
+    name: "Mei Agnes Park",
+    role: t({
+      en: "Director, MAR/S (UNDERTHELINE)",
+      ko: "Director, MAR/S (UNDERTHELINE)",
+    }),
+    title: t({
+      en: "Directing virtual persona programs that expand artist IP.",
+      ko: "Directing virtual persona programs that expand artist IP.",
+    }),
+    description: t({
+      en: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
+      ko: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
+    }),
+    image: teamMei,
   },
 ];
 
