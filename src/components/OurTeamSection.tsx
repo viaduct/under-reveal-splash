@@ -15,7 +15,7 @@ import { useI18n } from "@/i18n";
 type TranslateFn = (t: { en: string; ko: string }) => string;
 
 const getTeamMembers = (t: TranslateFn) => [
-   // {
+  // {
   //   name: t({ en: "Shin Sanghyun", ko: "신상현" }),
   //   role: t({
   //     en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
@@ -154,22 +154,22 @@ const getTeamMembers = (t: TranslateFn) => [
     }),
     image: teamStavros,
   },
-  {
-    name: "Mei Agnes Park",
-    role: t({
-      en: "Director, MAR/S (UNDERTHELINE)",
-      ko: "Director, MAR/S (UNDERTHELINE)",
-    }),
-    title: t({
-      en: "Directing virtual persona programs that expand artist IP.",
-      ko: "Directing virtual persona programs that expand artist IP.",
-    }),
-    description: t({
-      en: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
-      ko: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
-    }),
-    image: teamMei,
-  },
+  // {
+  //   name: "Mei Agnes Park",
+  //   role: t({
+  //     en: "Director, MAR/S (UNDERTHELINE)",
+  //     ko: "Director, MAR/S (UNDERTHELINE)",
+  //   }),
+  //   title: t({
+  //     en: "Directing virtual persona programs that expand artist IP.",
+  //     ko: "Directing virtual persona programs that expand artist IP.",
+  //   }),
+  //   description: t({
+  //     en: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
+  //     ko: "Mei Agnes Park leads MAR/S, UNDERTHELINE's virtual-artist platform initiative, including virtual persona programs where established artists participate through alternate identities and character-led IP. She previously contributed to AAIM (All About Indie Music), an early DOCE OS pilot, supporting end-to-end pilot validation—from community operating workflows to the in-app playback → reporting pipeline used for settlement-ready tracking. She studied Art Management at Showa University of Music.",
+  //   }),
+  //   image: teamMei,
+  // },
 ];
 
 const OurTeamSection = () => {
