@@ -48,6 +48,22 @@ const getTeamMembers = (t: TranslateFn) => [
     image: teamRobert,
   },
   {
+    name: "Wonjoon Jang",
+    role: t({
+      en: "CFO, Co-founder (Undertheline)",
+      ko: "CFO, Co-founder (Undertheline)",
+    }),
+    title: t({
+      en: "Capital and structuring — financing the operator-led super app strategy.",
+      ko: "Capital and structuring — financing the operator-led super app strategy.",
+    }),
+    description: t({
+      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
+      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
+    }),
+    image: teamRyan,
+  },
+  {
     name: t({ en: "Han Kim", ko: "김한" }),
     role: t({
       en: "COO (Undertheline)\nFounder (Panorama)",
@@ -94,23 +110,6 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
     }),
     image: teamMinji,
-  },
-
-  {
-    name: "Wonjoon Jang",
-    role: t({
-      en: "CFO, Co-founder (Undertheline)",
-      ko: "CFO, Co-founder (Undertheline)",
-    }),
-    title: t({
-      en: "Capital and structuring — financing the operator-led super app strategy.",
-      ko: "Capital and structuring — financing the operator-led super app strategy.",
-    }),
-    description: t({
-      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
-      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
-    }),
-    image: teamRyan,
   },
   {
     name: "Mark Friedman",
