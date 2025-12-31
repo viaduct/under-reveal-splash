@@ -107,8 +107,8 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "Capital and structuring — financing the operator-led super app strategy.",
     }),
     description: t({
-      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade financ",
-      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade financ",
+      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
+      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
     }),
     image: teamRyan,
   },
