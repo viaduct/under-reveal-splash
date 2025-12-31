@@ -99,8 +99,8 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Wonjoon Jang",
     role: t({
-      en: "CFO (Undertheline)",
-      ko: "CFO (Undertheline)",
+      en: "CFO, Co-founder (Undertheline)",
+      ko: "CFO, Co-founder (Undertheline)",
     }),
     title: t({
       en: "Capital and structuring — financing the operator-led super app strategy.",
