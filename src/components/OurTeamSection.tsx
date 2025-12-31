@@ -114,8 +114,8 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Minji Song",
     role: t({
-      en: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
-      ko: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
+      en: "Director (UNDERTHELINE)\nCEO (Fatrix)",
+      ko: "Director (UNDERTHELINE)\nCEO (Fatrix)",
     }),
     title: t({
       en: "Commerce operator connecting brands to app-native retail.",
