@@ -96,22 +96,6 @@ const getTeamMembers = (t: TranslateFn) => [
     image: teamCharles,
   },
   {
-    name: "Minji Song",
-    role: t({
-      en: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
-      ko: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
-    }),
-    title: t({
-      en: "Commerce operator connecting brands to app-native retail.",
-      ko: "Commerce operator connecting brands to app-native retail.",
-    }),
-    description: t({
-      en: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
-      ko: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
-    }),
-    image: teamMinji,
-  },
-  {
     name: "Mark Friedman",
     role: t({
       en: "Capital & Investment Advisor (Undertheline)",
@@ -126,6 +110,22 @@ const getTeamMembers = (t: TranslateFn) => [
       ko: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
     }),
     image: teamMark,
+  },
+  {
+    name: "Minji Song",
+    role: t({
+      en: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
+      ko: "Co-Founder, Director (UNDERTHELINE)\nFounding Member (Hyaloid) · CEO (Fatrix)",
+    }),
+    title: t({
+      en: "Commerce operator connecting brands to app-native retail.",
+      ko: "Commerce operator connecting brands to app-native retail.",
+    }),
+    description: t({
+      en: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
+      ko: "Minji Song leads commerce initiatives across UNDERTHELINE Holdings and its affiliated super app ecosystem—turning product strategy, merchandising, and retail operations into app-native experiences. She contributed to early DOCE OS pilot projects including AAIM (All About Indie Music) and Spit, helping design and test community operating flows and the platform's in-app playback-based settlement and reporting framework. She also led Drop the Bit, a team competition content project surfaced through Spit, building participation and release flows end to end.",
+    }),
+    image: teamMinji,
   },
   // {
   //   name: "Maurizio Romiti",
