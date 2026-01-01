@@ -18,8 +18,8 @@ const getTeamMembers = (t: TranslateFn) => [
   // {
   //   name: t({ en: "Shin Sanghyun", ko: "신상현" }),
   //   role: t({
-  //     en: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
-  //     ko: "Founder (Undertheline)\nCo-Founder (Urbanlink Group)",
+  //     en: "Founder (UNDERTHELINE)\nCo-Founder (Urbanlink Group)",
+  //     ko: "Founder (UNDERTHELINE)\nCo-Founder (Urbanlink Group)",
   //   }),
   //   title: t({
   //     en: "DOCE Architect.",
@@ -34,40 +34,40 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Robert W. Lewis III",
     role: t({
-      en: "Director, Artist & Platform Strategy (Undertheline)\nFounder & CEO (Urbanlink Group)",
-      ko: "Director, Artist & Platform Strategy (Undertheline)\nFounder & CEO (Urbanlink Group)",
+      en: "Director, Artist & Platform Strategy (UNDERTHELINE)\nFounder & CEO (Urbanlink Group)",
+      ko: "Director, Artist & Platform Strategy (UNDERTHELINE)\nFounder & CEO (Urbanlink Group)",
     }),
     title: t({
       en: "Producer-operator bridging artist development and super app strategy.",
       ko: "Producer-operator bridging artist development and super app strategy.",
     }),
     description: t({
-      en: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under Undertheline.",
-      ko: "30년 이상의 미국 음악 산업 베테랑. Whitney Houston, Beyoncé, Michael Jackson, Ariana Grande, The Weeknd 등 세계적 아티스트들과 협업해온 프로듀서. Undertheline 산하 전체 레이블의 슈퍼앱 전략 및 아티스트 개발을 지원합니다.",
+      en: "Robert Lewis is a veteran of the U.S. music industry with over 30 years of experience. He has collaborated with world-renowned artists including Brandy & Monica, Whitney Houston, Destiny's Child, Jennifer Lopez, Beyoncé, Akon, Snoop Dogg, Michael Jackson, Justin Bieber, Lady Gaga, Ariana Grande, The Weeknd, Cardi B, Doja Cat, and many more. He contributes to the expansion of super-app strategies and supports the production and development of artists across all labels under UNDERTHELINE.",
+      ko: "30년 이상의 미국 음악 산업 베테랑. Whitney Houston, Beyoncé, Michael Jackson, Ariana Grande, The Weeknd 등 세계적 아티스트들과 협업해온 프로듀서. UNDERTHELINE 산하 전체 레이블의 슈퍼앱 전략 및 아티스트 개발을 지원합니다.",
     }),
     image: teamRobert,
   },
   {
     name: "Wonjoon Jang",
     role: t({
-      en: "CFO, Co-founder (Undertheline)",
-      ko: "CFO, Co-founder (Undertheline)",
+      en: "Co-founder, CFO (UNDERTHELINE)",
+      ko: "Co-founder, CFO (UNDERTHELINE)",
     }),
     title: t({
       en: "Capital and structuring — financing the operator-led super app strategy.",
       ko: "Capital and structuring — financing the operator-led super app strategy.",
     }),
     description: t({
-      en: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
-      ko: "Wonjoon Jang leads Undertheline's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
+      en: "Wonjoon Jang leads UNDERTHELINE's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
+      ko: "Wonjoon Jang leads UNDERTHELINE's capital strategy—covering fundraising, cross-border structuring, and deal execution across entertainment and technology. He drives investor relations and capital planning to scale DOCE-powered publishing with clear, defensible economics. Previously, he worked in transaction advisory at Deloitte Tomatsu FAS and executed Doha-based cross-border trade finance in GCC-linked markets, later leading financing and investment operations through a U.S. investment platform as CEO of Eidos Investment, LLC.",
     }),
     image: teamRyan,
   },
   {
     name: t({ en: "Han Kim", ko: "김한" }),
     role: t({
-      en: "COO (Undertheline)\nFounder (Panorama)",
-      ko: "COO (Undertheline)\nFounder (Panorama)",
+      en: "COO (UNDERTHELINE)\nFounder (Panorama)",
+      ko: "COO (UNDERTHELINE)\nFounder (Panorama)",
     }),
     title: t({
       en: "Cross-border operator for rights, deals, and platform execution.",
@@ -82,40 +82,40 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: 'Charles "Big Chuck" Stanton',
     role: t({
-      en: "Strategic Advisor (Undertheline)",
-      ko: "Strategic Advisor (Undertheline)",
+      en: "Strategic Advisor (UNDERTHELINE)",
+      ko: "Strategic Advisor (UNDERTHELINE)",
     }),
     title: t({
       en: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
       ko: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
     }),
     description: t({
-      en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
-      ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At Undertheline, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+      en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+      ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
     }),
     image: teamCharles,
   },
   {
     name: "Mark Friedman",
     role: t({
-      en: "Capital & Investment Advisor (Undertheline)",
-      ko: "Capital & Investment Advisor (Undertheline)",
+      en: "Capital & Investment Advisor (UNDERTHELINE)",
+      ko: "Capital & Investment Advisor (UNDERTHELINE)",
     }),
     title: t({
       en: "Institutional fundraising advisor — deal execution, capital strategy, and investor relations.",
       ko: "Institutional fundraising advisor — deal execution, capital strategy, and investor relations.",
     }),
     description: t({
-      en: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
-      ko: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At Undertheline, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+      en: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At UNDERTHELINE, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
+      ko: "Mark Friedman is a veteran operator and investor with deep experience in consumer brands, e-commerce, and capital markets. He co-founded and led Perfect Fitness to rank #1 in Consumer Products on the INC 500 list, and later founded MF Consulting to advise founders and funds. He previously served on the International Board of YPO, chairing more than 45 global programs, and holds a High-Tech Venture MBA from USC. At UNDERTHELINE, he supports U.S. IR, capital structure, and valuation strategy, translating the DOCE ecosystem into a language that institutional investors can underwrite.",
     }),
     image: teamMark,
   },
   {
     name: "Minji Song",
     role: t({
-      en: "Director (UNDERTHELINE)\nCEO (Fatrix)",
-      ko: "Director (UNDERTHELINE)\nCEO (Fatrix)",
+      en: "Director (UNDERTHELINE)",
+      ko: "Director (UNDERTHELINE)",
     }),
     title: t({
       en: "Commerce operator connecting brands to app-native retail.",
@@ -140,8 +140,8 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Stavros Pirounis",
     role: t({
-      en: "Director, Luxury Partnerships & Brand Strategy (Undertheline)",
-      ko: "Director, Luxury Partnerships & Brand Strategy (Undertheline)",
+      en: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
+      ko: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
     }),
     title: t({
       en: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
