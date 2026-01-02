@@ -114,8 +114,8 @@ const getTeamMembers = (t: TranslateFn) => [
   {
     name: "Minji Song",
     role: t({
-      en: "Director (UNDERTHELINE)",
-      ko: "Director (UNDERTHELINE)",
+      en: "Director (UNDERTHELINE)\nCEO (Fatrix)",
+      ko: "Director (UNDERTHELINE)\nCEO (Fatrix)",
     }),
     title: t({
       en: "Commerce operator connecting brands to app-native retail.",
@@ -368,14 +368,13 @@ const OurTeamSection = () => {
       id="our-team"
       ref={sectionRef}
       className="pt-[20px] md:pt-[100px] pb-8 bg-background flex flex-col"
-      // style={{ minHeight: "calc(100vh - 80px)" }}
+    // style={{ minHeight: "calc(100vh - 80px)" }}
     >
       {/* Title - Hidden on mobile */}
       <div className="hidden md:block px-6 md:px-12 mb-8 text-center">
         <h2
-          className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          }`}
+          className={`text-[31px] lg:text-[50px] leading-[100%] font-bold text-foreground font-rift transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+            }`}
         >
           {t({ en: "OUR TEAM", ko: "팀 소개" })}
         </h2>
@@ -410,9 +409,8 @@ const OurTeamSection = () => {
             {teamMembers.map((member, index) => (
               <div
                 key={member.name}
-                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start justify-center transition-all duration-700 delay-${
-                  index * 100
-                } snap-center`}
+                className={`flex-shrink-0 w-screen min-h-[400px] flex items-start justify-center transition-all duration-700 delay-${index * 100
+                  } snap-center`}
                 style={{
                   opacity: isVisible ? 1 : 0,
                   transform: isVisible ? "translateX(0)" : "translateX(50px)",
