@@ -79,22 +79,22 @@ const getTeamMembers = (t: TranslateFn) => [
     }),
     image: teamHan,
   },
-  {
-    name: 'Charles "Big Chuck" Stanton',
-    role: t({
-      en: "Strategic Advisor (UNDERTHELINE)",
-      ko: "Strategic Advisor (UNDERTHELINE)",
-    }),
-    title: t({
-      en: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
-      ko: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
-    }),
-    description: t({
-      en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
-      ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
-    }),
-    image: teamCharles,
-  },
+  // {
+  //   name: 'Charles "Big Chuck" Stanton',
+  //   role: t({
+  //     en: "Strategic Advisor (UNDERTHELINE)",
+  //     ko: "Strategic Advisor (UNDERTHELINE)",
+  //   }),
+  //   title: t({
+  //     en: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
+  //     ko: "U.S. hip-hop and urban culture connector — A&R, artist development, and go-to-market.",
+  //   }),
+  //   description: t({
+  //     en: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+  //     ko: 'Michael Jackson collaborator & culture connector. Charles "Big Chuck" Stanton is a veteran executive and producer in U.S. hip-hop and R&B, who spent much of Michael Jackson\'s final decade working closely with producer Theron "Neff-U" Feemster on MJ\'s transition toward a more urban sound. Over his career, he has been involved in projects with artists such as Michael Jackson, New Edition, Boyz II Men, Luther Vandross, Anita Baker, Dr. Dre, Eminem, 50 Cent, Jay-Z, The Game and others, connecting street culture with mainstream audiences. At UNDERTHELINE, he helps build the DOCE pipeline in U.S. hip-hop and urban markets, advising on A&R, artist development, and culture-driven go-to-market strategies.',
+  //   }),
+  //   image: teamCharles,
+  // },
   {
     name: "Mark Friedman",
     role: t({
@@ -137,22 +137,22 @@ const getTeamMembers = (t: TranslateFn) => [
   //   }),
   //   image: teamMaurizio,
   // },
-  {
-    name: "Stavros Pirounis",
-    role: t({
-      en: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
-      ko: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
-    }),
-    title: t({
-      en: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
-      ko: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
-    }),
-    description: t({
-      en: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
-      ko: "ST Dupont 아시아 총괄 및 한국 대표, Gruppo GFT 아시아 CEO(Armani·Valentino·Calvin Klein 관리) 등을 역임. Loro Piana, Zegna 등 럭셔리 하우스 성장에 기여.",
-    }),
-    image: teamStavros,
-  },
+  // {
+  //   name: "Stavros Pirounis",
+  //   role: t({
+  //     en: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
+  //     ko: "Director, Luxury Partnerships & Brand Strategy (UNDERTHELINE)",
+  //   }),
+  //   title: t({
+  //     en: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
+  //     ko: "Luxury brand strategist shaping partnerships, collaborations, and cultural positioning.",
+  //   }),
+  //   description: t({
+  //     en: "Stavros Pirounis is a veteran executive in the global fashion industry. He served as Executive Director for Asia and President of Korea at ST Dupont (2010–2023), and earlier as CEO of Gruppo G.F.T. Asia-Pacific (1996–2009), managing brands like Armani, Valentino, and Calvin Klein. He also held senior roles at Loro Piana and Ermenegildo Zegna, contributing to their growth as leading luxury houses.",
+  //     ko: "ST Dupont 아시아 총괄 및 한국 대표, Gruppo GFT 아시아 CEO(Armani·Valentino·Calvin Klein 관리) 등을 역임. Loro Piana, Zegna 등 럭셔리 하우스 성장에 기여.",
+  //   }),
+  //   image: teamStavros,
+  // },
   // {
   //   name: "Mei Agnes Park",
   //   role: t({
