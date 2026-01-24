@@ -38,7 +38,7 @@ const NewsSection = () => {
     >
       <div className="max-w-6xl w-full">
         {/* Title with line */}
-        <div className="flex items-center gap-6 mb-12">
+        <div className="flex items-center gap-4 md:gap-6 mb-6 md:mb-12">
           <div
             className={`transition-all duration-1000 ${
               isVisible
@@ -46,7 +46,7 @@ const NewsSection = () => {
                 : "opacity-0 translate-y-4"
             }`}
           >
-            <h2 className="text-[32px] lg:text-[40px] leading-[100%] font-bold text-foreground font-rift whitespace-nowrap">
+            <h2 className="text-2xl md:text-[32px] lg:text-[40px] leading-[100%] font-bold text-foreground font-rift whitespace-nowrap">
               LATEST NEWS
             </h2>
           </div>
@@ -61,35 +61,66 @@ const NewsSection = () => {
           </div>
         </div>
 
-        {/* News Cards Grid */}
+        {/* News Cards - Mobile: Compact List, Desktop: Grid */}
         <div
-          className={`grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 transition-all duration-1000 ${
+          className={`transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
           style={{ transitionDelay: isVisible ? "500ms" : "0ms" }}
         >
-          {latestNews.map((news) => (
-            <Link
-              key={news.id}
-              to={`/news/${news.id}`}
-              className="group block"
-            >
-              <div className="aspect-[4/3] overflow-hidden mb-4">
-                <img
-                  src={news.image}
-                  alt={news.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
-                {news.category.toUpperCase()}
-              </span>
-              <h3 className="text-base font-bold text-foreground mb-2 group-hover:underline line-clamp-2">
-                {news.title}
-              </h3>
-              <p className="text-xs text-muted-foreground">{news.date}</p>
-            </Link>
-          ))}
+          {/* Mobile Layout */}
+          <div className="flex flex-col gap-4 md:hidden mb-6">
+            {latestNews.map((news) => (
+              <Link
+                key={news.id}
+                to={`/news/${news.id}`}
+                className="group flex gap-4"
+              >
+                <div className="w-24 h-24 shrink-0 overflow-hidden">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="flex-1 min-w-0 flex flex-col justify-center">
+                  <span className="text-[10px] font-bold text-primary font-rift tracking-wider mb-1">
+                    {news.category.toUpperCase()}
+                  </span>
+                  <h3 className="text-sm font-bold text-foreground group-hover:underline line-clamp-2 mb-1">
+                    {news.title}
+                  </h3>
+                  <p className="text-[10px] text-muted-foreground">{news.date}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* Desktop Layout */}
+          <div className="hidden md:grid md:grid-cols-3 gap-6 mb-12">
+            {latestNews.map((news) => (
+              <Link
+                key={news.id}
+                to={`/news/${news.id}`}
+                className="group block"
+              >
+                <div className="aspect-[4/3] overflow-hidden mb-4">
+                  <img
+                    src={news.image}
+                    alt={news.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <span className="text-xs font-bold text-primary font-rift tracking-wider mb-2 block">
+                  {news.category.toUpperCase()}
+                </span>
+                <h3 className="text-base font-bold text-foreground mb-2 group-hover:underline line-clamp-2">
+                  {news.title}
+                </h3>
+                <p className="text-xs text-muted-foreground">{news.date}</p>
+              </Link>
+            ))}
+          </div>
         </div>
 
         {/* View All Link */}
