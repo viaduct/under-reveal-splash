@@ -8,6 +8,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection";
 import SubsidiaryDetailsSection from "@/components/SubsidiaryDetailsSection";
 import BrandMessageSection from "@/components/BrandMessageSection";
 import GlobalNetworkSection from "@/components/GlobalNetworkSection";
+import NewsSection from "@/components/NewsSection";
 import Footer from "@/components/Footer";
 import SnapSection from "@/components/SnapSection";
 import {
@@ -24,6 +25,7 @@ const navItems = [
   { label: "What", id: "what" },
   { label: "Who", id: "who" },
   { label: "Companies", id: "companies" },
+  { label: "News", id: "news" },
   { label: "Contact", id: "contact" },
 ];
 
@@ -110,6 +112,9 @@ const Index = () => {
         </SnapSection>
         <SnapSection>
           <GlobalNetworkSection />
+        </SnapSection>
+        <SnapSection id="news">
+          <NewsSection />
         </SnapSection>
         <SnapSection>
           <BrandMessageSection />

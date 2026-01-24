@@ -1,7 +1,12 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
 const Logo = () => {
-  return <img src={logo} alt="Undertheline Holdings" className="h-4" />;
+  return (
+    <Link to="/">
+      <img src={logo} alt="Undertheline Holdings" className="h-4" />
+    </Link>
+  );
 };
 
 export default Logo;
